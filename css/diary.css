@@ -5,12 +5,12 @@
 .date{
     background-color: #3F3F3F;
     height: 70px;
-    margin-top: 105px;
+    margin-top: 65px;
     margin-left: 60px;
     margin-right: 400px;
     border-radius: 10px;
     width: 550px;
-    
+    box-shadow: 2px 2px 10px #00000066;
 }
 .diaryTag{
     display: flex;
@@ -41,6 +41,7 @@
     display: flex;
     border-radius: 10px;
     width: 484px;
+    box-shadow: 2px 2px 10px #00000066;
 }
 .diaryTag-mid{
     display: flex;
@@ -51,20 +52,22 @@
     margin-left: 30px;
     padding: 12px;
     border-radius: 10px;
+    box-shadow: 2px 2px 10px #00000066;
 }
 .music{
     position: relative;
     background-color: #3F3F3F;
-    height: 478.58px;
-    width: 384px;
+    height: 380px;
+    width: 400px;
     border-radius: 10px;
     margin-top: 15px;
     margin-left: 60px;
     margin-bottom: 15px;
+    box-shadow: 2px 2px 10px #00000066;
 }
 .music-white {
     position: absolute;
-    top: 50px;
+    top: 30px;
     left: 50px;
     width: 260.48px;
     height: 183.94px;
@@ -75,7 +78,7 @@
 
 .music-brown {
     position: absolute;
-    top: 50px;
+    top: 30px;
     left: 50px;
     width: 260.48px;
     height: 183.94px;
@@ -89,7 +92,7 @@
 }
 .song{
     position: absolute;
-    top: 300px;
+    top: 250px;
     left: 60px;
     display: flex;
     align-items: center;
@@ -98,7 +101,7 @@
 }
 .singer{
     position: absolute;
-    top: 380px;
+    top: 320px;
     left: 60px;
     display: flex;
     align-items: center;
@@ -107,15 +110,16 @@
 }
 .diary{
     position: absolute;
-    width: 609px;
-    height: 686px;
+    width: 559px;
+    height: 600px;
     background-color: #F7F0DD;
-    top: 109px;
-    right: 100px;
+    top: 89px;
+    right: 140px;
     border-radius: 10px;
+    box-shadow: 2px 2px 10px #00000066;
 }
 .diary-title input[type="text"]{
-    width: 537px;
+    width: 490px;
     height: 70px;
     color: #3F3F3F;
     background-color: #FEFBEB;
@@ -125,10 +129,11 @@
     margin-left: 15px;
     margin-top: 20px;
     border-radius: 10px;
+    box-shadow: 2px 2px 5px #00000066 inset;
 }
 .diary-content textarea{
-    width: 537px;
-    height: 439px;
+    width: 490px;
+    height: 370px;
     color: #3F3F3F;
     background-color: #FEFBEB;
     padding-left: 30px;
@@ -138,6 +143,7 @@
     margin-top: 20px;
     border-radius: 10px;
     padding-top: 30px;
+    box-shadow: 2px 2px 5px #00000066 inset;
 }
 .ok{
     position: absolute;
@@ -153,6 +159,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 2px 2px 7px #00000046;
 }
 .ok img{
     width: 43px;

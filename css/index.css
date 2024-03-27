@@ -16,9 +16,25 @@
     height: 517px;
     border-radius: 10px;
     margin-top: 30px;
+    color: #000000;
+    text-shadow: 5px 5px 5px rgb(255, 255, 255);
+}
+.introduce-a{
+    background-image: url(../images/a-index-ps.png);
+    background-size: 100% auto;
+}
+.introduce-b{
+    background-image: url(../images/b-index-ps.png);
+    background-size: 100% auto;
+}
+.introduce-c{
+    background-image: url(../images/c-index-ps.png);
+    background-size: 100% auto;
 }
 .introduce-d{
     margin-bottom: 30px;
+    background-image: url(../images/d-index-ps.png);
+    background-size: 100% auto;
 }
 .a-content-font{
     display: flex;
