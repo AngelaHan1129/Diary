@@ -1,40 +1,55 @@
+.main{
+    display: flex;
+    justify-content: center;
+}
 .date{
     background-color: #3F3F3F;
     height: 70px;
     margin-top: 105px;
     margin-left: 60px;
+    margin-right: 400px;
     border-radius: 10px;
-    width: 384px;
+    width: 550px;
+    
 }
 .diaryTag{
     display: flex;
     align-items: center;
     justify-content: start;
+    flex-wrap: wrap;
 }
 .diaryTag img{
-    width: 25px;
+    width: 30px;
     margin-left: 30px;
 }
 .diaryTag input[type="date"]{
     width: 177.82px;
     margin-left: 30px;
-    padding: 8px;
+    padding: 12px;
     border-radius: 10px;
+}
+.diaryTag-mid img{
+    width: 30px;
+    margin-left: 30px;
 }
 .feeling{
     background-color: #887A69;
-    height: 140px;
+    height: 120px;
     margin-top: 15px;
     margin-left: 60px;
-    display: flex;
     flex-wrap: wrap;
+    display: flex;
     border-radius: 10px;
-    width: 384px;
+    width: 484px;
 }
-.diaryTag input[type="text"]{
+.diaryTag-mid{
+    display: flex;
+    align-items: center;
+}
+.diaryTag-mid input[type="text"]{
     width: 177.82px;
     margin-left: 30px;
-    padding: 8px;
+    padding: 12px;
     border-radius: 10px;
 }
 .music{
@@ -96,7 +111,7 @@
     height: 686px;
     background-color: #F7F0DD;
     top: 109px;
-    left: 619px;
+    right: 100px;
     border-radius: 10px;
 }
 .diary-title input[type="text"]{

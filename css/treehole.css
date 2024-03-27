@@ -2,14 +2,16 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin:30px 80px ;
+    margin:20px 80px ;
 }
 .diary-content{
     width: 280px;
-    height: 160px;
+    height: 167px;
     background-color: #887A69;
     border-radius: 10px;
     margin-top: 20px;
+    box-shadow: 2px 2px 10px #00000066;
+    border: 2px solid #B7B7B7;
 }
 .diary-day-title{
     display: flex;
@@ -17,6 +19,7 @@
     margin-top: 10px;
 }
 .diary-day{
+    margin-top: 5px;
     color: #ffffff;
 }
 .diary-title{
@@ -24,14 +27,27 @@
     width: 80px;
     height: 25px;
     border-radius: 10px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.diary-title p{
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    overflow:hidden;
 }
 .diary-img-face{
     display: flex;
     justify-content: center;
 }
 .diary-img-face img{
-    width: 50px;
+    width: 80px;
+    margin: 5px;
+}
+.diary-read-foot{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
 }
 .diary-read{
     background-color: #71604A;
@@ -41,8 +57,41 @@
     display: flex;
     justify-content: center;
     border-radius: 10px;
+    align-items: center;
+    box-shadow: 5px 5px 10px #00000055;
 }
 .diary-read img{
     width: 20px;
     margin-right: 15px;
+}
+.pagination {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.pagination table {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.pagination a {
+    color: #71604A;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #71604A;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #ffffff;
+    color: #71604A;
+    border-radius: 5px;
+}
+
+.pagination span {
+    background-color: #F7F0DD;
+    color: #71604A;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
