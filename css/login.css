@@ -1,0 +1,93 @@
+.login{
+    background-color: #887a69;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+#logintext{
+    width: 50px;
+    height: 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    position: absolute;
+    right: 0;
+}
+
+.loginform{
+    background-color: #fefbec;
+    width: calc(400px - 90px);
+    height: calc(600px - 90px);
+    padding: 45px;
+    border-radius: 10px;
+    position: absolute;
+    align-self: center;
+    z-index: 1;
+    box-shadow: 1px 2.5px 5px rgba(0, 0, 0, 0.25);
+}
+
+form p{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 10px;
+}
+
+.loginform p a{
+    color: #a99883;
+}
+
+#logintitle{
+    color: #887a69;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.loginform input{
+    margin: 0 5% 25px;
+}
+
+input[type = "text"], input[type = "email"], input[type = "password"]{
+    color: #878787;
+    font-size: 20px;
+    font-weight: 100;
+    width: calc(90% - 30px);
+    height: 50px;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 2.5px 5px rgba(0, 0, 0, 0.25);
+}
+
+input[type = "submit"]{
+    font-size: 24px;
+    width: 90%;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+}
+
+.loginform input[type = "submit"]{
+    color: #fff;
+    background-color: #887a69;
+    margin: 20px 5%;
+}
+
+input[type = "submit"]:hover{
+    cursor: pointer;
+}
+
+#goregister{
+    margin-top: 45px;
+    margin-bottom: 25px;
+}
+
+#forgotpwd{
+    width: 80%;
+    margin: 0 10%;
+    padding-top: 20px;
+    border-top: 1px solid #000;
+}

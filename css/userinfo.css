@@ -1,0 +1,181 @@
+#userinfo{
+    background-color: #887a69;
+}
+
+#userform{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#userfront{
+    background-color: #c8c8c8;
+    width: 960px;
+    height: 250px;
+    border-radius: 10px;
+    position: absolute;
+    top: 30px;
+    box-shadow: 2px 5px 2px rgba(0, 0, 0, 0.1);
+}   
+
+.usershot{
+    background-color: #eaeaea;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.head2{
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #555;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: 30px;
+}
+
+.body2{
+    background-color: transparent;
+    width: 76px;
+    height: 38px;
+    border: 4px solid #555;
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    margin: auto;
+    position: relative;
+    top: 50px;
+}
+
+#changeshot{
+    color: #fff;
+    background-color: #000;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+#changeshot:hover{
+    opacity: 0.4;
+}
+
+#inputimg{
+    display: none;
+}
+
+#userimg{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+#userlist, #changepwd, #selectgender{
+    background-color: #fefbec;
+    width: 720px;
+    height: 460px;
+    border-radius: 10px;
+    padding: 0 50px;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+#userlist{
+    position: absolute;
+    bottom: 30px;
+}
+
+#changepwd, #selectgender{
+    align-self: center;
+}
+
+#username{
+    color: #000;
+    font-size: 32px;
+    text-align: center;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#account, #password, #gender, #email, #originpwd, #newpwd, #confirmpwd{
+    background-color: #fefbec;
+    color: #000;
+    width: 478px;
+    height: 23px;
+    font-size: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+input:not([type = "submit"], [type = "reset"]){
+    width: 75%;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    text-align: right;
+    cursor: text;
+}
+
+input[type = "submit"], [type = "reset"]{
+    background-color: #71604a;
+    color: #fff;
+    width: 95px;
+    height: 47.5px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    align-self: end;
+    cursor: pointer;
+}
+
+select{
+    background-color: transparent;
+    width: 50%;
+    height: 100%;
+    font-size: 20px;
+    text-align: right;
+    border: none;
+}
+
+select:focus{
+    outline: none;
+}
+
+option{
+    background-color: #fefbec;
+}

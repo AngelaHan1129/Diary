@@ -1,0 +1,33 @@
+.registerform{
+    background-color: #887a69;
+    width: calc(400px - 90px);
+    height: calc(600px - 90px);
+    padding: 45px;
+    border-radius: 10px;
+    align-self: center;
+    z-index: 0;
+    transform: rotate(15deg);
+    box-shadow: 1px 2.5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.registerform input{
+    margin: 0 5% 15px;
+}
+
+.registerform input[type = "submit"]{
+    color: #887a69;
+    background-color: #fefbec;
+    margin: 15px 5%;
+}
+
+#registertitle{
+    color: #fff;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+#gologin{
+    color: #fff;
+    margin-top: 15px;
+}
