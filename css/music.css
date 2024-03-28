@@ -7,14 +7,14 @@ main{
 }
 
 .upside{
-    height: calc(62.5% - 60px);
+    height: calc(62.5% - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .upwrap{
-    width: 1300px;
+    width: 1100px;
     height: 85%;
     display: flex;
     justify-content: space-around;
@@ -79,7 +79,7 @@ main{
 }
 
 .downwrap{
-    width: 1250px;
+    width: 1050px;
     height: 90%;
     display: flex;
     flex-direction: column;

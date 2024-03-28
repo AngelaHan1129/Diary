@@ -5,31 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/infos.css">
     <link rel="stylesheet" href="css/userinfo.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>用戶資訊</title>
 </head>
 <body>
-    <div class="leftside">
-        <img src="./images/changeDiary.png" alt="翻轉日記" id="logo">
-        <a href="userinfo.html" id="userinfo">
-            <div id="infoshot">
-                <div class="head"></div>
-                <div class="body"></div>
+    <div class="left">
+        <a href="./index.html">
+            <div class="logo">
+                <img src="./images/changeDiary.png">
             </div>
-            <div id="infoname">User</div>
         </a>
-        <hr width="158px" style="margin: 0 auto;">
-        <ul class="infolist">
-            <li><a href=""><img src="./images/homeGray.png" alt="home"><div>首頁</div></a></li>
-            <li><a href=""><img src="./images/treeGray.png" alt="report"><div>樹洞</div></a></li>
-            <li><a href="music.html"><img src="./images/music2Gray.png" alt="music"><div>音樂</div></a></li>
-            <li><a href=""><img src="./images/diaryGray.png" alt="diary"><div>日記</div></a></li>
-        </ul>
+        <div class="headSticker">
+            <div class="head-circular">
+                <a href="./userinfo.html">
+                    <img src="./images/member2.png">
+                    <p>UserName</p>
+                </a>
+            </div>
+            <hr>
+        </div>
+        <div class="nav">
+            <div class="nav-link">
+                <a href="./index.html">
+                    <img src="./images/homeGray.png">
+                    <p>首頁</p>
+                </a>
+            </div>
+            <div class="nav-link">
+                <a href="./treehole.html">
+                    <img src="./images/reportGray.png">
+                    <p>樹洞</p>
+                </a>
+            </div>
+            <div class="nav-link">
+                <a href="./music.html">
+                    <img src="./images/music2Gray.png">
+                    <p>音樂</p>
+                </a>
+            </div>
+            <div class="nav-link">
+                <a href="./diary.html">
+                    <img src="./images/diaryGray.png">
+                    <p>日記</p>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="rightside">
         <header>
-            <a href="" class="logout">
-                <img src="image/login.png" alt="login" id="loginicon">
-                <div id="logouttext">登出</div>
+            <a href="./login.html" class="logout">
+                <img src="./images/loginGray.png" alt="login" id="loginicon">
+                <div id="logouttext">登入</div>
             </a>
         </header>
         <main>
