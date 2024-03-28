@@ -10,8 +10,12 @@ body{
     font-family: 'AnyConv.com__Iansui-Regular';
     src: url(../font-size/AnyConv.com__Iansui-Regular.woff) format('woff');
 }
+input::placeholder {
+    font-family: 'AnyConv.com__Iansui-Regular';
+}
 input,button,textarea {
     border: none;
+    font-family: 'AnyConv.com__Iansui-Regular';
 }
 ul{
     list-style: none;
@@ -174,7 +178,6 @@ input:focus{
     align-items: center;
     z-index: 2;
 }
-/* 搜尋欄 */
 .search input[type="text"]{
     font-size: 24px;
     background-color: #555555;

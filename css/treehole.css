@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin:20px 80px ;
+    margin:20px 100px ;
 }
 .diary-content{
     width: 280px;
