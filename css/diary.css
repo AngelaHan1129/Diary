@@ -1,170 +1,161 @@
-.main{
-    display: flex;
-    justify-content: center;
-}
-.date{
-    background-color: #3F3F3F;
-    height: 70px;
-    margin-top: 65px;
-    margin-left: 60px;
-    margin-right: 400px;
-    border-radius: 10px;
-    width: 484px;
-    box-shadow: 2px 2px 10px #00000066;
-}
-.diaryTag{
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    flex-wrap: wrap;
-}
-.diaryTag img{
-    width: 30px;
-    margin-left: 30px;
-}
-.diaryTag input[type="date"]{
-    width: 177.82px;
-    margin-left: 30px;
-    padding: 12px;
-    border-radius: 10px;
-}
-.diaryTag-mid img{
-    width: 30px;
-    margin-left: 30px;
-}
-.feeling{
-    background-color: #887A69;
-    height: 120px;
-    margin-top: 15px;
-    margin-left: 60px;
-    flex-wrap: wrap;
-    display: flex;
-    border-radius: 10px;
-    width: 484px;
-    box-shadow: 2px 2px 10px #00000066;
-}
-.diaryTag-mid{
-    display: flex;
-    align-items: center;
-}
-.diaryTag-mid input[type="text"]{
-    width: 177.82px;
-    margin-left: 30px;
-    padding: 12px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px #00000066;
-}
-.music{
-    position: relative;
-    background-color: #3F3F3F;
-    height: 365px;
-    width: 484px;
-    border-radius: 10px;
-    margin-top: 15px;
-    margin-left: 60px;
-    margin-bottom: 15px;
-    box-shadow: 2px 2px 10px #00000066;
-}
-.music-white {
-    position: absolute;
-    top: 30px;
-    left: 50px;
-    width: 260.48px;
-    height: 183.94px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    z-index: 1;
+.infolist :nth-of-type(4) a{
+    background-color: #887a69;
 }
 
-.music-brown {
+main img{
+    width: 30px;
+    height: 30px;
+}
+
+#fun{
+    width: 484px;
+    position: absolute;
+    top: 50px;
+    left: 150px;
+}
+
+#fun >*{
+    width: calc(100% - 60px);
+    margin-top: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+#fun input{
+    width: 180px;
+    padding: 8px;
+    border-radius: 10px;
+    position: relative;
+    font-size: 20px;
+    left: 30px;
+    border: none;
+}
+
+.date{
+    background-color: #3F3F3F;
+    height: 30px;
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+.date, .feeling div{
+    display: flex;
+    align-items: center;
+}
+
+.feeling{
+    background-color: #887A69;
+    height: 110px;
+    padding: 5px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+#music{
+    background-color: #3F3F3F;
+    height: 365px;
+    padding: 5px 30px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.music{
+    width: 260.48px;
+    height: 183.94px;
+    border-radius: 10px;
     position: absolute;
     top: 30px;
     left: 50px;
-    width: 260.48px;
-    height: 183.94px;
+}
+
+.white {
+    background-color: #ffffff;
+}
+
+.brown {
     background-color: #887A69;
-    transform: rotate(-11.64deg);
-    border-radius: 10px;
+    transform: rotate(-12deg);
 }
-.music img{
-    width: 30px;
-    margin-right: 20px;
-}
-.song{
+
+#song{
     position: absolute;
-    top: 250px;
+    bottom: 90px;
     left: 60px;
     display: flex;
     align-items: center;
     color: #ffffff;
     font-size: 20px;
 }
-.singer{
+
+#singer{
     position: absolute;
-    top: 320px;
+    bottom: 30px;
     left: 60px;
     display: flex;
     align-items: center;
     color: #ffffff;
     font-size: 20px;
 }
-.diary{
-    position: absolute;
-    width: 559px;
-    height: 600px;
+
+#diary{
     background-color: #F7F0DD;
-    top: 89px;
-    right: 140px;
+    max-width: 520px;
+    height: 570px;
+    padding: 20px 15px;
     border-radius: 10px;
-    box-shadow: 2px 2px 10px #00000066;
-}
-.diary-title input[type="text"]{
-    width: 490px;
-    height: 70px;
-    color: #3F3F3F;
-    background-color: #FEFBEB;
-    padding-left: 30px;
-    font-size: 26px;
-    display: flex;
-    margin-left: 15px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px #00000066 inset;
-}
-.diary-content textarea{
-    width: 490px;
-    height: 370px;
-    color: #3F3F3F;
-    background-color: #FEFBEB;
-    padding-left: 30px;
-    font-size: 26px;
-    display: flex;
-    margin-left: 15px;
-    margin-top: 20px;
-    border-radius: 10px;
-    padding-top: 30px;
-    box-shadow: 2px 2px 5px #00000066 inset;
-}
-.ok{
     position: absolute;
-    background-color: #71604A;
-    font-size: 26px;
-    color: #ffffff;
-    right: 30px;
-    width: 165px;
-    height: 49.81px;
+    top: 30px;
+    right: 140px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+#title, #content{
+    background-color: #FEFBEB;
+    color: #3F3F3F;
+    width: calc(100% - 60px);
+    padding: 0 30px;
     border-radius: 10px;
+    font-size: 24px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6) inset;
+}
+
+#title:focus, #content:focus{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6) inset;
+}
+
+#title{
+    height: 70px;
+}
+
+#content{
+    height: 370px;
     margin-top: 20px;
-    cursor: pointer;
+    padding-top: 30px;
+}
+
+button[type = "submit"]{
+    background-color: #71604A;
+    color: #ffffff;
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.4);
+    font-size: 26px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    box-shadow: 2px 2px 7px #00000046;
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
 }
+
 .ok img{
-    width: 43px;
-    margin-right: 20px;
+    width: 30px;
 }
+
 @media screen and (max-width:1330px) {
     
 }

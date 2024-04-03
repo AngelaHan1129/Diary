@@ -6,57 +6,31 @@
     <link rel="stylesheet" href="css/infos.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/register.css">
-    <link rel="stylesheet" href="./css/style.css">
     <title>登入?註冊?</title>
 </head>
 <body>
-    <div class="left">
-        <a href="./index.html">
-            <div class="logo">
-                <img src="./images/changeDiary.png">
+    <div class="leftside">
+        <a href="index.html"><img src="image/changeDiary.png" alt="翻轉日記" id="logo"></a>
+        <a href="userinfo.html" id="userinfo">
+            <div id="infoshot">
+                <div class="head"></div>
+                <div class="body"></div>
             </div>
+            <div id="infoname">User</div>
         </a>
-        <div class="headSticker">
-            <div class="head-circular">
-                <a href="./userinfo.html">
-                    <img src="./images/member2.png">
-                    <p>UserName</p>
-                </a>
-            </div>
-            <hr>
-        </div>
-        <div class="nav">
-            <div class="nav-link">
-                <a href="./index.html">
-                    <img src="./images/homeGray.png">
-                    <p>首頁</p>
-                </a>
-            </div>
-            <div class="nav-link">
-                <a href="./treehole.html">
-                    <img src="./images/reportGray.png">
-                    <p>樹洞</p>
-                </a>
-            </div>
-            <div class="nav-link">
-                <a href="./music.html">
-                    <img src="./images/music2Gray.png">
-                    <p>音樂</p>
-                </a>
-            </div>
-            <div class="nav-link">
-                <a href="./diary.html">
-                    <img src="./images/diaryGray.png">
-                    <p>日記</p>
-                </a>
-            </div>
-        </div>
+        <hr width="158px" style="margin: 0 auto;">
+        <ul class="infolist">
+            <li><a href="index.html"><img src="image/home.png" alt="home"><div>首頁</div></a></li>
+            <li><a href="treehole.html"><img src="image/report.png" alt="report"><div>樹洞</div></a></li>
+            <li><a href="music.html"><img src="image/music.png" alt="music"><div>音樂</div></a></li>
+            <li><a href="diary.html"><img src="image/diary.png" alt="diary"><div>日記</div></a></li>
+        </ul>
     </div>
     <div class="rightside">
         <header>
-            <a href="./login.html" class="logout">
-                <img src="./images/loginGray.png" alt="login" id="loginicon">
-                <div id="logouttext">登入</div>
+            <a href="login.html" class="login">
+                <img src="image/login.png" alt="login" id="loginicon">
+                <div id="logintext">登入</div>
             </a>
         </header>
         <main>
@@ -75,7 +49,7 @@
                 <input type="password" name="password" id="password" placeholder="密碼" required>
                 <input type="password" id="confirmpwd" placeholder="確認密碼" required>
                 <input type="submit" value="註冊">
-                <p id="gologin">已有帳戶?<a href="" id="loginlink">返回登入</a></p>
+                <p id="gologin">已有帳戶?<a href="" id="loginlink">點此登入</a></p>
             </form>
         </main>
     </div>

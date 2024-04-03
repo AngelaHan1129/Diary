@@ -1,11 +1,11 @@
-var musiclist = document.getElementById('musiclist')
+var musicinfo = document.getElementById('musicinfo')
 
 document.getElementById('previous').addEventListener('click',function(event){
     event.preventDefault();
-    musiclist.style.transition = "transform 0.5s ease"
-    musiclist.style.transform = "translate(-100%)"
+    musicinfo.style.transition = "transform 0.5s ease"
+    musicinfo.style.animation = "fade-in"
     
-    setTimeout(function(){
-        musiclist.style.transform = "translate(100%)"
-    })
+    // setTimeout(function(){
+    //     musicinfo.style.transform = "translate(100%)"
+    // },500)
 })
