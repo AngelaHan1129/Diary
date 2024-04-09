@@ -198,3 +198,63 @@ main{
     display: flex;
     justify-content: center;
 }
+
+@keyframes FadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes FadeInLeft{
+    0%{
+        opacity: 0;
+        transform: translate(-50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes FadeInRight{
+    0%{
+        opacity: 0;
+        transform: translate(50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes  FadeOut{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes FadeOutLeft{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translate(-50%);
+    }
+}
+
+@keyframes FadeOutRight{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translate(50%);
+    }
+}

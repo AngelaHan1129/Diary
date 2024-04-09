@@ -1,3 +1,7 @@
+.infolist :nth-of-type(1) a{
+    background-color: #887a69;
+}
+
 .rightside{
     height: auto;
 }
