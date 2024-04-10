@@ -1,157 +1,186 @@
-.content{
+.infolist :nth-of-type(1) a{
+    background-color: #887a69;
+}
+
+.rightside{
+    height: auto;
+}
+
+#wrap{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.intr-bor{
+
+.bar{
     border-bottom: 1px solid #000000;
     padding-bottom: 30px;
 }
-.introduce-a,
-.introduce-b,
-.introduce-c,
-.introduce-d{
+
+.bar:last-of-type{
+    border: none;
+}
+
+.intro{
     background-color: #D9D9D9;
+    color: #000000;
     width: 1063px;
     height: 517px;
-    border-radius: 10px;
     margin-top: 30px;
-    color: #000000;
-    text-shadow: 5px 5px 5px rgb(255, 255, 255);
+    border-radius: 10px;
+    position: relative;
+    text-shadow: 5px 5px 5px #fff;
 }
-.introduce-a{
-    background-image: url(../images/a-index-ps.png);
+
+.a{
+    background-image: url(../image/a-index-ps.png);
     background-size: 100% auto;
 }
-.introduce-b{
-    background-image: url(../images/b-index-ps.png);
+
+.b{
+    background-image: url(../image/b-index-ps.png);
     background-size: 100% auto;
 }
-.introduce-c{
-    background-image: url(../images/c-index-ps.png);
+
+.c{
+    background-image: url(../image/c-index-ps.png);
     background-size: 100% auto;
 }
-.introduce-d{
-    margin-bottom: 30px;
-    background-image: url(../images/d-index-ps.png);
+
+.d{
+    background-image: url(../image/d-index-ps.png);
     background-size: 100% auto;
 }
-.a-content-font{
+
+.a-content{
     display: flex;
     flex-direction: column;
-    padding-top: 100px;
-    padding-left: 100px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
     font-size: 25px;
 }
-.a-content-font p{
+
+.a-content p{
     width: 400px;
     height: 100px;
     border-radius: 10px;
     margin-top: 35px;
     text-align: start;
 }
+
 .b-content{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-.b-left-picture,
-.b-right-picture{
+
+.b-picture{
+    background-color: #B9B7B7;
     width: 250px;
     height: 250px;
-    background-color: #B9B7B7;
     border-radius: 10px;
 }
-.b-left-picture{
+
+.b-left{
     margin-top: 30px;
-    background-image: url(../images/b-1.jpg);
+    background-image: url(../image/b-1.jpg);
     background-size: 100% auto;
 }
-.b-center-font{
+
+.b-center{
     font-size: 25px;
     margin-top: 50px;
 }
-.b-right-picture{
+
+.b-right{
     margin-top: 250px;
-    background-image: url(../images/b-2.jpg);
+    background-image: url(../image/b-2.jpg);
     background-size: 100% auto;
 }
-.b-center-font p{
+
+.b-center p{
     width: 400px;
     height: 100px;
-    border-radius: 10px;
     margin-top: 35px;
-    text-align:start;
 }
+
 .c-content{
-    display: flex;
     font-size: 25px;
+    display: flex;
     justify-content: space-around;
 }
-.c-right{
+
+.c-left{
+    background-color:#B9B7B7;
+    background-image: url(../image/c-1.jpg);
+    background-size: 100% auto;
     width: 450px;
     height: 450px;
-    background-color:#B9B7B7;
-    border-radius: 10px;
     margin-top: 35px;
-    background-image: url(../images/c-1.jpg);
-    background-size: 100% auto;
+    border-radius: 10px;
 }
-.c-font{
+
+.c-text{
     margin-top: 105px;
 }
-.c-font p{
+
+.c-text p{
     border-radius: 10px;
     width: 400px;
     height: 100px;
     margin-top: 35px;
 }
+
 .d-all{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
+
 .d-content{
     margin-top: 30px;
     font-size: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
+
 .d-content p{
     width: 600px;
     height: 100px;
     border-radius: 10px;
     margin-top: 35px;
 }
-.d-img-two{
+
+.d-img{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 620px;
 }
-.d-img-sq1,
-.d-img-sq2{
+
+.d-img div{
     background-color: #B9B7B7;
     width: 300px;
     height: 200px;
     border-radius: 10px;
     margin-top: 35px;
 }
-.d-img-sq1{
-    background-image: url(../images/d-1.jpg);
+
+.d-img :first-of-type{
+    background-image: url(../image/d-1.jpg);
     background-size: 100% auto;
 }
-.d-img-sq2{
-    background-image: url(../images/d-2.jpg);
+
+.d-img :nth-of-type(2){
+    background-image: url(../image/d-2.jpg);
     background-size: 100% auto;
 }
+
 .d-right{
     background-color: #B9B7B7;
     width: 350px;
     height: 450px;
     border-radius: 10px;
     margin-top: 30px;
-    background-image: url(../images/d-3.jpg);
+    background-image: url(../image/d-3.jpg);
     background-size: 100% auto;
 }

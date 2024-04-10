@@ -1,26 +1,11 @@
 .login{
     background-color: #887a69;
-    width: 100px;
-    height: 40px;
-    border-radius: 10px;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-}
-
-#logintext{
-    width: 50px;
-    height: 20px;
-    margin: 10px 0;
-    font-size: 16px;
-    position: absolute;
-    right: 0;
 }
 
 .loginform{
     background-color: #fefbec;
-    width: calc(400px - 90px);
-    height: calc(600px - 90px);
+    width: calc(350px - 90px);
+    height: calc(525px - 90px);
     padding: 45px;
     border-radius: 10px;
     position: absolute;
@@ -81,7 +66,7 @@ input[type = "submit"]:hover{
 }
 
 #goregister{
-    margin-top: 45px;
+    margin-top: 35px;
     margin-bottom: 25px;
 }
 

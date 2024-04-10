@@ -3,25 +3,26 @@
 }
 
 main{
-    display: inline;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.upside{
-    height: calc(62.5% - 80px);
+#upside{
+    height: calc(62.5% - 60px);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.upwrap{
-    width: 1100px;
-    height: 85%;
+#upwrap{
+    width: 90%;
+    height: 90%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.upwrap a{
+#upwrap a{
     color: #000;
 }
 
@@ -71,16 +72,16 @@ main{
     height: 40px;
 }
 
-.downside{
+#downside{
     height: calc(37.5% - 1px);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.downwrap{
-    width: 1050px;
-    height: 90%;
+#downwrap{
+    width: 90%;
+    height: 95%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,16 +93,30 @@ main{
     height: calc(80% - 40px);
     padding: 20px;
     border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.playlist-wrap{
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    transition: transform 0.5s ease;
+    display: inline-block;
 }
 
 .preview{
     color: #fff;
     width: calc(25% - 20px);
+    margin: 0 10px;
     height: 100%;
     font-size: 18px;
     text-align: center;
+    display: inline-block;
+}
+
+.preview:first-of-type{
+    margin-left: 0;
 }
 
 .preview div{
@@ -117,18 +132,18 @@ main{
     align-items: center;
 }
 
-.nums{
+.pages{
     height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.nums div{
-    width: 43px;
-    height: 43px;
-    margin: 10px;
-    font-size: 20px;
+.pages a{
+    color: #3f3f3f;
+    width: 38px;
+    height: 38px;
+    margin: 5px;
     border: 1px solid #3f3f3f;
     border-radius: 10px;
     display: flex;
@@ -137,12 +152,7 @@ main{
     transition: all 0.3s;
 }
 
-.nums :hover{
+.pages a:hover{
     color: #fff;
     background-color: #3f3f3f;
-    cursor: pointer;
-}
-
-.nums :first-of-type,.nums :last-of-type{
-    border: none;
 }

@@ -1,13 +1,7 @@
+var date = new Date();
+var yyyy = date.getFullYear();
+var mm = String(date.getMonth() + 1).padStart(2, '0');
+var dd = String(date.getDate()).padStart(2, '0');
+var today = yyyy + "-" + mm + "-" + dd;
 
-var dateInput = document.getElementById('dateInput');
-
-dateInput.addEventListener('focus', function() {
-    dateInput.value = '';
-    dateInput.setAttribute('placeholder', '年/月/日');
-});
-
-dateInput.addEventListener('blur', function() {
-    if (dateInput.value === '') {
-        dateInput.setAttribute('placeholder', '');
-    }
-});
+document.getElementById("date").value = today;
