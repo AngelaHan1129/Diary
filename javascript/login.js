@@ -37,7 +37,7 @@ document.getElementById("registerlink").addEventListener("click", function(event
     loginform.style.transform = "translateX(0) rotate(15deg)";
   }, 500);
 });
-
+console.log(loginlink)
 document.getElementById("loginlink").addEventListener("click", function(event) {
   event.preventDefault();
   loginform.style.transition =  "transform 0.5s ease"

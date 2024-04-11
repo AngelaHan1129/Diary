@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="css/register.css">
     <title>登入?註冊?</title>
 </head>
+
 <body>
     <div class="leftside">
         <a href="index.html"><img src="image/changeDiary.png" alt="翻轉日記" id="logo"></a>
@@ -20,10 +22,18 @@
         </a>
         <hr width="158px" style="margin: 0 auto;">
         <ul class="infolist">
-            <li><a href="index.html"><img src="image/home.png" alt="home"><div>首頁</div></a></li>
-            <li><a href="treehole.html"><img src="image/report.png" alt="report"><div>樹洞</div></a></li>
-            <li><a href="music.html"><img src="image/music.png" alt="music"><div>音樂</div></a></li>
-            <li><a href="diary.html"><img src="image/diary.png" alt="diary"><div>日記</div></a></li>
+            <li><a href="index.html"><img src="image/home.png" alt="home">
+                    <div>首頁</div>
+                </a></li>
+            <li><a href="treehole.html"><img src="image/report.png" alt="report">
+                    <div>樹洞</div>
+                </a></li>
+            <li><a href="music.html"><img src="image/music.png" alt="music">
+                    <div>音樂</div>
+                </a></li>
+            <li><a href="diary.html"><img src="image/diary.png" alt="diary">
+                    <div>日記</div>
+                </a></li>
         </ul>
     </div>
     <div class="rightside">
@@ -55,28 +65,22 @@
     </div>
 </body>
 <script>
-    fetch('http://localhost:8000/api/login', {method: 'post'})
-    .then(res => console.log(res))
-    const formEl = document.querySelector('.loginform');
+    
+const formEl = document.querySelector('.loginform');
     formEl.addEventListener('submit', event => {
         event.preventDefault();
         const formData = new FormData(formEl);
-        const data = new URLSearchParams(fromData);
+        let object = {};
+        formData.forEach((value, key) => object[key] = value);
+        let json = JSON.stringify(object);
         fetch('http://localhost:8000/api/login', {
-        method: 'post',
-        body:data
-    })
-    .then(res => {
-            res.json()
-        })
-        .then(data => {
-
-            console.log(data)
-        }).catch(err => {
-            console.log(err);
-        });
-        // console.log(formData.get('account'));
-    })
+            method: 'post',
+            body: json
+        }).then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.log(err));
+    });
 </script>
 <script src="javascript/login.js"></script>
+
 </html>
