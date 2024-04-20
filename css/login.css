@@ -14,6 +14,10 @@
     box-shadow: 1px 2.5px 5px rgba(0, 0, 0, 0.25);
 }
 
+#loginmsg,#registermsg{
+    color: red;
+}
+
 form p{
     display: flex;
     justify-content: space-around;

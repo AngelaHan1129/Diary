@@ -47,40 +47,27 @@
             <form action="" id="loginform" class="loginform">
                 <p id="logintitle">Login</p>
                 <input type="text" name="account" placeholder="帳號" required>
-                <input type="password" name="password" id="password" placeholder="密碼" required>
+                <input type="password" name="password" id="registerpassword" placeholder="密碼" required>
                 <input type="submit" value="登入">
+                <p id="loginmsg"></p>
                 <p id="goregister">新用戶?<a href="" id="registerlink">前往註冊</a></p>
                 <p id="forgotpwd"><a href="#">忘記密碼</a></p>
             </form>
+            
             <form action="" id="registerform" class="registerform" onsubmit="return validateRegister()">
                 <p id="registertitle">Register</p>
                 <input type="text" name="account" placeholder="帳號" required>
+                <input type="text" name="name" placeholder="姓名" required>
                 <input type="email" name="email" id="email" placeholder="電子信箱" required>
-                <input type="password" name="password" id="password" placeholder="密碼" required>
-                <input type="password" id="confirmpwd" placeholder="確認密碼" required>
+                <input type="password" name="password" id="passwd" placeholder="密碼" required>
+                <input type="password" name="checkpwd" id="confirmpwd" placeholder="確認密碼" required>
                 <input type="submit" value="註冊">
+                <p id="registermsg"></p>
                 <p id="gologin">已有帳戶?<a href="" id="loginlink">點此登入</a></p>
             </form>
         </main>
     </div>
 </body>
-<script>
-    
-const formEl = document.querySelector('.loginform');
-    formEl.addEventListener('submit', event => {
-        event.preventDefault();
-        const formData = new FormData(formEl);
-        let object = {};
-        formData.forEach((value, key) => object[key] = value);
-        let json = JSON.stringify(object);
-        fetch('http://localhost:8000/api/login', {
-            method: 'post',
-            body: json
-        }).then(res => res.json())
-            .then(data => console.log(data))
-            .catch(err => console.log(err));
-    });
-</script>
 <script src="javascript/login.js"></script>
 
 </html>
