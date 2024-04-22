@@ -1,73 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/infos.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/register.css">
+    <script src="javascript/layout.js"></script>
     <title>登入?註冊?</title>
 </head>
-
 <body>
-    <div class="leftside">
-        <a href="index.html"><img src="image/changeDiary.png" alt="翻轉日記" id="logo"></a>
-        <a href="userinfo.html" id="userinfo">
-            <div id="infoshot">
-                <div class="head"></div>
-                <div class="body"></div>
-            </div>
-            <div id="infoname">User</div>
-        </a>
-        <hr width="158px" style="margin: 0 auto;">
-        <ul class="infolist">
-            <li><a href="index.html"><img src="image/home.png" alt="home">
-                    <div>首頁</div>
-                </a></li>
-            <li><a href="treehole.html"><img src="image/report.png" alt="report">
-                    <div>樹洞</div>
-                </a></li>
-            <li><a href="music.html"><img src="image/music.png" alt="music">
-                    <div>音樂</div>
-                </a></li>
-            <li><a href="diary.html"><img src="image/diary.png" alt="diary">
-                    <div>日記</div>
-                </a></li>
-        </ul>
-    </div>
-    <div class="rightside">
-        <header>
-            <a href="login.html" class="login">
-                <img src="image/login.png" alt="login" id="loginicon">
-                <div id="logintext">登入</div>
-            </a>
-        </header>
-        <main>
-            <form action="" id="loginform" class="loginform">
-                <p id="logintitle">Login</p>
-                <input type="text" name="account" placeholder="帳號" required>
-                <input type="password" name="password" id="registerpassword" placeholder="密碼" required>
-                <input type="submit" value="登入">
-                <p id="loginmsg"></p>
-                <p id="goregister">新用戶?<a href="" id="registerlink">前往註冊</a></p>
-                <p id="forgotpwd"><a href="#">忘記密碼</a></p>
-            </form>
-            
-            <form action="" id="registerform" class="registerform" onsubmit="return validateRegister()">
-                <p id="registertitle">Register</p>
-                <input type="text" name="account" placeholder="帳號" required>
-                <input type="text" name="name" placeholder="姓名" required>
-                <input type="email" name="email" id="email" placeholder="電子信箱" required>
-                <input type="password" name="password" id="passwd" placeholder="密碼" required>
-                <input type="password" name="checkpwd" id="confirmpwd" placeholder="確認密碼" required>
-                <input type="submit" value="註冊">
-                <p id="registermsg"></p>
-                <p id="gologin">已有帳戶?<a href="" id="loginlink">點此登入</a></p>
-            </form>
-        </main>
-    </div>
+    <form action="" id="loginform" class="loginform">
+        <p id="logintitle">Login</p>
+        <input type="text" name="account" placeholder="帳號" required>
+        <input type="password" name="password" id="registerpassword" placeholder="密碼" required>
+        <input type="submit" value="登入">
+        <p id="loginmsg"></p>
+        <p id="goregister">新用戶?<a href="" id="registerlink">前往註冊</a></p>
+        <p id="forgotpwd"><a href="#">忘記密碼</a></p>
+    </form>
+    <form action="" id="registerform" class="registerform" onsubmit="return validateRegister()">
+        <p id="registertitle">Register</p>
+        <input type="text" name="account" placeholder="帳號" required>
+        <input type="text" name="name" placeholder="姓名" required>
+        <input type="email" name="email" id="email" placeholder="電子信箱" required>
+        <input type="password" name="password" id="passwd" placeholder="密碼" required>
+        <input type="password" name="checkpwd" id="confirmpwd" placeholder="確認密碼" required>
+        <input type="submit" value="註冊">
+        <p id="registermsg"></p>
+        <p id="gologin">已有帳戶?<a href="" id="loginlink">點此登入</a></p>
+    </form>
 </body>
-<script src="javascript/login.js"></script>
-
 </html>

@@ -1,18 +1,20 @@
-.infolist :nth-of-type(1) a{
+li a[href*="index"]{
     background-color: #887a69;
 }
 
-.rightside{
+#rightside{
     height: auto;
 }
 
 #wrap{
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .bar{
+    width: 100%;
     border-bottom: 1px solid #000000;
     padding-bottom: 30px;
 }
@@ -23,9 +25,12 @@
 
 .intro{
     background-color: #D9D9D9;
+    background-size: 100%;
+    background-repeat: no-repeat;
     color: #000000;
-    width: 1063px;
-    height: 517px;
+    font-size: 2vw;
+    width: 100%;
+    aspect-ratio: 1/0.5;
     margin-top: 30px;
     border-radius: 10px;
     position: relative;
@@ -34,153 +39,155 @@
 
 .a{
     background-image: url(../image/a-index-ps.png);
-    background-size: 100% auto;
 }
 
 .b{
     background-image: url(../image/b-index-ps.png);
-    background-size: 100% auto;
 }
 
 .c{
     background-image: url(../image/c-index-ps.png);
-    background-size: 100% auto;
 }
 
 .d{
     background-image: url(../image/d-index-ps.png);
-    background-size: 100% auto;
 }
 
-.a-content{
+.a-text{
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 100px;
-    left: 100px;
-    font-size: 25px;
+    top: 20%;
+    left: 10%;
 }
 
-.a-content p{
-    width: 400px;
+.a-text p{
+    max-width: 400px;
     height: 100px;
     border-radius: 10px;
     margin-top: 35px;
-    text-align: start;
 }
 
 .b-content{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
 }
 
-.b-picture{
-    background-color: #B9B7B7;
-    width: 250px;
-    height: 250px;
+.b-img{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 20%;
+    aspect-ratio: 1/1;
     border-radius: 10px;
 }
 
 .b-left{
-    margin-top: 30px;
     background-image: url(../image/b-1.jpg);
-    background-size: 100% auto;
-}
-
-.b-center{
-    font-size: 25px;
-    margin-top: 50px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
 }
 
 .b-right{
-    margin-top: 250px;
     background-image: url(../image/b-2.jpg);
-    background-size: 100% auto;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
 }
 
-.b-center p{
-    width: 400px;
+.b-text{
+    max-width: 400px;
+    width: 40%;
+    margin-top: 50px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.b-text p{
     height: 100px;
     margin-top: 35px;
 }
 
-.c-content{
-    font-size: 25px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.c-left{
-    background-color:#B9B7B7;
+.c-img{
     background-image: url(../image/c-1.jpg);
-    background-size: 100% auto;
-    width: 450px;
-    height: 450px;
-    margin-top: 35px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 45%;
+    aspect-ratio: 1/1;
     border-radius: 10px;
+    position: absolute;
+    top: 6%;
+    left: 3%;
 }
 
 .c-text{
-    margin-top: 105px;
+    max-width: 400px;
+    width: 40%;
+    position: absolute;
+    top: 20%;
+    left: 51%;
 }
 
 .c-text p{
     border-radius: 10px;
-    width: 400px;
+    width: 100%;
     height: 100px;
-    margin-top: 35px;
+    position: absolute;
+
 }
 
-.d-all{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.d-text{
+    max-width: 600px;
+    width: 60%;
+    position: absolute;
+    top: 6%;
+    left: 3%;
 }
 
-.d-content{
-    margin-top: 30px;
-    font-size: 25px;
-}
-
-.d-content p{
-    width: 600px;
+.d-text p{
+    width: 100%;
     height: 100px;
     border-radius: 10px;
     margin-top: 35px;
 }
 
 .d-img{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 620px;
-}
-
-.d-img div{
+    background-size: 100%;
+    background-repeat: no-repeat;
     background-color: #B9B7B7;
-    width: 300px;
-    height: 200px;
+    max-width: 300px;
+    width: 30%;
+    aspect-ratio: 1/0.5;
     border-radius: 10px;
-    margin-top: 35px;
 }
 
-.d-img :first-of-type{
+.d-img:first-of-type{
     background-image: url(../image/d-1.jpg);
-    background-size: 100% auto;
+    position: absolute;
+    bottom: 6%;
+    left: 3%;
 }
 
-.d-img :nth-of-type(2){
+.d-img:last-of-type{
     background-image: url(../image/d-2.jpg);
-    background-size: 100% auto;
+    position: absolute;
+    bottom: 6%;
+    left: 33%;
 }
 
 .d-right{
     background-color: #B9B7B7;
-    width: 350px;
-    height: 450px;
+    max-width: 350px;
+    width: 35%;
+    aspect-ratio: 1/1;
     border-radius: 10px;
     margin-top: 30px;
     background-image: url(../image/d-3.jpg);
-    background-size: 100% auto;
+    background-size: 100%;
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
 }

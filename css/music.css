@@ -1,4 +1,4 @@
-.infolist :nth-of-type(3) a{
+li a[href*="music"]{
     background-color: #887a69;
 }
 

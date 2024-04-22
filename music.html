@@ -3,108 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/infos.css">
-    <link rel="stylesheet" href="css/music.css">
+    <script src="javascript/layout.js"></script>
     <title>音樂</title>
 </head>
 <body>
-    <div class="leftside">
-        <a href="index.html"><img src="image/changeDiary.png" alt="翻轉日記" id="logo"></a>
-        <a href="userinfo.html" id="userinfo">
-            <div id="infoshot">
-                <div class="head"></div>
-                <div class="body"></div>
+    <div id="upside">
+        <div id="upwrap">
+            <a href="" id="previous">&lt;</a>
+            <div id="musicinfo">
+                <iframe id="player"
+                src="https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+                <ul class="musiclist">
+                    <li><img src="image/date.png" alt="home"><div>日期：</div></li>
+                    <li><img src="image/music2.png" alt="report"><div>歌曲名稱：</div></li>
+                    <li><img src="image/person.png" alt="music"><div>歌手名稱：</div></li>
+                </ul>
             </div>
-            <div id="infoname">User</div>
-        </a>
-        <hr width="158px" style="margin: 0 auto;">
-        <ul class="infolist">
-            <li><a href="index.html"><img src="image/home.png" alt="home"><div>首頁</div></a></li>
-            <li><a href="treehole.html"><img src="image/report.png" alt="report"><div>樹洞</div></a></li>
-            <li><a href="music.html"><img src="image/music.png" alt="music"><div>音樂</div></a></li>
-            <li><a href="diary.html"><img src="image/diary.png" alt="diary"><div>日記</div></a></li>
-        </ul>
-    </div>
-    <div class="rightside">
-    <header>
-        <input type="search" placeholder="搜尋">
-        <a href="login.html" class="login">
-            <img src="image/login.png" alt="login" id="loginicon">
-            <div id="logintext">登入</div>
-        </a>
-    </header>
-    <main>
-        <div id="upside">
-            <div id="upwrap">
-                <a href="" id="previous">&lt;</a>
-                <div id="musicinfo">
-                    <iframe id="player"
-                    src="https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                    <ul class="musiclist">
-                        <li><img src="image/date.png" alt="home"><div>日期：</div></li>
-                        <li><img src="image/music2.png" alt="report"><div>歌曲名稱：</div></li>
-                        <li><img src="image/person.png" alt="music"><div>歌手名稱：</div></li>
-                    </ul>
-                </div>
-                <a href="" id="next">&gt;</a>
-            </div>
+            <a href="" id="next">&gt;</a>
         </div>
-        <hr width="95%" style="margin: 0 auto;">
-        <div id="downside">
-            <div id="downwrap">
-                <div id="playlist">
-                    <div class="playlist-wrap">
-                        <div class="preview">
-                            <div></div>
-                            <p>2024-03-01</p>
-                        </div>
-                        <div class="preview">
-                            <div></div>
-                            <p>2024-03-01</p>
-                        </div>
-                        <div class="preview">
-                            <div></div>
-                            <p>2024-03-01</p>
-                        </div>
-                        <div class="preview">
-                            <div></div>
-                            <p>2024-03-01</p>
-                        </div>
-                        <div class="preview">
-                            <div></div>
-                            <p>2024-03-01</p>
-                        </div>
-                        <div class="preview">
-                            <div></div>
-                            <p>2024-03-01</p>
-                        </div>
-                        <div class="preview">
-                            <div></div>
-                            <p>2024-03-01</p>
-                        </div>
-                        <div class="preview">
-                            <div></div>
-                            <p>2024-03-01</p>
-                        </div>
+    </div>
+    <hr width="95%" style="margin: 0 auto;">
+    <div id="downside">
+        <div id="downwrap">
+            <div id="playlist">
+                <div class="playlist-wrap">
+                    <div class="preview">
+                        <div></div>
+                        <p>2024-03-01</p>
+                    </div>
+                    <div class="preview">
+                        <div></div>
+                        <p>2024-03-01</p>
+                    </div>
+                    <div class="preview">
+                        <div></div>
+                        <p>2024-03-01</p>
+                    </div>
+                    <div class="preview">
+                        <div></div>
+                        <p>2024-03-01</p>
+                    </div>
+                    <div class="preview">
+                        <div></div>
+                        <p>2024-03-01</p>
+                    </div>
+                    <div class="preview">
+                        <div></div>
+                        <p>2024-03-01</p>
+                    </div>
+                    <div class="preview">
+                        <div></div>
+                        <p>2024-03-01</p>
+                    </div>
+                    <div class="preview">
+                        <div></div>
+                        <p>2024-03-01</p>
                     </div>
                 </div>
-                <table class="pages">
-                    <tr>
-                        <td><a href="">&lt;&lt;</a></td>
-                        <td><a href="">1</a></td>
-                        <td><a href="">2</a></td>
-                        <td><a href="">3</a></td>
-                        <td><a href="">4</a></td>
-                        <td><a href="">5</a></td>
-                        <td><a href="">&gt;&gt;</a></td>
-                    </tr>
-                </table>
             </div>
+            <table class="pages">
+                <tr>
+                    <td><a href="">&lt;&lt;</a></td>
+                    <td><a href="">1</a></td>
+                    <td><a href="">2</a></td>
+                    <td><a href="">3</a></td>
+                    <td><a href="">4</a></td>
+                    <td><a href="">5</a></td>
+                    <td><a href="">&gt;&gt;</a></td>
+                </tr>
+            </table>
         </div>
-        <script src="javascript/music.js"></script>
-    </main>
+    </div>
+    <script src="javascript/music.js"></script>
 </body>
 </html>

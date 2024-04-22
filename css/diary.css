@@ -1,4 +1,4 @@
-.infolist :nth-of-type(4) a{
+li a[href *= "diary"]{
     background-color: #887a69;
 }
 
