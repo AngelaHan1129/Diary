@@ -83,6 +83,7 @@ function isValidEmail(email) {
   }
   loginData();
   
+  //註冊api未完成
   async function registerData() {
     const forRegister = await document.querySelector('.registerform');
     let msg = '';
@@ -101,9 +102,10 @@ function isValidEmail(email) {
           .then(data => {
             console.log(data)
             errmsg = msg.replace("",data.msg)
-            document.getElementById('.registermsg').innerHTML = errmsg;
+            console.log(errmsg)
+            document.getElementById('registermsg').innerText = errmsg;
           })
-      })
+      });
     }
     catch (err) {
       console.log(err)

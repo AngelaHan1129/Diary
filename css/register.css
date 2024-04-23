@@ -1,3 +1,6 @@
+.registermsg{
+    color: red;
+}
 .registerform{
     background-color: #887a69;
     width: calc(350px - 90px);
