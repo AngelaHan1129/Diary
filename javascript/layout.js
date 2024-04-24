@@ -35,6 +35,7 @@ const jsFiles = {
     'login.html': 'javascript/login.js',
     'music.html': 'javascript/music.js',
     'diary.html': 'javascript/diary.js',
+    'index.html': 'javascript/index.js',
     'userinfo.html': 'javascript/userinfo.js'
 }
 

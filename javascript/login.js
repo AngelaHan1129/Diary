@@ -83,7 +83,7 @@ function isValidEmail(email) {
   }
   loginData();
   
-  //註冊api未完成
+
   async function registerData() {
     const forRegister = await document.querySelector('.registerform');
     let msg = '';
