@@ -104,6 +104,7 @@ function isValidEmail(email) {
             errmsg = msg.replace("",data.msg)
             console.log(errmsg)
             document.getElementById('registermsg').innerText = errmsg;
+
           })
       });
     }
@@ -112,3 +113,16 @@ function isValidEmail(email) {
     }
   }
   registerData();
+
+  async function registerAuthCode(){
+    let SendAuthCode = await document.querySelector('SendAuthCode')
+    let InputAuthCode = await document.querySelector('InputAuthCode') 
+    let registerlink = await document.querySelector('registerlink') 
+    registerlink.addEventListener("click",function(){
+      InputAuthCode.showModel();
+    })
+    SendAuthCode.addEventListener("click",function(){
+      InputAuthCode.close();
+    })
+  }
+ 

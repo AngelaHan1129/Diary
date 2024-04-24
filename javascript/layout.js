@@ -77,7 +77,7 @@ function layout(page) {
         });
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const pathname = window.location.pathname;
     let page = pages[pathname] || 'index.html';
     layout(page);
