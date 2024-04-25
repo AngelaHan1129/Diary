@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form class="form" name="f1" action="journal.php" method="POST" id="f1s">
+    <form class="form" name="writeform" action="journal.php" method="POST" id="f1s">
         <div id="fun">
             <div id="current_date" class="date">
                 <img src="image/date.png" alt="">
@@ -31,32 +31,28 @@
                         </div>
 
                         <ul class="dropdown">
-                            <li data-image="image/img-emoji/angry.png" onclick="selectOption(this), loadImage(this, 'angry')">
+                            <li data-image="image/img-emoji/angry.png"
+                                onclick="selectOption(this), loadImage(this, 'angry')">
                                 <img src="image/img-emoji/angry.png" alt="生氣" width="100">
                             </li>
-                            <li data-image="image/img-emoji/calm.png"
-                            name="emoji" value="calm"      
-                            onclick="selectOption(this), loadImage(this, 'calm')">
+                            <li data-image="image/img-emoji/calm.png" name="emoji" value="calm"
+                                onclick="selectOption(this), loadImage(this, 'calm')">
                                 <img src="image/img-emoji/calm.png" alt="平靜" width="100">
                             </li>
-                            <li data-image="image/img-emoji//fear.png"
-                            name="emoji" value="fear"      
-                            onclick="selectOption(this), loadImage(this, 'fear')">
+                            <li data-image="image/img-emoji//fear.png" name="emoji" value="fear"
+                                onclick="selectOption(this), loadImage(this, 'fear')">
                                 <img src="image/img-emoji//fear.png" alt="害怕" width="100">
                             </li>
-                            <li data-image="image/img-emoji/happiness.png"
-                            name="emoji" value="happiness"      
-                            onclick="selectOption(this), loadImage(this, 'happiness')">
+                            <li data-image="image/img-emoji/happiness.png" name="emoji" value="happiness"
+                                onclick="selectOption(this), loadImage(this, 'happiness')">
                                 <img src="image/img-emoji/happiness.png" alt="幸福" width="100">
                             </li>
-                            <li data-image="image/img-emoji/joy.png"
-                            name="emoji" value="joy"     
-                            onclick="selectOption(this), loadImage(this, 'joy')">
+                            <li data-image="image/img-emoji/joy.png" name="emoji" value="joy"
+                                onclick="selectOption(this), loadImage(this, 'joy')">
                                 <img src="image/img-emoji/joy.png" alt="喜悅" width="100">
                             </li>
-                            <li data-image="image/img-emoji//sad.png"
-                            name="emoji" value="sad"    
-                            onclick="selectOption(this), loadImage(this, 'sad')">
+                            <li data-image="image/img-emoji//sad.png" name="emoji" value="sad"
+                                onclick="selectOption(this), loadImage(this, 'sad')">
                                 <img src="image/img-emoji//sad.png" alt="失落" width="100">
                             </li>
                         </ul>
@@ -76,29 +72,24 @@
                         </div>
 
                         <ul class="dropdown">
-                            <li data-image="image/img-weather/sun.png" 
-                            name="weather" value="sunny"
+                            <li data-image="image/img-weather/sun.png" name="weather" value="sunny"
                                 onclick="selectOption(this), loadImage1(this, 'sunny')">
                                 <img src="image/img-weather/sun.png" alt="晴天" width="100">
                             </li>
-                            <li data-image="image/img-weather/rain.png"
-                            name="weather" value="rainy"
+                            <li data-image="image/img-weather/rain.png" name="weather" value="rainy"
                                 onclick="selectOption(this), loadImage1(this, 'rainy')">
                                 <img src="image/img-weather/rain.png" alt="雨天" width="100">
                             </li>
-                            <li data-image="image/img-weather/cloudy.png"
-                            name="weather" value="cloudy"    
-                            onclick="selectOption(this), loadImage1(this, 'cloudy')">
+                            <li data-image="image/img-weather/cloudy.png" name="weather" value="cloudy"
+                                onclick="selectOption(this), loadImage1(this, 'cloudy')">
                                 <img src="image/img-weather/cloudy.png" alt="陰天" width="100">
                             </li>
-                            <li data-image="image/img-weather/partly.png"
-                            name="weather" value="sun_cloud"    
-                            onclick="selectOption(this), loadImage1(this, 'sun_cloud')">
+                            <li data-image="image/img-weather/partly.png" name="weather" value="sun_cloud"
+                                onclick="selectOption(this), loadImage1(this, 'sun_cloud')">
                                 <img src="image/img-weather/partly.png" alt="晴時多雲" width="100">
                             </li>
-                            <li data-image="image/img-weather/snowy.png"
-                            name="weather" value="snow"    
-                            onclick="selectOption(this), loadImage1(this, 'snow')">
+                            <li data-image="image/img-weather/snowy.png" name="weather" value="snow"
+                                onclick="selectOption(this), loadImage1(this, 'snow')">
                                 <img src="image/img-weather/snowy.png" alt="下雪" width="100">
                             </li>
                         </ul>
@@ -129,11 +120,11 @@
 
         <div id="diary">
             <input type="text" id="title" placeholder="標題" />
-            <textarea placeholder="內容..." id="content"></textarea>
+            <textarea placeholder="內容..." id="content" name="content"></textarea>
             <button type="submit">
                 <img src="image/pen.png" alt="">
                 <p>儲存</p>
-                <p id="msg"></p>
+                <p id="diarymsg"></p>
             </button>
         </div>
 

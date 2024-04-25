@@ -74,4 +74,34 @@ function selectOption(option) {
       document.getElementById("selected_weather_field").value = emotion;
   }
   // 将当前日期设置为隐藏输入字段的值
-  document.getElementById("current_date_input").value = year + "-" +  month + "-" + day; 
+  document.getElementById("current_date_input").value = year + "-" +  month + "-" + day;
+  
+  async function writeDiary(){
+    const forDiary = await document.querySelector('.writeform');
+    let msg = '';
+    try {
+      forDiary.addEventListener('submit', event => {
+        event.preventDefault();
+        const formData = new FormData(forDiary);
+        let object = {};
+        formData.forEach((value, key) => object[key] = value);
+        let json = JSON.stringify(object);
+        fetch('http://localhost:8000/api/write_diary', {
+          method: 'post',
+          body: json
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+            errmsg = msg.replace("",data.msg)
+            console.log(errmsg)
+            document.getElementById('diarymsg').innerText = errmsg;
+
+          })
+      });
+    }
+    catch (err) {
+      console.log(err)
+    }
+  }
+  writeDiary()
