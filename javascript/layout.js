@@ -17,7 +17,7 @@ const pages = {
 //     'selectgender.html': '選擇性別',
 //     'treehole.html': '樹洞',
 //     'music.html': '音樂',
-//     'diary.html': '日記'
+//     'diary.html': ' 日記'
 // }
 
 const cssFiles = {
