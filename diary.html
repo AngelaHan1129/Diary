@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,49 +8,113 @@
     <script src="javascript/layout.js"></script>
     <title>日記</title>
 </head>
+
 <body>
-    <div id="fun">
-        <div class="date">
-            <img src="image/date.png" alt="">
-            <input type="date" name="date" id="date">
+    <form class="form" name="f1" action="journal.php" method="POST" id="f1">
+        <div id="fun">
+            <div  id="current_date" class="date">
+                <img src="image/date.png" alt="">
+                <input type="date" name="date" id="date">
+            </div>
+            <div class="feeling">
+                <div id="emotion">
+                    <!-- <img src="image/smile.png" alt="">
+                    <input type="text" placeholder="表情符號" /> -->
+                    <div class="drop">
+                        <div class="dropOption" onclick="toggleDropdown(this)">
+                            <div class="image-container" id="image-container">
+                                <img src="image/smile.png" width="80" alt="請選擇">
+                            </div>
+                            <a id="selected_emotion_1">請選擇</a>
+                            <span></span>
+                        </div>
+            
+                        <ul class="dropdown">
+                            <li data-image="images/angry.png" onclick="selectOption(this), loadImage(this, 'angry')">
+                                <img src="image/img-emoji/angry.png" alt="生氣" width="100">
+                            </li>
+                            <li data-image="image/img-emoji/calm.png" onclick="selectOption(this), loadImage(this, 'calm')">
+                                <img src="image/img-emoji/calm.png" alt="平靜" width="100">
+                            </li>
+                            <li data-image="image/img-emoji//fear.png" onclick="selectOption(this), loadImage(this, 'fear')">
+                                <img src="image/img-emoji//fear.png" alt="害怕" width="100">
+                            </li>
+                            <li data-image="image/img-emoji/happiness.png" onclick="selectOption(this), loadImage(this, 'happiness')">
+                                <img src="image/img-emoji/happiness.png" alt="幸福" width="100">
+                            </li>
+                            <li data-image="image/img-emoji/joy.png" onclick="selectOption(this), loadImage(this, 'joy')">
+                                <img src="image/img-emoji/joy.png" alt="喜悅" width="100">
+                            </li>
+                            <li data-image="image/img-emoji//sad.png" onclick="selectOption(this), loadImage(this, 'sad')">
+                                <img src="image/img-emoji//sad.png" alt="難過" width="100">
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="drop">
+                        <div class="dropOption" onclick="toggleDropdown(this)">
+                            <div class="image-container1" id="image-container1">
+                                <img src="images/rainy-day.png" width="80" alt="請選擇">
+                            </div>
+                            <a id="selected_weather_1">請選擇</a>
+                            <span></span>
+                        </div>
+            
+                        <ul class="dropdown">
+                            <li data-image="images/sunny.png" onclick="selectOption(this), loadImage1(this, 'sunny')">
+                                <img src="images/sunny.png" alt="晴天" width="100">
+                            </li>
+                            <li data-image="images/rainy.png" onclick="selectOption(this), loadImage1(this, 'rainy')">
+                                <img src="images/rainy.png" alt="雨天" width="100">
+                            </li>
+                            <li data-image="images/cloudy.png" onclick="selectOption(this), loadImage1(this, 'cloudy')">
+                                <img src="images/cloudy.png" alt="陰天" width="100">
+                            </li>
+                            <li data-image="images/sun_cloud.png" onclick="selectOption(this), loadImage1(this, 'sun_cloud')">
+                                <img src="images/sun_cloud.png" alt="晴時多雲" width="100">
+                            </li>
+                            <li data-image="images/snow.png" onclick="selectOption(this), loadImage1(this, 'snow')">
+                                <img src="images/snow.png" alt="下雪" width="100">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="weather">
+                    <img src="./image/cloud.png">
+                    <input type="text" placeholder="今天天氣" />
+                </div>
+            </div>
+            <div id="music">
+                <div>
+                    <div class="music brown"></div>
+                    <iframe class="music white" width="260.48" height="183.94"
+                        src="https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div id="song">
+                    <img src="./image/music.png" />
+                    <p>歌曲名稱</p>
+                </div>
+                <div id="singer">
+                    <img src="./image/person.png" />
+                    <p>歌手名稱 </p>
+                </div>
+            </div>
         </div>
-        <div class="feeling">
-            <div id="emotion">
-                <img src="image/smile.png" alt="">
-                <input type="text" placeholder="表情符號" />
-            </div>
-            <div id="weather">
-                <img src="./image/cloud.png">
-                <input type="text" placeholder="今天天氣" />
-            </div>
+
+        <div id="diary">
+            <input type="text" id="title" placeholder="標題" />
+            <textarea placeholder="內容..." id="content"></textarea>
+            <button type="submit">
+                <img src="image/pen.png" alt="">
+                <p>儲存</p>
+            </button>
         </div>
-        <div id="music">
-            <div>
-                <div class="music brown"></div>
-                <iframe class="music white" width="260.48" height="183.94"
-                    src="https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div id="song">
-                <img src="./image/music.png" />
-                <p>歌曲名稱</p>
-            </div>
-            <div id="singer">
-                <img src="./image/person.png" />
-                <p>歌手名稱 </p>
-            </div>
-        </div>
-    </div>
-    <form id="diary">
-        <input type="text" id="title" placeholder="標題" />
-        <textarea placeholder="內容..." id="content"></textarea>
-        <button type="submit">
-            <img src="image/pen.png" alt="">
-            <p>儲存</p>
-        </button>
+
     </form>
 </body>
+
 </html>
