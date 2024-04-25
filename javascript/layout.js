@@ -35,7 +35,10 @@ const jsFiles = {
     'login.html': 'javascript/login.js',
     'music.html': 'javascript/music.js',
     'diary.html': 'javascript/diary.js',
-    'userinfo.html': 'javascript/userinfo.js'
+    'index.html': 'javascript/index.js',
+    'userinfo.html': 'javascript/userinfo.js',
+    'changepwd.html': 'javascript/userinfo.js',
+    'selectgender.html':'javascript/userinfo.js',
 }
 
 function layout(page) {

@@ -1,4 +1,4 @@
-//不只以下mail 正則表達式
+//正則表達式
 function isValidEmail(email) {
     var emailRegex = /.+@(gmail.com|yahoo.com.tw|live.com|mail.com)$/;
     return emailRegex.test(email);
@@ -83,7 +83,8 @@ async function loginData() {
 }
 loginData();
   
-async function registerData() {
+
+  async function registerData() {
     const forRegister = await document.querySelector('.registerform');
     let msg = '';
     try {

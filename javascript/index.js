@@ -1,20 +1,14 @@
-
-async function sentenctData() {
-    const url = await 'http://localhost:8000/api/sentence'
+async function sentenceData() {
     try {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                let msg = data.data.sentence
-                console.log(msg)
-                msg += `<h2>${data.data.sentence}</h2>`
-                // sentencemsg = msg.replace("",data.data.sentence)
-                document.getElementById('sentence').innerHTML = msg;
-            })
+        const res = await fetch('http://localhost:8000/api/sentence');
+        const sentenceShow = document.getElementById('sentence');
+        const data = await res.json();
+        console.log(sentenceShow);
+        sentenceShow.innerText = data.data.sentence;
     }
     catch (err) {
-        console.log(err)
+        console.error(err);
     }
-
 }
-sentenctData()
+
+sentenceData();

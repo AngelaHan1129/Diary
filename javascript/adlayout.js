@@ -23,11 +23,11 @@ const cssFiles = {
 }
 
 const jsFiles = {
-    'admusic.html': 'javascript/manage.js',
-    'admim_emotional.html': 'javascript/manage.js',
-    'aduser.html': 'javascript/manage.js',
-    'adpwd.html': 'javascript/manage.js',
-    'adgender.html': 'javascript/manage.js'
+    'admusic.html': ['javascript/manage.js'],
+    'admim_emotional.html': ['javascript/manage.js'],
+    'aduser.html': ['javascript/manage.js', 'javascript/userinfo.js'],
+    'adpwd.html': ['javascript/manage.js', 'javascript/userinfo.js'],
+    'adgender.html': ['javascript/manage.js']
 }
 
 function layout(page) {

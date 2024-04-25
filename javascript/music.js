@@ -25,6 +25,23 @@ next.addEventListener("click", function(event){
         next.style.animation = "FadeIn 1s"
     })
 });
+async function treehole() {
+    const formDiary = await document.querySelector('.upside')
+    try {
+        let res = await (await fetch('http://localhost:8000/api/show_music_all'))
+        console.log(res)
+        console.log(res.ok)
+        console.log(res.status)
+        console.log(res.statusText)
+        console.log(res.url)
+
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+treehole()
+
 
 // var playlist = document.getElementById("playlist");
 // var playlistwrap = document.querySelector(".playlist-wrap");
