@@ -1,8 +1,4 @@
-.registermsg {
-    color: red;
-}
-
-.registerform {
+.registerform{
     background-color: #887a69;
     width: calc(350px - 90px);
     height: calc(525px - 90px);
@@ -14,34 +10,24 @@
     box-shadow: 1px 2.5px 5px rgba(0, 0, 0, 0.25);
 }
 
-.registerform input {
-    margin: 0 5% 10px;
+.registerform input{
+    margin: 0 5% 5px;
 }
 
-.registerform input[type="submit"] {
+.registerform input[type = "submit"]{
     color: #887a69;
     background-color: #fefbec;
-    margin: 10px 5%;
+    margin-top: 5px;
 }
 
-#registertitle {
+#registertitle{
     color: #fff;
     font-size: 32px;
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 10px;
 }
 
-#gologin {
+#gologin{
     color: #fff;
-    margin-top: 15px;
-}
-
-dialog {
-    border: none;
-    box-shadow: 0 2px 6px #ccc;
-    border-radius: 10px;
-}
-
-dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
 }

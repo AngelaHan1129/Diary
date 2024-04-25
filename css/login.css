@@ -39,7 +39,7 @@ form p{
     margin: 0 5% 25px;
 }
 
-input[type = "text"], input[type = "email"], input[type = "password"]{
+input{
     color: #878787;
     font-size: 20px;
     font-weight: 100;

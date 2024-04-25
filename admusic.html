@@ -4,144 +4,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/manage.css">
-    <link rel="stylesheet" href="css/admusic.css">
     <link rel="shortcut icon" href="image/DiaryLogo.ico">
+    <script src="javascript/adlayout.js"></script>
     <title>AdMusic</title>
 </head>
 
 <body>
-    <aside id="leftside">
-        <a href="admusic.html"><img src="image/report.png" alt=""></a>
-        <a href="admin_emotianal.html"><img src="image/music2.png" alt=""></a>
-        <a href="index.html"><img src="image/login.png" alt=""></a>
-    </aside>
-    <main id="main">
-        <div id="wrap">
-            <div id="search">
-                <input type="search">
-                <a href=""><img src="image/search.png" alt=""></a>
+    <div id="wrap">
+        <div id="search">
+            <input type="search">
+            <a href=""><img src="image/search.png" alt=""></a>
+        </div>
+        <div id="quote">
+            <div class="title">
+                <div></div>
+                <h1>音樂庫</h1>
             </div>
-            <div id="quote">
-                <div class="title">
-                    <div></div>
-                    <h1>音樂庫</h1>
-                </div>
-                <div class="content">
-                    <div id="quote-left">
-                        <div id="quotes">
-                            <div class="type">
-                                <table>
-                                    <tr>
-                                        <th>類型</th>
-                                        <td class="typ-tag">古典</td>
-                                        <td class="typ-tag">爵士</td>
-                                        <td class="typ-tag">搖滾</td>
-                                        <td class="typ-tag">流行</td>
-                                        <td class="typ-tag">自然環境</td>
-                                        <td class="typ-tag">冥想</td>
-                                    </tr>
-                                </table>
-                            </div>
+            <div class="content">
+                <div id="quote-left">
+                    <div id="quotes">
+                        <div class="type">
+                            <table>
+                                <tr>
+                                    <th>類型</th>
+                                    <td class="typ-tag">古典</td>
+                                    <td class="typ-tag">爵士</td>
+                                    <td class="typ-tag">搖滾</td>
+                                    <td class="typ-tag">流行</td>
+                                    <td class="typ-tag">自然環境</td>
+                                    <td class="typ-tag">冥想</td>
+                                </tr>
+                            </table>
                         </div>
-                        <table class="music-menu">
-                            <tr>
-                                <td class="music-tag">
-                                    <audio controls>
-                                        <source src="https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j" type="audio/mpeg">
-                                      </audio>
-                                </td>
-                                <td class="music-tag">歌名</td>
-                                <td class="music-tag">https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j</td>
-                            </tr>
-                        </table>
-                        <table class="music-menu">
-                            <tr>
-                                <td class="music-tag">
-                                    <audio controls>
-                                        <source src="https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j" type="audio/mpeg">
-                                      </audio>
-                                </td>
-                                <td class="music-tag">歌名</td>
-                                <td class="music-tag">https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j</td>
-                            </tr>
-                        </table>
-                        <table class="music-menu">
-                            <tr>
-                                <td class="music-tag">
-                                    <audio controls>
-                                        <source src="https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j" type="audio/mpeg">
-                                      </audio>
-                                </td>
-                                <td class="music-tag">歌名</td>
-                                <td class="music-tag">https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j</td>
-                            </tr>
-                        </table>
-
-                        <table class="pages">
-                            <tr>
-                                <td><a href="">&lt;&lt;</a></td>
-                                <td><a href="">1</a></td>
-                                <td><a href="">2</a></td>
-                                <td><a href="">3</a></td>
-                                <td><a href="">4</a></td>
-                                <td><a href="">5</a></td>
-                                <td><a href="">&gt;&gt;</a></td>
-                            </tr>
-                        </table>
-
                     </div>
-                </div>
-            </div>
-            <div id="percent">
-                <div class="title">
-                    <div></div>
-                    <h1>音樂庫統計</h1>
-                </div>
-                <div class="content">
-                    <img src="image/chart.png" height="100%" alt="">
-                </div>
-            </div>
-            <div id="add">
-                <div class="title">
-                    <div></div>
-                    <h1>音樂庫新增</h1>
-                </div>
-                <div class="content">
-                    <form action="">
-                        <label>
-                            <h3>類型</h3>
-                            <input type="text" name="quote">
-                        </label>
-                        <label>
-                            <h3>網址</h3>
-                            <input type="text" name="quote">
-                        </label>
-                        <input type="submit" value="新增音樂">
-                    </form>
+                    <table class="music-menu">
+                        <tr>
+                            <td class="music-tag">
+                                <audio controls>
+                                    <source src="https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j" type="audio/mpeg">
+                                  </audio>
+                            </td>
+                            <td class="music-tag">歌名</td>
+                            <td class="music-tag">https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j</td>
+                        </tr>
+                    </table>
+                    <table class="music-menu">
+                        <tr>
+                            <td class="music-tag">
+                                <audio controls>
+                                    <source src="https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j" type="audio/mpeg">
+                                  </audio>
+                            </td>
+                            <td class="music-tag">歌名</td>
+                            <td class="music-tag">https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j</td>
+                        </tr>
+                    </table>
+                    <table class="music-menu">
+                        <tr>
+                            <td class="music-tag">
+                                <audio controls>
+                                    <source src="https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j" type="audio/mpeg">
+                                  </audio>
+                            </td>
+                            <td class="music-tag">歌名</td>
+                            <td class="music-tag">https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j</td>
+                        </tr>
+                    </table>
+
+                    <table class="pages">
+                        <tr>
+                            <td><a href="">&lt;&lt;</a></td>
+                            <td><a href="">1</a></td>
+                            <td><a href="">2</a></td>
+                            <td><a href="">3</a></td>
+                            <td><a href="">4</a></td>
+                            <td><a href="">5</a></td>
+                            <td><a href="">&gt;&gt;</a></td>
+                        </tr>
+                    </table>
+
                 </div>
             </div>
         </div>
-    </main>
-    <a href="" id="switch">&gt;</a>
-    <aside id="rightside">
-        <img src="image/changeDiary.png" alt="" id="logo">
-        <div id="count">
-            <div id="menbers">
-                <div><img src="image/person.png" alt="">會員人數</div>
-                <div>100K</div>
+        <div id="percent">
+            <div class="title">
+                <div></div>
+                <h1>音樂庫統計</h1>
             </div>
-            <div id="views">
-                <div><img src="image/person.png" alt="">瀏覽人數</div>
-                <div>234K</div>
+            <div class="content">
+                <img src="image/chart.png" height="100%" alt="">
             </div>
         </div>
-        <div id="account">
-            <div>User</div>
-            <div><img src="image/member.png" alt=""></div>
+        <div id="add">
+            <div class="title">
+                <div></div>
+                <h1>音樂庫新增</h1>
+            </div>
+            <div class="content">
+                <form action="">
+                    <label>
+                        <h3>類型</h3>
+                        <input type="text" name="quote">
+                    </label>
+                    <label>
+                        <h3>網址</h3>
+                        <input type="text" name="quote">
+                    </label>
+                    <input type="submit" value="新增音樂">
+                </form>
+            </div>
         </div>
-    </aside>
-    <script src="javascript/manage.js"></script>
+    </div>
 </body>
 
 </html>

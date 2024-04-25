@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="javascript/adlayout.js"></script>
+    <title>管理員密碼</title>
+</head>
+<body>
+    <form action="userinfo.html" id="changepwd">
+        <div id="username">User</div>
+        <div id="originpwd">原密碼<input name="originpwd"></div>
+        <div id="newpwd">新密碼<input name="newpwd"></div>
+        <div id="confirmpwd">確認密碼<input name="confirmpwd"></div>
+        <div>
+            <input type="reset" value="返回" onclick="resetlink('changepwd')">
+            <input type="submit" value="儲存">
+        </div>
+    </form>
+</body>
+</html>
