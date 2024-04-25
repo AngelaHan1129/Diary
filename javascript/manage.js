@@ -1,6 +1,6 @@
 var switchbtn = document.getElementById("switch")
 var rightside = document.getElementById("rightside")
-var main = document.getElementById("main")
+var main = document.querySelector("main")
 var switched = false;
 
 switchbtn.addEventListener("click", function(event){

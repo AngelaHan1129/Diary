@@ -1,48 +1,37 @@
 const pages = {
-    '/index.html': 'index.html',
-    '/login.html': 'login.html',
-    '/userinfo.html': 'userinfo.html',
-    '/changepwd.html': 'changepwd.html',
-    '/selectgender.html': 'selectgender.html',
-    '/treehole.html': 'treehole.html',
-    '/music.html': 'music.html',
-    '/diary.html': 'diary.html'
+    '/admusic.html': 'admusic.html',
+    '/admin_emotional.html': 'admin_emotional.html',
+    '/aduser.html': 'aduser.html',
+    '/adpwd.html': 'adpwd.html',
+    '/adgender.html': 'adgender.html'
 }
 
 const titles = {
-    'index.html': '首頁',
-    'login.html': '登入?註冊?',
-    'userinfo.html': '用戶資訊',
-    'changpwd.html': '變更密碼',
-    'selectgender.html': '選擇性別',
-    'treehole.html': '樹洞',
-    'music.html': '音樂',
-    'diary.html': '日記'
+    'admusic.html': 'Admusic',
+    'admin_emotional.html': '心情小站',
+    'aduser.html': '管理員資料',
+    'adpwd.html': '管理員密碼',
+    'adgender.html': '管理員性別'
 }
 
 const cssFiles = {
-    'index.html': ['css/layout.css', 'css/layout-m.css', 'css/index.css', 'css/index-m.css'],
-    'login.html': ['css/layout.css', 'css/layout-m.css', 'css/login.css', 'css/register.css'],
-    'userinfo.html': ['css/layout.css', 'css/layout-m.css', 'css/userinfo.css'],
-    'changepwd.html': ['css/layout.css', 'css/layout-m.css', 'css/userinfo.css'],
-    'selectgender.html': ['css/layout.css', 'css/layout-m.css', 'css/userinfo.css'],
-    'treehole.html': ['css/layout.css', 'css/layout-m.css', 'css/treehole.css', 'css/treehole-m.css'],
-    'music.html': ['css/layout.css', 'css/layout-m.css', 'css/music.css'],
-    'diary.html': ['css/layout.css', 'css/layout-m.css', 'css/diary.css']
+    'admusic.html': ['css/adlayout.css', 'css/admusic.css'],
+    'admin_emotional.html': ['css/adlayout.css', 'css/emotional.css'],
+    'aduser.html': ['css/adlayout.css', 'css/aduser.css'],
+    'adpwd.html': ['css/adlayout.css', 'css/aduser.css'],
+    'adgender.html': ['css/adlayout.css', 'css/aduser.css']
 }
 
 const jsFiles = {
-    'login.html': 'javascript/login.js',
-    'music.html': 'javascript/music.js',
-    'diary.html': 'javascript/diary.js',
-    'index.html': 'javascript/index.js',
-    'userinfo.html': 'javascript/userinfo.js',
-    'changepwd.html': 'javascript/userinfo.js',
-    'selectgender.html':'javascript/userinfo.js',
+    'admusic.html': ['javascript/manage.js'],
+    'admim_emotional.html': ['javascript/manage.js'],
+    'aduser.html': ['javascript/manage.js', 'javascript/userinfo.js'],
+    'adpwd.html': ['javascript/manage.js', 'javascript/userinfo.js'],
+    'adgender.html': ['javascript/manage.js']
 }
 
 function layout(page) {
-    fetch('layout.html')
+    fetch('adlayout.html')
         .then(response => response.text())
         .then(html => {
             document.body.innerHTML = html;

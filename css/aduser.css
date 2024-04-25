@@ -1,5 +1,10 @@
-#userinfo{
-    background-color: #887a69;
+main{
+    justify-content: center;
+}
+
+#aduser{
+    background-color: #0b2a3d;
+    color: #fff;
 }
 
 #userform{
@@ -96,7 +101,7 @@
 }
 
 #userlist, #changepwd, #selectgender{
-    background-color: #fefbec;
+    background-color: #aacce1;
     width: 60%;
     height: 55%;
     border-radius: 10px;
@@ -152,7 +157,7 @@ input:not([type = "submit"], [type = "reset"]){
 }
 
 input[type = "submit"], [type = "reset"]{
-    background-color: #71604a;
+    background-color: #0a2b3d;
     color: #fff;
     width: 95px;
     height: 47.5px;
@@ -166,6 +171,7 @@ input[type = "submit"], [type = "reset"]{
 select{
     background-color: transparent;
     width: 50%;
+    height: 100%;
     font-size: 20px;
     text-align: right;
     border: none;
@@ -176,5 +182,5 @@ select:focus{
 }
 
 option{
-    background-color: #fefbec;
+    background-color: #aacce1;
 }

@@ -3,6 +3,11 @@ function resetlink(formid) {
     window.location.href = "userinfo.html";
 }
 
+function adreset(formid) {
+    document.getElementById(formid).reset();
+    window.location.href = "aduser.html";
+}
+
 var changeshot = document.getElementById('changeshot');
 var inputimg = document.getElementById('inputimg');
 var userimg = document.getElementById('userimg');

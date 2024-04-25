@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="javascript/layout.js"></script>
-    <title>性別</title>
+    <script src="javascript/adlayout.js"></script>
+    <title>管理者性別</title>
 </head>
 <body>
     <form action="userinfo.html" id="selectgender">
         <div id="username">User</div>
         <label for="gender" id="gender">
-            我是
-            <select name="gender" id="">
-                <option value="1">男生</option>
-                <option value="2">女生</option>
-                <option value="3">不願透露</option>
+            我是?
+            <select name="gender">
+                <option value="male">男生</option>
+                <option value="female">女生</option>
+                <option value="x">不願透露</option>
             </select>
         </label>
         <div>
-            <input type="reset" value="返回" onclick="resetlink('selectgender')">
+            <input type="reset" value="返回" onclick="adreset('selectgender')">
             <input type="submit" value="儲存">
         </div>
     </form>

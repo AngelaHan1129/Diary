@@ -22,7 +22,7 @@ input:focus {
     outline: none;
 }
 
-input[type="search"] {
+header input[type="search"] {
     color: #ffffff;
     background-color: #555555;
     font-size: 16px;
@@ -31,6 +31,7 @@ input[type="search"] {
     padding: 0 20px;
     border: none;
     border-radius: 10px;
+    text-align: left;
     position: absolute;
     top: 10px;
     left: 40px;
