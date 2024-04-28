@@ -23,7 +23,7 @@ function validateRegister() {
     }
     return true;
 }
-  
+
 var loginform = document.getElementById('loginform')
 var registerfrom = document.getElementById('registerform')
   
@@ -82,9 +82,8 @@ async function loginData() {
     }
 }
 loginData();
-  
 
-  async function registerData() {
+async function registerData() {
     const forRegister = await document.querySelector('.registerform');
     let msg = '';
     try {

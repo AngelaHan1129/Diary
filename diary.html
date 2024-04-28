@@ -16,11 +16,79 @@
                 <img src="image/date.png" alt="">
                 <input type="date" name="date" id="date">
             </div>
+            <div id="emotion-m">
+                <div class="drop">
+                    <div class="dropOption" onclick="toggleDropdown(this)">
+                        <div class="image-container" id="image-container">
+                            <img src="image/smile.png" width="80" alt="請選擇">
+                        </div>
+                        <a id="selected_emotion">請選擇表情</a>
+                        <span></span>
+                    </div>
+
+                    <ul class="dropdown">
+                        <li data-image="image/img-emoji/angry.png"
+                            onclick="selectOption(this), loadImage(this, 'angry')">
+                            <img src="image/img-emoji/angry.png" alt="生氣" width="100">
+                        </li>
+                        <li data-image="image/img-emoji/calm.png" name="emoji" value="calm"
+                            onclick="selectOption(this), loadImage(this, 'calm')">
+                            <img src="image/img-emoji/calm.png" alt="平靜" width="100">
+                        </li>
+                        <li data-image="image/img-emoji//fear.png" name="emoji" value="fear"
+                            onclick="selectOption(this), loadImage(this, 'fear')">
+                            <img src="image/img-emoji//fear.png" alt="害怕" width="100">
+                        </li>
+                        <li data-image="image/img-emoji/happiness.png" name="emoji" value="happiness"
+                            onclick="selectOption(this), loadImage(this, 'happiness')">
+                            <img src="image/img-emoji/happiness.png" alt="幸福" width="100">
+                        </li>
+                        <li data-image="image/img-emoji/joy.png" name="emoji" value="joy"
+                            onclick="selectOption(this), loadImage(this, 'joy')">
+                            <img src="image/img-emoji/joy.png" alt="喜悅" width="100">
+                        </li>
+                        <li data-image="image/img-emoji//sad.png" name="emoji" value="sad"
+                            onclick="selectOption(this), loadImage(this, 'sad')">
+                            <img src="image/img-emoji//sad.png" alt="失落" width="100">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="weather-m">
+                <div class="drop">
+                    <div class="dropOption" onclick="toggleDropdown(this)">
+                        <div class="image-container" id="image-container1">
+                            <img src="image/cloud.png" width="80" alt="請選擇">
+                        </div>
+                        <a id="selected_weather">請選擇天氣</a>
+                        <span></span>
+                    </div>
+                    <ul class="dropdown">
+                        <li data-image="image/img-weather/sun.png" name="weather" value="sunny"
+                            onclick="selectOption(this), loadImage1(this, 'sunny')">
+                            <img src="image/img-weather/sun.png" alt="晴天" width="100">
+                        </li>
+                        <li data-image="image/img-weather/rain.png" name="weather" value="rainy"
+                            onclick="selectOption(this), loadImage1(this, 'rainy')">
+                            <img src="image/img-weather/rain.png" alt="雨天" width="100">
+                        </li>
+                        <li data-image="image/img-weather/cloudy.png" name="weather" value="cloudy"
+                            onclick="selectOption(this), loadImage1(this, 'cloudy')">
+                            <img src="image/img-weather/cloudy.png" alt="陰天" width="100">
+                        </li>
+                        <li data-image="image/img-weather/partly.png" name="weather" value="sun_cloud"
+                            onclick="selectOption(this), loadImage1(this, 'sun_cloud')">
+                            <img src="image/img-weather/partly.png" alt="晴時多雲" width="100">
+                        </li>
+                        <li data-image="image/img-weather/snowy.png" name="weather" value="snow"
+                            onclick="selectOption(this), loadImage1(this, 'snow')">
+                            <img src="image/img-weather/snowy.png" alt="下雪" width="100">
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <div class="feeling">
                 <div id="emotion">
-                    <!-- <img src="image/smile.png" alt="">
-                    <input type="text" placeholder="表情符號" /> -->
-
                     <div class="drop">
                         <div class="dropOption" onclick="toggleDropdown(this)">
                             <div class="image-container" id="image-container">
@@ -67,7 +135,7 @@
                             <div class="image-container" id="image-container1">
                                 <img src="image/cloud.png" width="80" alt="請選擇">
                             </div>
-                            <a id="selected_weather_1">請選擇天氣</a>
+                            <a id="selected_weather">請選擇天氣</a>
                             <span></span>
                         </div>
 
@@ -95,7 +163,6 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
             <div id="music">
                 <div>
