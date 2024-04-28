@@ -83,7 +83,6 @@ async function loginData() {
 }
 loginData();
 
-
 async function registerData() {
     const forRegister = await document.querySelector('.registerform');
     
