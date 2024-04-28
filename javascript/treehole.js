@@ -2,12 +2,11 @@ async function treehole() {
     const url = await 'http://localhost:8000/api/show_diary'
     const formDiary = await document.querySelector('.upside')
     try {
-        let res = await (await fetch('http://localhost:8000/api/show_diary_all'))
-        console.log(res)
-        console.log(res.ok)
-        console.log(res.status)
-        console.log(res.statusText)
-        console.log(res.url)
+        const res = await fetch('http://localhost:8000/api/show_diary_all');
+        const sentenceShow = document.getElementById('sentence');
+        const data = await res.json();
+        console.log(sentenceShow);
+        sentenceShow.innerText = data.data.sentence;
 
     }
     catch (err) {

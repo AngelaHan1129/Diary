@@ -85,15 +85,25 @@ loginData();
 
 async function registerData() {
     const forRegister = await document.querySelector('.registerform');
-
-    var button = document.querySelector('.prompttest');
-    var showtxt = document.querySelector('.show');
+    let acc =await  document.querySelector('.acc').value
+    // let myname = document.querySelector('.myname')
+    // let email = document.querySelector('.email')
+    // let pwd = document.querySelector('.pwd')
+    // let ckeckpwd = document.querySelector('.checkpwd')
+    // var button = document.querySelector('.prompttest');
+    var showtxt =await document.querySelector('.show');
     let msg = '';
     try {
         forRegister.addEventListener('submit', event => {
             event.preventDefault();
             const formDataR = new FormData(forRegister);
-            let object = {};
+            let object = {
+                // "name": `${acc}`,
+                // "account": `${myname}`,
+                // "email": `${email}`,
+                // "password":`${pwd}`,
+                // "checkpwd": `${ckeckpwd}`
+            };
             formDataR.forEach((value, key) => object[key] = value);
             let json = JSON.stringify(object);
             fetch('http://localhost:8000/api/register', {
@@ -111,17 +121,23 @@ async function registerData() {
                         if (guest == null || "") {
                             showtxt.innerHTML = '您已取消輸入'
                         } else {
-                            showtxt.innerHTML = '驗碼輸入成功^^'
+                            showtxt.innerHTML = ''
                         }
                         // button.addEventListener('click', popup3);
-                        // fetch('http://localhost:8000/api/AuthCode', {
-                        //     method: 'get',
-                        //     body: json
-                        // }).then(res => res.json())
-                        //     .then(data => {
-                        //         console.log(data)
-                        //         guest
-                        //     })
+
+                        // let bodys = {
+                        //     "acc": `${acc}`,
+                        //     "AuthCode": `${guest}`
+                        // }
+                        fetch('http://localhost:8000/api/AuthCode', {
+                            method: 'post',
+                            body: JSON.stringify()
+                        }).then(res => res.json())
+                            .then(data => {
+                                console.log(data)
+                                errmsg = msg.replace("", data.msg)
+                    document.getElementById('registermsg').innerText = errmsg;
+                            })
 
                     }
 
