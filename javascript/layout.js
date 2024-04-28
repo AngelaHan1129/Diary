@@ -28,17 +28,17 @@ const cssFiles = {
     'selectgender.html': ['css/layout.css', 'css/layout-m.css', 'css/userinfo.css'],
     'treehole.html': ['css/layout.css', 'css/layout-m.css', 'css/treehole.css', 'css/treehole-m.css'],
     'music.html': ['css/layout.css', 'css/layout-m.css', 'css/music.css'],
-    'diary.html': ['css/layout.css', 'css/layout-m.css', 'css/diary.css']
+    'diary.html': ['css/layout.css', 'css/layout-m.css', 'css/diary.css', 'css/diary-m.css']
 }
 
 const jsFiles = {
-    'login.html': 'javascript/login.js',
-    'music.html': 'javascript/music.js',
-    'diary.html': 'javascript/diary.js',
-    'index.html': 'javascript/index.js',
-    'userinfo.html': 'javascript/userinfo.js',
-    'changepwd.html': 'javascript/userinfo.js',
-    'selectgender.html':'javascript/userinfo.js',
+    'login.html': ['javascript/login.js'],
+    'music.html': ['javascript/music.min.js'],
+    'diary.html': ['javascript/diary.min.js'],
+    'index.html': ['javascript/index.js'],
+    'userinfo.html': ['javascript/userinfo.js'],
+    'changepwd.html': ['javascript/userinfo.js'],
+    'selectgender.html':['javascript/userinfo.js'],
 }
 
 function layout(page) {
@@ -66,9 +66,12 @@ function layout(page) {
                         });
                     }
                     if (jsFile) {
-                        const script = document.createElement('script');
-                        script.src = jsFile;
-                        document.body.appendChild(script);
+                        jsFile.forEach(jsfile => {
+                            const script = document.createElement('script');
+                            script.src = jsfile;
+                            script.async = true;
+                            document.body.appendChild(script);
+                        })
                     }
                 })
                 .catch(error => {

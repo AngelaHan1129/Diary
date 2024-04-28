@@ -78,12 +78,18 @@
     }
 }
 
-@media screen and (max-width:490px) {
+@media screen and (max-width:470px) {
     .diarys:nth-last-of-type(4),.diarys:nth-last-of-type(5),.diarys:nth-last-of-type(6){
         display: none;
     }
 
     .pages td:nth-of-type(2),.pages td:nth-last-of-type(2){
+        display: none;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .pages td:nth-of-type(3),.pages td:nth-last-of-type(3){
         display: none;
     }
 }

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="javascript/layout.js"></script>
     <title>登入?註冊?</title>
 </head>
+
 <body>
     <form action="" id="loginform" class="loginform">
         <p id="logintitle">Login</p>
@@ -18,14 +20,17 @@
     </form>
     <form action="" id="registerform" class="registerform" onsubmit="return validateRegister()">
         <p id="registertitle">Register</p>
-        <input type="text" name="account" placeholder="帳號" required>
+        <input type="text" name="account" id="acc" placeholder="帳號" required>
         <input type="text" name="name" placeholder="姓名" required>
         <input type="email" name="email" id="email" placeholder="電子信箱" required>
         <input type="password" name="password" id="passwd" placeholder="密碼" required>
         <input type="password" name="checkpwd" id="confirmpwd" placeholder="確認密碼" required>
-        <input class='prompttest'  type="submit" value="註冊">
+        <input class='prompttest' type="submit" value="註冊">
+        
+        <p class='show'></p>
         <p id="registermsg"></p>
         <p id="gologin">已有帳戶?<a href="" id="loginlink">點此登入</a></p>
     </form>
 </body>
+
 </html>
