@@ -73,35 +73,6 @@ function loadImage1(option, emotion) {
 
 document.getElementById("current_date_input") = yyyy + "-" +  mm + "-" + dd;
 
-// async function writeDiary(){
-//     const forDiary = await document.querySelector('.writeform');
-//     let msg = '';
-//     try {
-//         forDiary.addEventListener('submit', event => {
-//             event.preventDefault();
-//             const formData = new FormData(forDiary);
-//             let object = {};
-//             formData.forEach((value, key) => object[key] = value);
-//             let json = JSON.stringify(object);
-//             fetch('http://localhost:8000/api/write_diary', {
-//                 method: 'post',
-//                 body: json
-//             })
-//             .then(res => res.json())
-//             .then(data => {
-//                 console.log(data)
-//                 errmsg = msg.replace("",data.msg)
-//                 console.log(errmsg)
-//                 document.getElementById('diarymsg').innerText = errmsg;
-//             })
-//         });
-//     }
-//     catch (err) {
-//         console.log(err)
-//     }
-// }
-// writeDiary()
-
 var music = document.getElementsByClassName("music")
 var submit = document.querySelector("button");
 
@@ -118,9 +89,7 @@ async function DiaryData() {
       formDiary.addEventListener('submit', event => {
           event.preventDefault();
           const formData = new FormData(formDiary);
-          let object = {
-            
-          };
+          let object = {};
           formData.forEach((value, key) => object[key] = value);
           let json = JSON.stringify(object);
           fetch('http://localhost:8000/api/write_diary', {
