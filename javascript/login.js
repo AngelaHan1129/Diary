@@ -103,11 +103,6 @@ loginData()
 async function registerData() {
     const forRegister = await document.querySelector('.registerform');
     let acc = await document.querySelector('.acc').value
-    // let myname = document.querySelector('.myname')
-    // let email = document.querySelector('.email')
-    // let pwd = document.querySelector('.pwd')
-    // let ckeckpwd = document.querySelector('.checkpwd')
-    // var button = document.querySelector('.prompttest');
     var showtxt = await document.querySelector('.show');
     let msg = '';
     try {
