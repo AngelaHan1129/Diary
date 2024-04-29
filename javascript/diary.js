@@ -118,7 +118,9 @@ async function DiaryData() {
       formDiary.addEventListener('submit', event => {
           event.preventDefault();
           const formData = new FormData(formDiary);
-          let object = {};
+          let object = {
+            
+          };
           formData.forEach((value, key) => object[key] = value);
           let json = JSON.stringify(object);
           fetch('http://localhost:8000/api/write_diary', {
