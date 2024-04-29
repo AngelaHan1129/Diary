@@ -66,22 +66,39 @@ async function loginData() {
             formData.forEach((value, key) => object[key] = value);
             let json = JSON.stringify(object);
             fetch('http://localhost:8000/api/login', {
-                method: 'post',
-                body: json
+                    method: 'POST',
+                    body: json
             })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    errmsg = msg.replace("", data.msg)
-                    document.getElementById('loginmsg').innerText = errmsg;
-                })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                errmsg = msg.replace("", data.msg);
+                document.getElementById('loginmsg').innerText = errmsg;
+                if(errmsg === "登入成功") {
+                    const responseData = JSON.parse(data.data);
+                    console.log(responseData);
+                    if (responseData.user !== undefined) {
+                        localStorage.setItem('userData', JSON.stringify(responseData));
+                        const logoutLinks = document.querySelectorAll('header .logintext');
+                        logoutLinks.forEach(link => {
+                            link.href = 'logout.html'; 
+                            link.querySelector('div').innerText = '登出';
+                        });
+
+                        window.location.href = 'http://127.0.0.1:5501/index.html';
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
         });
     }
     catch (err) {
         console.log(err);
     }
 }
-loginData();
+loginData()
 
 async function registerData() {
     const forRegister = await document.querySelector('.registerform');
@@ -117,7 +134,7 @@ async function registerData() {
                     console.log(registermsg)
                     document.getElementById('registermsg').innerHTML = errmsg;
                     if (errmsg == '註冊成功，請收取驗證信') {
-                        var guest = window.prompt('您好!註冊成功，請收取驗證信', '請輸入您的驗證碼');
+                        var guest = window.prompt('您好!註冊成功，請收取驗證信');
                         if (guest == null || "") {
                             showtxt.innerHTML = '您已取消輸入'
                         } else {

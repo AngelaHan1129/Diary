@@ -34,11 +34,12 @@ const cssFiles = {
 const jsFiles = {
     'login.html': ['javascript/login.js'],
     'music.html': ['javascript/music.min.js'],
-    'diary.html': ['javascript/diary.min.js'],
+    'diary.html': ['javascript/diary.js'],
     'index.html': ['javascript/index.js'],
     'userinfo.html': ['javascript/userinfo.js'],
     'changepwd.html': ['javascript/userinfo.js'],
     'selectgender.html':['javascript/userinfo.js'],
+    'treehole.html':['javascript/treehole.js']
 }
 
 function layout(page) {
