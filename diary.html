@@ -98,7 +98,7 @@
                             <span></span>
                         </div>
 
-                        <ul class="dropdown">
+                        <ul name="emoji" class="dropdown">
                             <li data-image="image/img-emoji/angry.png"
                                 onclick="selectOption(this), loadImage(this, 'angry')">
                                 <img src="image/img-emoji/angry.png" alt="生氣" width="100">
@@ -139,7 +139,7 @@
                             <span></span>
                         </div>
 
-                        <ul class="dropdown">
+                        <ul name="weather" class="dropdown">
                             <li data-image="image/img-weather/sun.png" name="weather" value="sunny"
                                 onclick="selectOption(this), loadImage1(this, 'sunny')">
                                 <img src="image/img-weather/sun.png" alt="晴天" width="100">
@@ -186,7 +186,7 @@
         </div>
 
         <div id="diary">
-            <input type="text" id="title" placeholder="標題" />
+            <input type="text" id="title" name="title" placeholder="標題" />
             <textarea placeholder="內容..." id="content" name="content"></textarea>
             <button type="submit">
                 <img src="image/pen.png" alt="">

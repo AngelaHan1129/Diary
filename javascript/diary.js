@@ -42,7 +42,7 @@ function loadImage(option, emotion) {
     xhttp.open("GET", imageUrl);
     xhttp.send();
 
-    document.getElementById("selected_emotion_field").value = emotion;
+    // document.getElementById("selected_emotion_field").value = emotion;
 }
 
 function loadImage1(option, emotion) {
@@ -68,18 +68,18 @@ function loadImage1(option, emotion) {
     xhttp.open("GET", imageUrl);
     xhttp.send();
 
-    document.getElementById("selected_weather_field").value = emotion;
+    // document.getElementById("selected_weather_field").value = emotion;
 }
 
-document.getElementById("current_date_input") = yyyy + "-" +  mm + "-" + dd;
+//document.getElementById("current_date_input") = yyyy + "-" +  mm + "-" + dd;
 
 var music = document.getElementsByClassName("music")
 var submit = document.querySelector("button");
 
 submit.addEventListener("click", function(event){
     event.preventDefault();
-    music.style.transition = "transfrom 0.4s"
-    music.style.transform = "none"
+    // music.style.transition = "transform 0.4s"
+    // music.style.transform = "none"
 })
 
 async function DiaryData() {
