@@ -69,23 +69,6 @@ async function loginData() {
                 method: 'POST',
                 body: json
             })
-<<<<<<< HEAD
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    errmsg = msg.replace("", data.msg);
-                    document.getElementById('loginmsg').innerText = errmsg;
-                    if (errmsg === "登入成功") {
-                        const responseData = JSON.parse(data.data);
-                        console.log(responseData);
-                        if (responseData.user !== undefined) {
-                            localStorage.setItem('userData', JSON.stringify(responseData));
-                            const logoutLinks = document.querySelectorAll('header .logintext');
-                            logoutLinks.forEach(link => {
-                                link.href = 'logout.html';
-                                link.querySelector('div').innerText = '登出';
-                            });
-=======
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -101,7 +84,6 @@ async function loginData() {
                             link.href = 'logout.html'; 
                             link.querySelector('div').innerText = '登出';
                         });
->>>>>>> ed4ff74dff098c87e8e9bf2868213bd3b9c79362
 
                             window.location.href = 'http://127.0.0.1:5501/index.html';
                         }
@@ -162,11 +144,6 @@ async function registerData() {
                             .then(data => {
                                 console.log("不要生氣 不要生氣")
                                 console.log(data)
-<<<<<<< HEAD
-                                errmsg = msg.replace("", data.msg)
-                                document.getElementById('registermsg').innerText = errmsg;
-                            })
-=======
                                 // errmsg = msg.replace("", data.msg)
                                 resultMsg = data.data.msg
                                 if(resultMsg == "驗證失敗"){
@@ -175,7 +152,6 @@ async function registerData() {
                                     document.getElementById('registermsg').innerText = "註冊成功，可以返回登入";
                                 }
                         })
->>>>>>> ed4ff74dff098c87e8e9bf2868213bd3b9c79362
 
                     }
 
