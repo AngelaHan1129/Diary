@@ -112,12 +112,12 @@ submit.addEventListener("click", function(event){
 })
 
 async function DiaryData() {
-  const formLogin = await document.querySelector('.formDiary');
+  const formDiary = await document.querySelector('.formDiary');
   let msg = '';
   try {
-      formLogin.addEventListener('submit', event => {
+      formDiary.addEventListener('submit', event => {
           event.preventDefault();
-          const formData = new FormData(formLogin);
+          const formData = new FormData(formDiary);
           let object = {};
           formData.forEach((value, key) => object[key] = value);
           let json = JSON.stringify(object);
@@ -130,20 +130,6 @@ async function DiaryData() {
               console.log(data);
               errmsg = msg.replace("", data.msg);
               document.getElementById('diarymsg').innerText = errmsg;
-              // if(errmsg === "登入成功") {
-              //     const responseData = JSON.parse(data.data);
-              //     console.log(responseData);
-              //     if (responseData.user !== undefined) {
-              //         localStorage.setItem('userData', JSON.stringify(responseData));
-              //         const logoutLinks = document.querySelectorAll('header .logintext');
-              //         logoutLinks.forEach(link => {
-              //             link.href = 'logout.html'; 
-              //             link.querySelector('div').innerText = '登出';
-              //         });
-
-              //         window.location.href = 'http://127.0.0.1:5501/index.html';
-              //     }
-              // }
           })
           .catch(error => {
               console.error('Fetch error:', error);

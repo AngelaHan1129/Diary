@@ -1,9 +1,13 @@
 async function treehole() {
     try {
-        let tab = ''; // Initialize the tab variable
+        let tab = '';
 
+        //localStorage.setItem('userData', countryString);
+        var getData = localStorage.getItem('userData');
+        var getDataArr = JSON.parse(getData);
+        console.log(getDataArr.user)
         let object = {
-            acc: 1
+            acc: getDataArr.user
         };
         let json = JSON.stringify(object);
         const response = await fetch('http://localhost:8000/api/show_diary_all', {
@@ -12,7 +16,7 @@ async function treehole() {
             mode: "cors"
         });
         const data = await response.json();
-        
+
         data.data.forEach(function (user) {
             let Emoji = ''; // Initialize Emoji here
             if (user.Emoji == 1) {
@@ -46,7 +50,7 @@ async function treehole() {
                     </div>
                     <hr>
                     <div class="diary-right">
-                        <img src="image/${Emoji}.png" class="emoticon">
+                        <img src="image/img-emoji/${Emoji}.png" class="emoticon">
                     </div>
                 </div>
             `;
