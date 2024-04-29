@@ -41,5 +41,8 @@ function changepwd(){
     })
     .then(data =>{
         console.log(data)
+        alert("密碼修改成功！");
+        history.back(); // 返回上一頁
+        
     })
 }
