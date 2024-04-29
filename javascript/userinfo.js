@@ -11,6 +11,7 @@ function adreset(formid) {
 var changeshot = document.getElementById('changeshot');
 var inputimg = document.getElementById('inputimg');
 var userimg = document.getElementById('userimg');
+let account = ''
 
 changeshot.addEventListener('click', function (event) {
     event.preventDefault();
@@ -27,6 +28,8 @@ inputimg.addEventListener('change', function () {
                 userimg.style.display = 'block';
             }
             reader.readAsDataURL(selectfile);
+            
+            changePicture(selectfile)
         } else {
             alert('請選擇圖片文件');
             changeshot.value = '';
@@ -35,6 +38,22 @@ inputimg.addEventListener('change', function () {
         console.log('未選擇文件');
     }
 });
+
+function changePicture(pic){
+    let formdata = new FormData()
+    const acc = JSON.parse(localStorage.getItem('userData')).user
+    formdata.append("account",acc)
+    formdata.append("file",pic)
+    fetch('http://localhost:8000/api/change_shot',
+{
+    method:"post",
+    body:formdata
+})
+    .then(res=>res.json())
+    .then(data =>{
+        console.log(data)
+    })
+}
 
 function getUserData(){
     const token = JSON.parse(localStorage.getItem('userData')).token
@@ -47,7 +66,7 @@ function getUserData(){
       })
       .then(data => {
         data = data.data
-        console.log(data)
+        account = data.user
         document.getElementById("username").innerText=data.Name
         document.getElementById("account").innerText = data.user
         document.getElementById("email_input").value = data.Email
