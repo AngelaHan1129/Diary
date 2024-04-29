@@ -2,7 +2,6 @@ async function treehole() {
     try {
         let tab = '';
 
-        //localStorage.setItem('userData', countryString);
         var getData = localStorage.getItem('userData');
         var getDataArr = JSON.parse(getData);
         console.log(getDataArr.user)
@@ -18,7 +17,7 @@ async function treehole() {
         const data = await response.json();
 
         data.data.forEach(function (user) {
-            let Emoji = ''; // Initialize Emoji here
+            let Emoji = ''; 
             if (user.Emoji == 1) {
                 Emoji = 'caim';
             } else if (user.Emoji == 2) {

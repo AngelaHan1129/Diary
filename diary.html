@@ -14,7 +14,7 @@
         <div id="fun">
             <div id="current_date" class="date">
                 <img src="image/date.png" alt="">
-                <input type="date" name="date" id="date">
+                <input type="date" name="date" id="date" class="datecontent">
             </div>
             <!-- <div id="emotion-m">
                 <div class="drop">
@@ -98,7 +98,7 @@
                             <span></span>
                         </div>
 
-                        <ul name="emoji" class="dropdown">
+                        <ul name="emoji" class="dropdown emojivalue">
                             <li data-image="image/img-emoji/angry.png"
                                 onclick="selectOption(this), loadImage(this, 'angry')">
                                 <img src="image/img-emoji/angry.png" alt="生氣" width="100">
@@ -139,28 +139,29 @@
                             <span></span>
                         </div>
 
-                        <ul name="weather" class="dropdown">
+                        <ul label="weather" name="weather" class="dropdown">
                             <li data-image="image/img-weather/sun.png" name="weather" value="sunny"
                                 onclick="selectOption(this), loadImage1(this, 'sunny')">
-                                <img src="image/img-weather/sun.png" alt="晴天" width="100">
+                                <img class="weatherValue" value="sun" src="image/img-weather/sun.png" alt="晴天" width="100">
                             </li>
                             <li data-image="image/img-weather/rain.png" name="weather" value="rainy"
                                 onclick="selectOption(this), loadImage1(this, 'rainy')">
-                                <img src="image/img-weather/rain.png" alt="雨天" width="100">
+                                <img class="weatherValue" value="sun" src="image/img-weather/rain.png" alt="雨天" width="100">
                             </li>
                             <li data-image="image/img-weather/cloudy.png" name="weather" value="cloudy"
                                 onclick="selectOption(this), loadImage1(this, 'cloudy')">
-                                <img src="image/img-weather/cloudy.png" alt="陰天" width="100">
+                                <img class="weatherValue" value="sun" src="image/img-weather/cloudy.png" alt="陰天" width="100">
                             </li>
                             <li data-image="image/img-weather/partly.png" name="weather" value="sun_cloud"
                                 onclick="selectOption(this), loadImage1(this, 'sun_cloud')">
-                                <img src="image/img-weather/partly.png" alt="晴時多雲" width="100">
+                                <img class="weatherValue" value="sun" src="image/img-weather/partly.png" alt="晴時多雲" width="100">
                             </li>
                             <li data-image="image/img-weather/snowy.png" name="weather" value="snow"
                                 onclick="selectOption(this), loadImage1(this, 'snow')">
-                                <img src="image/img-weather/snowy.png" alt="下雪" width="100">
+                                <img class="weatherValue" value="sun" src="image/img-weather/snowy.png" alt="下雪" width="100">
                             </li>
                         </ul>
+
                     </div>
                 </div>
             </div>
