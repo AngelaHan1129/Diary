@@ -35,3 +35,26 @@ inputimg.addEventListener('change', function () {
         console.log('未選擇文件');
     }
 });
+
+function getUserData(){
+    const token = JSON.parse(localStorage.getItem('userData')).token
+    fetch(`http://localhost:8000/api/getuser_by_token?token=${token}`)
+    .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        data = data.data
+        console.log(data)
+        document.getElementById("username").innerText=data.Name
+        document.getElementById("account").innerText = data.user
+        document.getElementById("email_input").value = data.Email
+      })
+      .catch(error => {
+        console.error('發生錯誤:', error);
+      });
+}
+
+getUserData()

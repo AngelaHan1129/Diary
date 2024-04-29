@@ -37,7 +37,7 @@ const jsFiles = {
     'diary.html': ['javascript/diary.js'],
     'index.html': ['javascript/index.js'],
     'userinfo.html': ['javascript/userinfo.js'],
-    'changepwd.html': ['javascript/userinfo.js'],
+    'changepwd.html': ['javascript/userinfo.js','javascript/changepwd.js'],
     'selectgender.html':['javascript/userinfo.js'],
     'treehole.html':['javascript/treehole.js']
 }

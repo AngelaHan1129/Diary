@@ -154,7 +154,6 @@ async function registerData() {
                             })
                         }).then(res => res.json())
                             .then(data => {
-                                console.log("不要生氣 不要生氣")
                                 console.log(data)
                                 // errmsg = msg.replace("", data.msg)
                                 resultMsg = data.data.msg

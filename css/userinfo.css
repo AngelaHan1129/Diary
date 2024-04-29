@@ -140,7 +140,7 @@
     position: relative;
 }
 
-input:not([type = "submit"], [type = "reset"]){
+input:not([type = "submit"], [type = "reset"], [type = "button"]){
     width: 75%;
     border: none;
     background-color: transparent;
@@ -151,7 +151,7 @@ input:not([type = "submit"], [type = "reset"]){
     cursor: text;
 }
 
-input[type = "submit"], [type = "reset"]{
+input[type = "submit"], [type = "reset"], [type = "button"]{
     background-color: #71604a;
     color: #fff;
     width: 95px;
