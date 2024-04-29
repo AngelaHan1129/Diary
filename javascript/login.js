@@ -75,7 +75,7 @@ async function loginData() {
                 errmsg = msg.replace("", data.msg);
                 document.getElementById('loginmsg').innerText = errmsg;
                 if(errmsg === "登入成功") {
-                    const responseData = JSON.parse(data.data);
+                    const responseData = data.data;
                     console.log(responseData);
                     if (responseData.user !== undefined) {
                         localStorage.setItem('userData', JSON.stringify(responseData));
@@ -148,13 +148,22 @@ async function registerData() {
                         // }
                         fetch('http://localhost:8000/api/AuthCode', {
                             method: 'post',
-                            body: JSON.stringify()
+                            body: JSON.stringify({
+                                "account": `${object.account}`,
+                                "AuthCode": `${guest}`
+                            })
                         }).then(res => res.json())
                             .then(data => {
+                                console.log("不要生氣 不要生氣")
                                 console.log(data)
-                                errmsg = msg.replace("", data.msg)
-                    document.getElementById('registermsg').innerText = errmsg;
-                            })
+                                // errmsg = msg.replace("", data.msg)
+                                resultMsg = data.data.msg
+                                if(resultMsg == "驗證失敗"){
+                                    document.getElementById('registermsg').innerText = resultMsg;
+                                }else{
+                                    document.getElementById('registermsg').innerText = "註冊成功，可以返回登入";
+                                }
+                        })
 
                     }
 
