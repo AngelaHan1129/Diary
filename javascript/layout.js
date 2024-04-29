@@ -38,7 +38,7 @@ const jsFiles = {
     'index.html': ['javascript/index.js'],
     'userinfo.html': ['javascript/userinfo.js'],
     'changepwd.html': ['javascript/userinfo.js','javascript/changepwd.js'],
-    'selectgender.html':['javascript/userinfo.js'],
+    'selectgender.html':['javascript/userinfo.js','javascript/changesex.js'],
     'treehole.html':['javascript/treehole.js']
 }
 

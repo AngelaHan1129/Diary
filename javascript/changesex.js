@@ -11,6 +11,8 @@ function getUserData(){
       .then(data => {
         data = data.data
         account = data.user
+        console.log(data)
+        document.getElementById("gender_select").value = data.Gender
       })
       .catch(error => {
         console.error('發生錯誤:', error);
@@ -19,18 +21,14 @@ function getUserData(){
 
 getUserData()
 
-function changepwd(){
-    const opwd = document.getElementById("originpwd_input").value
-    const npwd = document.getElementById("newpwd_input").value
-    const cpwd = document.getElementById("confirmpwd_input").value
+function changesex(){
+    const sex = document.getElementById("gender_select").value
 
-    fetch('http://localhost:8000/api/change_password',{
+    fetch('http://localhost:8000/api/change_sex',{
         method: 'POST',
         body: JSON.stringify({
             acc:account,
-            pwd:opwd,
-            newpwd:npwd,
-            cnewpwd:cpwd
+            sex:sex
         })
     })
     .then(res =>{
@@ -38,7 +36,7 @@ function changepwd(){
     })
     .then(data =>{
         console.log(data)
-        alert("密碼修改成功！");
+        alert("性別修改成功");
         history.back(); // 返回上一頁
         
     })
