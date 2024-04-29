@@ -9,6 +9,10 @@
 }
 
 @media screen and (max-width:845px) {
+    main{
+        height: 70%;
+    }
+
     #leftside{
         width: 100%;
         height: 15%;
@@ -86,6 +90,10 @@
 }
 
 @media screen and (max-width:470px) {
+    main{
+        height: 75%;
+    }
+    
     #leftside{
         height: 10%;
     }

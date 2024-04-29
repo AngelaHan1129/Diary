@@ -22,18 +22,18 @@ const titles = {
 
 const cssFiles = {
     'index.html': ['css/layout.css', 'css/layout-m.css', 'css/index.css', 'css/index-m.css'],
-    'login.html': ['css/layout.css', 'css/layout-m.css', 'css/login.css', 'css/register.css'],
-    'userinfo.html': ['css/layout.css', 'css/layout-m.css', 'css/userinfo.css'],
-    'changepwd.html': ['css/layout.css', 'css/layout-m.css', 'css/userinfo.css'],
-    'selectgender.html': ['css/layout.css', 'css/layout-m.css', 'css/userinfo.css'],
+    'login.html': ['css/layout.css', 'css/layout-m.css', 'css/login.css', 'css/register.css', 'css/login-m.css'],
+    'userinfo.html': ['css/layout.css', 'css/layout-m.css', 'css/userinfo.css', 'css/userinfo-m.css'],
+    'changepwd.html': ['css/layout.css', 'css/layout-m.css', 'css/userinfo.css', 'css/userinfo-m.css'],
+    'selectgender.html': ['css/layout.css', 'css/layout-m.css', 'css/userinfo.css', 'css/userinfo-m.css'],
     'treehole.html': ['css/layout.css', 'css/layout-m.css', 'css/treehole.css', 'css/treehole-m.css'],
-    'music.html': ['css/layout.css', 'css/layout-m.css', 'css/music.css'],
+    'music.html': ['css/layout.css', 'css/layout-m.css', 'css/music.css', 'css/music-m.css'],
     'diary.html': ['css/layout.css', 'css/layout-m.css', 'css/diary.css', 'css/diary-m.css']
 }
 
 const jsFiles = {
     'login.html': ['javascript/login.js'],
-    'music.html': ['javascript/music.min.js'],
+    'music.html': ['javascript/music.js'],
     'diary.html': ['javascript/diary.js'],
     'index.html': ['javascript/index.js'],
     'userinfo.html': ['javascript/userinfo.js'],

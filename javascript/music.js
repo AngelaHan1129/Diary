@@ -4,11 +4,11 @@ var next = document.getElementById("next");
 
 previous.addEventListener("click", function(event){
     event.preventDefault();
-    player.style.animation = "FadeOutLeft 1s"
+    player.style.animation = "FadeOutRight 1s"
     previous.style.animation = "FadeOut 1s"
     next.style.animation = "FadeOut 1s"
     player.addEventListener('animationend', function() {
-        player.style.animation = "FadeInRight 1s"
+        player.style.animation = "FadeInLeft 1s"
         previous.style.animation = "FadeIn 1s"
         next.style.animation = "FadeIn 1s"
     })
@@ -16,11 +16,11 @@ previous.addEventListener("click", function(event){
 
 next.addEventListener("click", function(event){
     event.preventDefault();
-    player.style.animation = "FadeOutRight 1s"
+    player.style.animation = "FadeOutLeft 1s"
     previous.style.animation = "FadeOut 1s"
     next.style.animation = "FadeOut 1s"
     player.addEventListener('animationend', function(){
-        player.style.animation = "FadeInLeft 1s"
+        player.style.animation = "FadeInRight 1s"
         previous.style.animation = "FadeIn 1s"
         next.style.animation = "FadeIn 1s"
     })

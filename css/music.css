@@ -4,7 +4,6 @@ li a[href*="music"]{
 
 main{
     flex-direction: column;
-    justify-content: space-around;
 }
 
 #upside{
@@ -44,16 +43,22 @@ main{
     border-radius: 10px;
 }
 
-#player{
+.player{
     background-color: #eaeaea;
-    width: 500px;
+    width: 55%;
     height: 100%;
-    margin-right: 30px;
+    margin-right: 5%;
+    border-radius: 10px;
+}
+
+#player{
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
 }
 
 .musiclist{
-    width: calc(100% - 530px);
+    width: 40%;
     height: 100%;
 }
 
@@ -81,16 +86,17 @@ main{
 
 #downwrap{
     width: 90%;
-    height: 95%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 
 #playlist{
     background-color: #887a69;
     width: calc(100% - 40px);
-    height: calc(80% - 40px);
+    height: calc(75% - 40px);
     padding: 20px;
     border-radius: 10px;
     position: relative;
@@ -115,11 +121,7 @@ main{
     display: inline-block;
 }
 
-.preview:first-of-type{
-    margin-left: 0;
-}
-
-.preview div{
+.preview >div{
     height: 80%;
     background-color: #eaeaea;
     border-radius: 10px;

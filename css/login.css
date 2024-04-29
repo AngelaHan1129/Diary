@@ -1,4 +1,4 @@
-.login{
+a[href*="login"]{
     background-color: #887a69;
 }
 
