@@ -66,32 +66,32 @@ async function loginData() {
             formData.forEach((value, key) => object[key] = value);
             let json = JSON.stringify(object);
             fetch('http://localhost:8000/api/login', {
-                    method: 'POST',
-                    body: json
+                method: 'POST',
+                body: json
             })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                errmsg = msg.replace("", data.msg);
-                document.getElementById('loginmsg').innerText = errmsg;
-                if(errmsg === "登入成功") {
-                    const responseData = JSON.parse(data.data);
-                    console.log(responseData);
-                    if (responseData.user !== undefined) {
-                        localStorage.setItem('userData', JSON.stringify(responseData));
-                        const logoutLinks = document.querySelectorAll('header .logintext');
-                        logoutLinks.forEach(link => {
-                            link.href = 'logout.html'; 
-                            link.querySelector('div').innerText = '登出';
-                        });
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    errmsg = msg.replace("", data.msg);
+                    document.getElementById('loginmsg').innerText = errmsg;
+                    if (errmsg === "登入成功") {
+                        const responseData = JSON.parse(data.data);
+                        console.log(responseData);
+                        if (responseData.user !== undefined) {
+                            localStorage.setItem('userData', JSON.stringify(responseData));
+                            const logoutLinks = document.querySelectorAll('header .logintext');
+                            logoutLinks.forEach(link => {
+                                link.href = 'logout.html';
+                                link.querySelector('div').innerText = '登出';
+                            });
 
-                        window.location.href = 'http://127.0.0.1:5501/index.html';
+                            window.location.href = 'http://127.0.0.1:5501/index.html';
+                        }
                     }
-                }
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-            });
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                });
         });
     }
     catch (err) {
@@ -102,25 +102,19 @@ loginData()
 
 async function registerData() {
     const forRegister = await document.querySelector('.registerform');
-    let acc =await  document.querySelector('.acc').value
+    let acc = await document.querySelector('.acc').value
     // let myname = document.querySelector('.myname')
     // let email = document.querySelector('.email')
     // let pwd = document.querySelector('.pwd')
     // let ckeckpwd = document.querySelector('.checkpwd')
     // var button = document.querySelector('.prompttest');
-    var showtxt =await document.querySelector('.show');
+    var showtxt = await document.querySelector('.show');
     let msg = '';
     try {
         forRegister.addEventListener('submit', event => {
             event.preventDefault();
             const formDataR = new FormData(forRegister);
-            let object = {
-                // "name": `${acc}`,
-                // "account": `${myname}`,
-                // "email": `${email}`,
-                // "password":`${pwd}`,
-                // "checkpwd": `${ckeckpwd}`
-            };
+            let object = {};
             formDataR.forEach((value, key) => object[key] = value);
             let json = JSON.stringify(object);
             fetch('http://localhost:8000/api/register', {
@@ -140,12 +134,6 @@ async function registerData() {
                         } else {
                             showtxt.innerHTML = ''
                         }
-                        // button.addEventListener('click', popup3);
-
-                        // let bodys = {
-                        //     "acc": `${acc}`,
-                        //     "AuthCode": `${guest}`
-                        // }
                         fetch('http://localhost:8000/api/AuthCode', {
                             method: 'post',
                             body: JSON.stringify()
@@ -153,7 +141,7 @@ async function registerData() {
                             .then(data => {
                                 console.log(data)
                                 errmsg = msg.replace("", data.msg)
-                    document.getElementById('registermsg').innerText = errmsg;
+                                document.getElementById('registermsg').innerText = errmsg;
                             })
 
                     }

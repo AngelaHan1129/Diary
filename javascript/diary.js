@@ -71,7 +71,7 @@ function loadImage1(option, emotion) {
     document.getElementById("selected_weather_field").value = emotion;
 }
 
-document.getElementById("current_date_input").value = yyyy + "-" +  mm + "-" + dd;
+document.getElementById("current_date_input") = yyyy + "-" +  mm + "-" + dd;
 
 // async function writeDiary(){
 //     const forDiary = await document.querySelector('.writeform');
