@@ -77,3 +77,23 @@ function getUserData(){
 }
 
 getUserData()
+
+const checklogin =  () => {
+    const user = localStorage.getItem('userData');
+    console.log(user)
+    if (user) {
+      const logoutLinks = document.querySelectorAll('header #logintext');
+      logoutLinks.forEach(link => {
+        // link.href = 'logout.html'; 
+        console.dir(link);
+        link.innerText = '登出';
+      });
+    }
+    
+    addEventListener('click',(event)=>{
+  
+      link.innerText = '登入';
+    })
+  }
+  
+  checklogin()

@@ -84,8 +84,9 @@ function layout(page) {
         });
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('DOMContentLoaded', function() {
     const pathname = window.location.pathname;
     let page = pages[pathname] || 'index.html';
     layout(page);
 });
+

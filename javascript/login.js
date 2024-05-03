@@ -69,24 +69,23 @@ async function loginData() {
                 method: 'POST',
                 body: json
             })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                errmsg = msg.replace("", data.msg);
-                document.getElementById('loginmsg').innerText = errmsg;
-                if(errmsg === "登入成功") {
-                    const responseData = data.data;
-                    console.log(responseData);
-                    if (responseData.user !== undefined) {
-                        localStorage.setItem('userData', JSON.stringify(responseData));
-                        const logoutLinks = document.querySelectorAll('header .logintext');
-                        logoutLinks.forEach(link => {
-                            link.href = 'logout.html'; 
-                            link.querySelector('div').innerText = '登出';
-                        });
-
-                            window.location.href = 'http://127.0.0.1:5501/index.html';
-                        }
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    errmsg = msg.replace("", data.msg);
+                    document.getElementById('loginmsg').innerText = errmsg;
+                    if (errmsg === "登入成功") {
+                        const responseData = data.data;
+                        console.log(responseData);
+                        // if (responseData.user !== undefined) {
+                        //     localStorage.setItem('userData', JSON.stringify(responseData));
+                        //     const logoutLinks = document.querySelectorAll('header #logintext');
+                        //     logoutLinks.forEach(link => {
+                        //         // link.href = 'logout.html'; 
+                        //         link.querySelector('div').innerText = '登出';
+                        //     });
+                        // }
+                        window.location.href = 'http://127.0.0.1:5501/index.html';
                     }
                 })
                 .catch(error => {
@@ -140,12 +139,12 @@ async function registerData() {
                                 console.log(data)
                                 // errmsg = msg.replace("", data.msg)
                                 resultMsg = data.data.msg
-                                if(resultMsg == "驗證失敗"){
+                                if (resultMsg == "驗證失敗") {
                                     document.getElementById('registermsg').innerText = resultMsg;
-                                }else{
+                                } else {
                                     document.getElementById('registermsg').innerText = "註冊成功，可以返回登入";
                                 }
-                        })
+                            })
 
                     }
 
