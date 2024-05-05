@@ -18,7 +18,7 @@ main img {
     position: absolute;
 }
 
-#fun>* {
+.date,.feeling {
     width: calc(100% - 60px);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
     transition: all 0.4s;
@@ -50,12 +50,10 @@ select {
 
 .feeling {
     background-color: #887A69;
-    height: 110px;
-    padding: 5px 30px;
+    height: 180px;
     display: flex;
     flex-wrap: wrap;
     border-radius: 10px;
-
 }
 
 #music {
