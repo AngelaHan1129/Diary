@@ -77,14 +77,14 @@ async function loginData() {
                     if (errmsg === "登入成功") {
                         const responseData = data.data;
                         console.log(responseData);
-                        // if (responseData.user !== undefined) {
-                        //     localStorage.setItem('userData', JSON.stringify(responseData));
-                        //     const logoutLinks = document.querySelectorAll('header #logintext');
-                        //     logoutLinks.forEach(link => {
-                        //         // link.href = 'logout.html'; 
-                        //         link.querySelector('div').innerText = '登出';
-                        //     });
-                        // }
+                        if (responseData.user !== undefined) {
+                            localStorage.setItem('userData', JSON.stringify(responseData));
+                            const logoutLinks = document.querySelectorAll('header #logintext');
+                            logoutLinks.forEach(link => {
+                                // link.href = 'logout.html'; 
+                                link.querySelector('div').innerText = '登出';
+                            });
+                        }
                         window.location.href = 'http://127.0.0.1:5501/index.html';
                     }
                 })
