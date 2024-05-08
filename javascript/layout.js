@@ -74,6 +74,7 @@ function layout(page) {
                             document.body.appendChild(script);
                         })
                     }
+                    checklogin()
                 })
                 .catch(error => {
                     console.error('加載指定頁面失敗：', error);
@@ -90,3 +91,18 @@ window.addEventListener('DOMContentLoaded', function() {
     layout(page);
 });
 
+const checklogin = () => {
+    const user = localStorage.getItem('userData');
+    console.log(user);
+    if (user) {
+      const logoutLinks = document.querySelectorAll('header #logintext');
+      logoutLinks.forEach(link => {
+        link.innerText = '登出';
+        link.addEventListener('click', () => {
+          localStorage.removeItem('userData');
+          link.innerText = '登入';
+        });
+      });
+    }
+  }
+  
