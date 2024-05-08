@@ -50,7 +50,7 @@ select {
 
 .feeling {
     background-color: #887A69;
-    height: 180px;
+    height: 120px;
     display: flex;
     flex-wrap: wrap;
     border-radius: 10px;
