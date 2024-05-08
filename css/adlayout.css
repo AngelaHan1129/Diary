@@ -190,6 +190,6 @@ input[type = "search"]{
     width: 25px;
     height: 25px;
     padding: 3px;
-    border: 2px solid #fff;
-    border-radius: 50%;
+    /* border: 2px solid #fff; */
+    /* border-radius: 50%; */
 }
