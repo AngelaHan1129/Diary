@@ -4,7 +4,9 @@ const pages = {
     '/aduser.html': 'aduser.html',
     '/adpwd.html': 'adpwd.html',
     '/adgender.html': 'adgender.html',
-    '/admember.html': 'admember.html'
+    '/admember.html': 'admember.html',
+    '/adsentence.html': 'adsentence.html',
+    '/adreport.html': 'adreport.html'
 }
 
 const titles = {
@@ -13,7 +15,9 @@ const titles = {
     'aduser.html': '管理員資料',
     'adpwd.html': '管理員密碼',
     'adgender.html': '管理員性別',
-    'admember.html': '管理員會員'
+    'admember.html': '管理員會員',
+    'adsentence.html': '管理佳句',
+    'adreport.html': '管理員報表'
 }
 
 const cssFiles = {
@@ -22,7 +26,9 @@ const cssFiles = {
     'aduser.html': ['css/adlayout.css', 'css/aduser.css'],
     'adpwd.html': ['css/adlayout.css', 'css/aduser.css'],
     'adgender.html': ['css/adlayout.css', 'css/aduser.css'],
-    'admember.html': ['css/adlayout.css', 'css/admember.css']
+    'admember.html': ['css/adlayout.css', 'css/admember.css'],
+    'adsentence.html': ['css/adlayout.css', 'css/adsentence.css'],
+    'adreport.html': ['css/adlayout.css', 'css/adreport.css']
 }
 
 const jsFiles = {
@@ -31,7 +37,9 @@ const jsFiles = {
     'aduser.html': ['javascript/manage.js', 'javascript/userinfo.js'],
     'adpwd.html': ['javascript/manage.js', 'javascript/userinfo.js'],
     'adgender.html': ['javascript/manage.js'],
-    'admember.html': ['javascript/manage.js']
+    'admember.html': ['javascript/manage.js'],
+    'adsentence.html': ['javascript/manage.js'],
+    'adreport.html': ['javascript/manage.js']
 }
 
 function layout(page) {
