@@ -2,17 +2,11 @@ async function treehole() {
     try {
         let tab = '';
 
-        var getData = localStorage.getItem('userData');
-        var getDataArr = JSON.parse(getData);
-        console.log(getDataArr.user)
-        let object = {
-            acc: getDataArr.user
-        };
-        let json = JSON.stringify(object);
+        var token = localStorage.getItem('userData');
         const response = await fetch('http://localhost:8000/api/show_diary_all', {
-            method: 'POST',
-            body: json,
-            mode: "cors"
+            headers:{
+                'Authorization': token
+            }
         });
         const data = await response.json();
 

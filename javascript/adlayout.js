@@ -3,7 +3,8 @@ const pages = {
     '/admin_emotional.html': 'admin_emotional.html',
     '/aduser.html': 'aduser.html',
     '/adpwd.html': 'adpwd.html',
-    '/adgender.html': 'adgender.html'
+    '/adgender.html': 'adgender.html',
+    '/admember.html': 'admember.html'
 }
 
 const titles = {
@@ -11,7 +12,8 @@ const titles = {
     'admin_emotional.html': '心情小站',
     'aduser.html': '管理員資料',
     'adpwd.html': '管理員密碼',
-    'adgender.html': '管理員性別'
+    'adgender.html': '管理員性別',
+    'admember.html': '管理員會員'
 }
 
 const cssFiles = {
@@ -19,7 +21,8 @@ const cssFiles = {
     'admin_emotional.html': ['css/adlayout.css', 'css/emotional.css'],
     'aduser.html': ['css/adlayout.css', 'css/aduser.css'],
     'adpwd.html': ['css/adlayout.css', 'css/aduser.css'],
-    'adgender.html': ['css/adlayout.css', 'css/aduser.css']
+    'adgender.html': ['css/adlayout.css', 'css/aduser.css'],
+    'admember.html': ['css/adlayout.css', 'css/admember.css']
 }
 
 const jsFiles = {
@@ -27,7 +30,8 @@ const jsFiles = {
     'admim_emotional.html': ['javascript/manage.js'],
     'aduser.html': ['javascript/manage.js', 'javascript/userinfo.js'],
     'adpwd.html': ['javascript/manage.js', 'javascript/userinfo.js'],
-    'adgender.html': ['javascript/manage.js']
+    'adgender.html': ['javascript/manage.js'],
+    'admember.html': ['javascript/manage.js']
 }
 
 function layout(page) {
