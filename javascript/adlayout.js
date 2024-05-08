@@ -1,6 +1,6 @@
 const pages = {
     '/admusic.html': 'admusic.html',
-    '/admin_emotional.html': 'admin_emotional.html',
+    '/ademotion.html': 'ademotion.html',
     '/aduser.html': 'aduser.html',
     '/adpwd.html': 'adpwd.html',
     '/adgender.html': 'adgender.html',
@@ -11,7 +11,7 @@ const pages = {
 
 const titles = {
     'admusic.html': 'Admusic',
-    'admin_emotional.html': '心情小站',
+    'ademotion.html': '心情小站',
     'aduser.html': '管理員資料',
     'adpwd.html': '管理員密碼',
     'adgender.html': '管理員性別',
@@ -22,7 +22,7 @@ const titles = {
 
 const cssFiles = {
     'admusic.html': ['css/adlayout.css', 'css/admusic.css'],
-    'admin_emotional.html': ['css/adlayout.css', 'css/emotional.css'],
+    'ademotion.html': ['css/adlayout.css', 'css/ademotion.css'],
     'aduser.html': ['css/adlayout.css', 'css/aduser.css'],
     'adpwd.html': ['css/adlayout.css', 'css/aduser.css'],
     'adgender.html': ['css/adlayout.css', 'css/aduser.css'],
@@ -33,7 +33,7 @@ const cssFiles = {
 
 const jsFiles = {
     'admusic.html': ['javascript/manage.js'],
-    'admim_emotional.html': ['javascript/manage.js'],
+    'ademotion.html': ['javascript/manage.js'],
     'aduser.html': ['javascript/manage.js', 'javascript/userinfo.js'],
     'adpwd.html': ['javascript/manage.js', 'javascript/userinfo.js'],
     'adgender.html': ['javascript/manage.js'],
