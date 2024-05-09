@@ -19,8 +19,8 @@ h1 {
     display: flex;
     align-items: center; 
     justify-content: center; 
-    width: 130px; 
-    height: 50px; 
+    width: 13%; 
+    height: 60%; 
     color: #fff;
     background-color: #75add0; 
     border: none;
@@ -30,23 +30,21 @@ h1 {
     line-height: 50px; 
     margin-left: 40px;
     margin-top: 40px; 
-    border-radius: 10px; 
+    border-radius: 15px; 
 }
-
 
 .button-text {
     box-sizing: border-box; 
 }
 
 .note-box {
-    width: 700px; 
-    height: 60px;
+    width: 90%; 
+    height: 60%;
     background-color: #16435F;  
-    border-radius: 10px; 
-    margin-left: 40px;
-    margin-top: 5px;
+    border-radius:10px; 
+    margin-left: 4%;
+    margin-top: 1%;
 }
-
 
 .dropdown-menu1, .dropdown-menu2, .dropdown-menu3, .dropdown-menu4 {
     background-color: #16435F;
@@ -69,16 +67,115 @@ h1 {
     margin-right: 20px; 
 }
 
+.dropdown-menu1 {
+    margin-right: 80px; 
+}
+
 
 .dropdown-menu2 {
-    margin-right: 30px; 
+    margin-right: 90px; 
 }
 
 .dropdown-menu3 {
-    margin-right: 40px; 
+    margin-right: 100px; 
 }
 
 .dropdown-menu4 {
-    margin-right: 50px; 
+    margin-right: 110px; 
 }
+
+.column{
+    width: calc(90% - 2px);
+    height: 70px;
+    background-color: #fff;  
+    border-radius: 10px; 
+    margin-left: 4%;
+    margin-right: 20px;
+    margin-top: 1%; 
+    border: 1px solid #000;
+    display: flex; 
+    align-items: center; 
+}
+
+.Center-text1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.center-text2,
+.center-text3,
+.center-text4,
+.center-text5 {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.center-text2 {
+    margin-left: 20px;
+}
+
+.center-text3 {
+    margin-left: 110px;
+}
+
+.center-text4 {
+    margin-left: 115px;
+}
+
+.center-text5 {
+    margin-left: 70px;
+}
+
+.center-text6 {
+    background-color: #E47D43;
+    color: #fff;
+    border: none;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-left: 150px; /* 将按钮向右移动 */
+    margin-right: 10px;
+    /* 增加右侧间距 */
+}
+
+.center-text7{
+    background-color: #2DBB32;
+    color: #fff;
+    border: none;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.Center-text2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Center-text3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Center-text4 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Center-text5 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* /* .container {
+    display: flex;
+    justify-content: center; /* 将内容水平居中 */
+    align-items: center; /* 将内容垂直居中 */
+    height: 100vh; /* 使用视窗的高度 */
+}  */
 
