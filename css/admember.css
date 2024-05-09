@@ -14,9 +14,11 @@
 .paper{
     width: 90%;
     height: 70%;
+    border: 1px solid #000;
     margin: 0 auto; 
     background-color: #fff; 
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    border-radius: 15px;
 }
 
 h1 {
@@ -37,7 +39,7 @@ h1 {
     text-align: center;
     line-height: 50px; 
     margin-left: 40px;
-    margin-top: 40px; 
+    margin-top: 3%; 
     border-radius: 15px; 
 }
 
