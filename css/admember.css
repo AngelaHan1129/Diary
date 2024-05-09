@@ -11,6 +11,14 @@
     margin: 0 15px;
 }
 
+.paper{
+    width: 90%;
+    height: 70%;
+    margin: 0 auto; 
+    background-color: #fff; 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
 h1 {
     color: #75add0;
 }
@@ -52,7 +60,7 @@ h1 {
     padding: 20px;
     font-size: 14px;
     border-radius: 10px;
-    border: none;
+    border: none; 
     margin-left: 20px;
     position: relative;
     display: inline-block;
@@ -65,6 +73,7 @@ h1 {
     background-size: 10px; 
     padding-right: 20px; 
     margin-right: 20px; 
+    outline: none;
 }
 
 .dropdown-menu1 {
@@ -127,6 +136,7 @@ h1 {
     margin-left: 70px;
 }
 
+
 .center-text6 {
     background-color: #E47D43;
     color: #fff;
@@ -134,9 +144,7 @@ h1 {
     text-align: center;
     padding: 10px 20px;
     border-radius: 10px;
-    margin-left: 150px; /* 将按钮向右移动 */
-    margin-right: 10px;
-    /* 增加右侧间距 */
+    margin-left: 100%; 
 }
 
 .center-text7{
@@ -146,6 +154,7 @@ h1 {
     text-align: center;
     padding: 10px 20px;
     border-radius: 10px;
+    margin-left: 120%
 }
 
 .Center-text2 {
@@ -172,10 +181,43 @@ h1 {
     align-items: center;
 }
 
-/* /* .container {
+.Center-text6 {
     display: flex;
-    justify-content: center; /* 将内容水平居中 */
-    align-items: center; /* 将内容垂直居中 */
-    height: 100vh; /* 使用视窗的高度 */
-}  */
+    justify-content: space-around;
+    align-items: center;
+}
 
+.Center-text7 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pages{
+    height: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.pages a{
+    color: #16435f;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #75add0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.pages a:hover{
+    color: #fff;
+    background-color: #16435f;
+}
+
+.container {
+    text-align: center; 
+    margin-left: 40%;
+}
