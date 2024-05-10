@@ -50,6 +50,7 @@ function layout(page) {
             fetch(page)
                 .then(response => response.text())
                 .then(pageHtml => {
+                    checklogin()
                     const main = document.querySelector('main');
                     main.innerHTML = pageHtml;
                     const title = titles[page]
@@ -74,7 +75,6 @@ function layout(page) {
                             document.body.appendChild(script);
                         })
                     }
-                    checklogin()
                 })
                 .catch(error => {
                     console.error('加載指定頁面失敗：', error);

@@ -15,6 +15,17 @@
     margin: 0 15px;
 }
 
+.button {
+    width: 300px;
+    height: 200px;
+    background-color: #75add0;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+    border: none;
+    cursor: pointer;
+}
+
 h1 {
     color: #75add0;
 }

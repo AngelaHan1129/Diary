@@ -1,3 +1,234 @@
+<<<<<<< HEAD
 #leftside a[href *="admember"]{
     background-color: #16435f;
 }
+=======
+.title {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.title div {
+    background-color: #3a779d;
+    width: 10px;
+    height: 100%;
+    margin: 0 15px;
+}
+
+table {
+    border-collapse: collapse; 
+}
+
+.paper{
+    width: 90%;
+    height: 65%;
+    margin: 0 auto; 
+    background-color: #fff; 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    border-radius: 15px;
+}
+
+h1 {
+    color: #75add0;
+}
+
+.rectangle-button {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    width: 13%; 
+    height: 60%; 
+    color: #fff;
+    background-color: #75add0; 
+    border: none;
+    cursor: pointer; 
+    font-size: 15px;
+    text-align: center;
+    line-height: 50px; 
+    margin-left: 40px;
+    margin-top: 3%; 
+    border-radius: 15px; 
+}
+
+.button-text {
+    box-sizing: border-box; 
+}
+
+.note-box {
+    width: 93%; 
+    height: 60%;
+    background-color: #16435F;  
+    border-radius:10px; 
+    margin-left: 4%;
+    margin-top: 1%;
+}
+
+.dropdown-menu1, .dropdown-menu2, .dropdown-menu3, .dropdown-menu4 {
+    background-color: #16435F;
+    color: #fff;
+    padding: 20px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none; 
+    margin-left: 20px;
+    position: relative;
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('/image/Triangle.png');
+    background-repeat: no-repeat;
+    background-position: right 1px center; 
+    background-size: 10px; 
+    padding-right: 20px; 
+    margin-right: 20px; 
+    outline: none;
+}
+
+.dropdown-menu1 {
+    margin-right: 80px; 
+}
+
+
+.dropdown-menu2 {
+    margin-right: 90px; 
+}
+
+.dropdown-menu3 {
+    margin-right: 100px; 
+}
+
+.dropdown-menu4 {
+    margin-right: 110px; 
+}
+
+.column{
+    width: 93%;
+    height: 70px;
+    background-color: #fff;  
+    border-radius: 10px; 
+    margin-left: 4%;
+    margin-right: 20px;
+    margin-top: 1%; 
+    border: 1px solid #000;
+    display: flex; 
+    align-items: center; 
+}
+
+.Center-text1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.center-text2,
+.center-text3,
+.center-text4,
+.center-text5 {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.center-text2 {
+    margin-left: 20px;
+}
+
+.center-text3 {
+    margin-left: 110px;
+}
+
+.center-text4 {
+    margin-left: 115px;
+}
+
+.center-text5 {
+    margin-left: 80px;
+}
+
+
+.center-text6 {
+    background-color: #E47D43;
+    color: #fff;
+    border: none;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-left: 80px; 
+}
+
+.center-text7{
+    background-color: #2DBB32;
+    color: #fff;
+    border: none;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.Center-text2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Center-text3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Center-text4 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Center-text5 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Center-text6 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Center-text7 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pages{
+    height: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.pages a{
+    color: #16435f;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #75add0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.pages a:hover{
+    color: #fff;
+    background-color: #16435f;
+}
+
+.container {
+    text-align: center; 
+    margin-left: 40%;
+}
+>>>>>>> bfd5b7660081b79b74d5c7fd5a55ea02e38a0b9b
