@@ -32,8 +32,41 @@ h1{
 #add{
     background-color: #75add0;
     color: #fff;
+<<<<<<< HEAD
     width: 15%;
     height: 50px;
+=======
+    background-color: #75add0; 
+    border: none;
+    cursor: pointer; 
+    font-size: 15px;
+    text-align: center;
+    line-height: 50px; 
+    margin-left: 40px;
+    margin-top: 3%; 
+    border-radius: 15px; 
+}
+
+.button-text {
+    box-sizing: border-box; 
+}
+
+.note-box {
+    width: 93%; 
+    height: 60%;
+    background-color: #16435F;  
+    border-radius:10px; 
+    margin-left: 4%;
+    margin-top: 1%;
+    overflow-x: auto;
+}
+
+.dropdown-menu1, .dropdown-menu2, .dropdown-menu3, .dropdown-menu4 {
+    background-color: #16435F;
+    color: #fff;
+    padding: 20px;
+    font-size: 15px;
+>>>>>>> 3400815e2c35b2f9effc12c184e5c0677a485aee
     border-radius: 10px;
     display: flex;
     align-self: start;
@@ -73,15 +106,69 @@ h1{
     outline: none;
 }
 
+<<<<<<< HEAD
 .column{
     width: calc(100% - 2px);
     height: 58px;
     background-color: #fff;
     border-radius: 10px;
     border: 1px solid #000;
+=======
+.dropdown-menu1 {
+    margin-right: 90px; 
+}
+
+
+.dropdown-menu2 {
+    margin-right: 100px; 
+}
+
+.dropdown-menu3 {
+    margin-right: 100px; 
+}
+
+.dropdown-menu4 {
+    margin-right: 110px; 
+}
+
+.column {
+    width: auto;
+    height: 70px;
+    background-color: #fff;  
+    border-radius: 10px; 
+    margin-left: 4%;
+    margin-right: 20px;
+    margin-top: 1%; 
+    border: 1px solid #000;
+    overflow-x: auto;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.column table {
+    width: 100%;
+}
+
+.Center-text1 {
+>>>>>>> 3400815e2c35b2f9effc12c184e5c0677a485aee
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     text-align: center;
+=======
+}
+
+.center-text2,
+.center-text3,
+.center-text4,
+.center-text5,
+.center-text6,
+.center-text7 {
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+>>>>>>> 3400815e2c35b2f9effc12c184e5c0677a485aee
 }
 
 .account{
@@ -100,8 +187,66 @@ h1{
     width: 5%;
 }
 
+<<<<<<< HEAD
 .btns{
     width: 30%;
+=======
+.center-text6{
+    background-color: #E47D43;
+    color: #fff;
+    border: none;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+}
+
+
+.center-text7 {
+    background-color: #2DBB32;
+    color: #fff;
+    border: none;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.center-text6 {
+    margin-left: 80px; 
+}
+
+.center-text7 {
+    margin-left: 10px;
+}
+
+.Center-text2,
+.Center-text3,
+.Center-text4,
+.Center-text5,
+.Center-text6,
+.Center-text7 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.pages{
+    height: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.pages a{
+    color: #16435f;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #75add0;
+    border-radius: 10px;
+>>>>>>> 3400815e2c35b2f9effc12c184e5c0677a485aee
     display: flex;
     justify-content: center;
 }
