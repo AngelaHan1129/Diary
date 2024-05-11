@@ -102,6 +102,7 @@ h1{
 
 .btns{
     width: 30%;
+    height: 80%;
     display: flex;
     justify-content: center;
 }
@@ -113,10 +114,11 @@ h1{
 }
 
 .edit,.delete{
+    width: 45%;
+    height: 100%;
     color: #fff;
     border: none;
     text-align: center;
-    padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
 }
