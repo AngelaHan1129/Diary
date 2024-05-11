@@ -66,6 +66,14 @@ main{
     position: relative;
 }
 
+#wrap-down,
+#wrap-up{
+    width: 95%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
 #search{
     width: 450px;
     height: 50px;
