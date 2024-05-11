@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="image/DiaryLogo.ico">
     <script src="javascript/adlayout.js"></script>
-    <title>AdMusic</title>
+    <title>音樂庫</title>
 </head>
 
 <body>
@@ -15,104 +15,131 @@
             <input type="search">
             <a href=""><img src="image/search.png" alt=""></a>
         </div>
-        <div id="quote">
-            <div class="title">
-                <div></div>
-                <h1>音樂庫</h1>
-            </div>
-            <div class="content">
-                <div id="quote-left">
-                    <div id="quotes">
-                        <div class="type">
-                            <table>
-                                <tr>
-                                    <th>類型</th>
-                                    <td class="typ-tag">古典</td>
-                                    <td class="typ-tag">爵士</td>
-                                    <td class="typ-tag">搖滾</td>
-                                    <td class="typ-tag">流行</td>
-                                    <td class="typ-tag">自然環境</td>
-                                    <td class="typ-tag">冥想</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <table class="music-menu">
-                        <tr>
-                            <td class="music-tag">
-                                <audio controls>
-                                    <source src="https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j" type="audio/mpeg">
-                                  </audio>
-                            </td>
-                            <td class="music-tag">歌名</td>
-                            <td class="music-tag">https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j</td>
-                        </tr>
-                    </table>
-                    <table class="music-menu">
-                        <tr>
-                            <td class="music-tag">
-                                <audio controls>
-                                    <source src="https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j" type="audio/mpeg">
-                                  </audio>
-                            </td>
-                            <td class="music-tag">歌名</td>
-                            <td class="music-tag">https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j</td>
-                        </tr>
-                    </table>
-                    <table class="music-menu">
-                        <tr>
-                            <td class="music-tag">
-                                <audio controls>
-                                    <source src="https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j" type="audio/mpeg">
-                                  </audio>
-                            </td>
-                            <td class="music-tag">歌名</td>
-                            <td class="music-tag">https://www.youtube.com/embed/ZQWrleq-NhQ?si=pA9s84RDa1wCsM1j</td>
-                        </tr>
-                    </table>
-
-                    <table class="pages">
-                        <tr>
-                            <td><a href="">&lt;&lt;</a></td>
-                            <td><a href="">1</a></td>
-                            <td><a href="">2</a></td>
-                            <td><a href="">3</a></td>
-                            <td><a href="">4</a></td>
-                            <td><a href="">5</a></td>
-                            <td><a href="">&gt;&gt;</a></td>
-                        </tr>
-                    </table>
-
+        <div class="title">
+            <div></div>
+            <h1>音樂庫</h1>
+        </div>
+        <div id="content">
+            <div class="sort">
+                <div class="singer">
+                    <select class="dropdown-menu">
+                        <option value="option">歌手</option>
+                    </select>
+                </div>
+                <div class="song">
+                    <select class="dropdown-menu">
+                        <option value="option">歌名</option>
+                    </select>
+                </div>
+                <div class="address">
+                    <select class="dropdown-menu">
+                        <option value="option">網址</option>
+                    </select>
                 </div>
             </div>
-        </div>
-        <div id="percent">
-            <div class="title">
-                <div></div>
-                <h1>音樂庫統計</h1>
+            <div></div>
+            <select name="type" id="types">
+                <option value="all">全部類型</option>
+            </select>
+            <div class="column">
+                <div class="singer">歌手</div>
+                <div class="song">歌名</div>
+                <div class="address">網址</div>
+                <div class="btns">
+                    <div>
+                        <input type="submit" value="刪除" class="delete">
+                        <input type="submit" value="修改" class="edit">
+                    </div>
+                </div>
             </div>
-            <div class="content">
-                <img src="image/chart.png" height="100%" alt="">
+            <div class="column">
+                <div class="singer">歌手</div>
+                <div class="song">歌名</div>
+                <div class="address">網址</div>
+                <div class="btns">
+                    <div>
+                        <input type="submit" value="刪除" class="delete">
+                        <input type="submit" value="修改" class="edit">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div id="add">
-            <div class="title">
-                <div></div>
-                <h1>音樂庫新增</h1>
+            <div class="column">
+                <div class="singer">歌手</div>
+                <div class="song">歌名</div>
+                <div class="address">網址</div>
+                <div class="btns">
+                    <div>
+                        <input type="submit" value="刪除" class="delete">
+                        <input type="submit" value="修改" class="edit">
+                    </div>
+                </div>
             </div>
-            <div class="content">
-                <form action="">
-                    <label>
-                        <h3>類型</h3>
-                        <input type="text" name="quote">
-                    </label>
-                    <label>
-                        <h3>網址</h3>
-                        <input type="text" name="quote">
-                    </label>
-                    <input type="submit" value="新增音樂">
-                </form>
+            <div class="column">
+                <div class="singer">歌手</div>
+                <div class="song">歌名</div>
+                <div class="address">網址</div>
+                <div class="btns">
+                    <div>
+                        <input type="submit" value="刪除" class="delete">
+                        <input type="submit" value="修改" class="edit">
+                    </div>
+                </div>
             </div>
+            <div class="column">
+                <div class="singer">歌手</div>
+                <div class="song">歌名</div>
+                <div class="address">網址</div>
+                <div class="btns">
+                    <div>
+                        <input type="submit" value="刪除" class="delete">
+                        <input type="submit" value="修改" class="edit">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="singer">歌手</div>
+                <div class="song">歌名</div>
+                <div class="address">網址</div>
+                <div class="btns">
+                    <div>
+                        <input type="submit" value="刪除" class="delete">
+                        <input type="submit" value="修改" class="edit">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="singer">歌手</div>
+                <div class="song">歌名</div>
+                <div class="address">網址</div>
+                <div class="btns">
+                    <div>
+                        <input type="submit" value="刪除" class="delete">
+                        <input type="submit" value="修改" class="edit">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="singer">歌手</div>
+                <div class="song">歌名</div>
+                <div class="address">網址</div>
+                <div class="btns">
+                    <div>
+                        <input type="submit" value="刪除" class="delete">
+                        <input type="submit" value="修改" class="edit">
+                    </div>
+                </div>
+            </div>
+            <table class="pages">
+                <tr>
+                    <td><a href="">&lt;&lt;</a></td>
+                    <td><a href="">1</a></td>
+                    <td><a href="">2</a></td>
+                    <td><a href="">3</a></td>
+                    <td><a href="">4</a></td>
+                    <td><a href="">5</a></td>
+                    <td><a href="">&gt;&gt;</a></td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>

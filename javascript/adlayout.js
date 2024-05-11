@@ -10,12 +10,12 @@ const pages = {
 }
 
 const titles = {
-    'admusic.html': 'Admusic',
+    'admusic.html': '音樂庫',
     'ademotion.html': '心情小站',
     'aduser.html': '管理員資料',
     'adpwd.html': '管理員密碼',
     'adgender.html': '管理員性別',
-    'admember.html': '會員名冊',
+    'admember.html': '管理會員',
     'adsentence.html': '名言佳句',
     'adreport.html': '管理員報表'
 }
@@ -39,7 +39,7 @@ const jsFiles = {
     'adgender.html': ['javascript/manage.js'],
     'admember.html': ['javascript/manage.js'],
     'adsentence.html': ['javascript/manage.js'],
-    'adreport.html': ['javascript/manage.js', 'javascript/adreport.js']
+    'adreport.html': ['javascript/manage.js']
 }
 
 function layout(page) {
@@ -67,11 +67,9 @@ function layout(page) {
                         });
                     }
                     if (jsFile) {
-                        jsFile.forEach(jsfile => {
-                            const script = document.createElement('script');
-                            script.src = jsfile;
-                            document.body.appendChild(script);
-                        })
+                        const script = document.createElement('script');
+                        script.src = jsFile;
+                        document.body.appendChild(script);
                     }
                 })
                 .catch(error => {
@@ -83,7 +81,7 @@ function layout(page) {
         });
 }
 
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
     const pathname = window.location.pathname;
     let page = pages[pathname] || 'index.html';
     layout(page);
