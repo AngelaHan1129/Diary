@@ -73,13 +73,13 @@
         position: relative;
     }
    
-    .diarys:nth-last-of-type(1),.diarys:nth-last-of-type(2),.diarys:nth-last-of-type(3){
+    .diarys:nth-last-of-type(-n+3){
         display: none;
     }
 }
 
 @media screen and (max-width:470px) {
-    .diarys:nth-last-of-type(4),.diarys:nth-last-of-type(5),.diarys:nth-last-of-type(6){
+    .diarys:nth-last-of-type(-n+6){
         display: none;
     }
 

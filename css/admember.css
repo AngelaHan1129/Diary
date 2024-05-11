@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+#leftside a[href *="admember"]{
+    background-color: #16435f;
+}
+=======
 .title {
     height: 40px;
     display: flex;
@@ -221,3 +226,4 @@ h1 {
     text-align: center; 
     margin-left: 40%;
 }
+>>>>>>> bfd5b7660081b79b74d5c7fd5a55ea02e38a0b9b
