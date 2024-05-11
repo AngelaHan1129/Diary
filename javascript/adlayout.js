@@ -15,8 +15,8 @@ const titles = {
     'aduser.html': '管理員資料',
     'adpwd.html': '管理員密碼',
     'adgender.html': '管理員性別',
-    'admember.html': '管理員會員',
-    'adsentence.html': '管理佳句',
+    'admember.html': '會員名冊',
+    'adsentence.html': '名言佳句',
     'adreport.html': '管理員報表'
 }
 
