@@ -39,7 +39,7 @@ const jsFiles = {
     'adgender.html': ['javascript/manage.js'],
     'admember.html': ['javascript/manage.js'],
     'adsentence.html': ['javascript/manage.js'],
-    'adreport.html': ['javascript/manage.js']
+    'adreport.html': ['javascript/manage.js', 'javascript/adreport.js']
 }
 
 function layout(page) {
@@ -67,9 +67,11 @@ function layout(page) {
                         });
                     }
                     if (jsFile) {
-                        const script = document.createElement('script');
-                        script.src = jsFile;
-                        document.body.appendChild(script);
+                        jsFile.forEach(jsfile => {
+                            const script = document.createElement('script');
+                            script.src = jsfile;
+                            document.body.appendChild(script);
+                        })
                     }
                 })
                 .catch(error => {
@@ -81,7 +83,7 @@ function layout(page) {
         });
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const pathname = window.location.pathname;
     let page = pages[pathname] || 'index.html';
     layout(page);
