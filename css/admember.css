@@ -1,3 +1,6 @@
+#leftside a[href *="admember"]{
+    background-color: #16435f;
+}
 .title {
     height: 40px;
     display: flex;
@@ -11,10 +14,13 @@
     margin: 0 15px;
 }
 
+table {
+    border-collapse: collapse; 
+}
+
 .paper{
     width: 90%;
-    height: 70%;
-    border: 1px solid #000;
+    height: 65%;
     margin: 0 auto; 
     background-color: #fff; 
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
@@ -35,7 +41,7 @@ h1 {
     background-color: #75add0; 
     border: none;
     cursor: pointer; 
-    font-size: 13px;
+    font-size: 15px;
     text-align: center;
     line-height: 50px; 
     margin-left: 40px;
@@ -48,7 +54,7 @@ h1 {
 }
 
 .note-box {
-    width: 90%; 
+    width: 93%; 
     height: 60%;
     background-color: #16435F;  
     border-radius:10px; 
@@ -60,7 +66,7 @@ h1 {
     background-color: #16435F;
     color: #fff;
     padding: 20px;
-    font-size: 14px;
+    font-size: 15px;
     border-radius: 10px;
     border: none; 
     margin-left: 20px;
@@ -96,7 +102,7 @@ h1 {
 }
 
 .column{
-    width: calc(90% - 2px);
+    width: 93%;
     height: 70px;
     background-color: #fff;  
     border-radius: 10px; 
@@ -135,7 +141,7 @@ h1 {
 }
 
 .center-text5 {
-    margin-left: 70px;
+    margin-left: 80px;
 }
 
 
@@ -146,7 +152,7 @@ h1 {
     text-align: center;
     padding: 10px 20px;
     border-radius: 10px;
-    margin-left: 100%; 
+    margin-left: 80px; 
 }
 
 .center-text7{
@@ -156,7 +162,7 @@ h1 {
     text-align: center;
     padding: 10px 20px;
     border-radius: 10px;
-    margin-left: 120%
+    margin-left: 10px;
 }
 
 .Center-text2 {

@@ -1,3 +1,7 @@
+#leftside a[href *="admusic"]{
+    background-color: #16435f;
+}
+
 .title {
     height: 40px;
     display: flex;
