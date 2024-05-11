@@ -75,7 +75,7 @@ h1{
 
 .column{
     width: calc(100% - 2px);
-    height: 58px;
+    height: 53px;
     background-color: #fff;
     border-radius: 10px;
     border: 1px solid #000;
