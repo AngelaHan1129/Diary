@@ -1,0 +1,13 @@
+#leftside a[href*="adreport"]{
+    background-color: #16435f;
+}
+
+#wrap-up,
+#wrap-down{
+    width: 100%;
+    display: flex;
+}
+
+#report{
+    width: 50%;
+}
