@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
     <meta charset="UTF-8">
@@ -38,9 +38,18 @@
                 </div>
             </div>
             <div></div>
-            <select name="type" id="types">
+            <div id="add">新增音樂</div> 
+            <dialog id="infoModalMusic">
+                <h3>新增音樂</h3>
+                <label>歌手</label><input type="text"><br>
+                <label>歌名</label><input type="text"><br>
+                <label>網址</label><input type="text"><br>
+                <button id="okMusic">ok</button>
+                <button id="closeMusic">close</button>
+            </dialog>
+            <!-- <select name="type" >
                 <option value="all">全部類型</option>
-            </select>
+            </select> -->
             <div class="column">
                 <div class="singer">歌手</div>
                 <div class="song">歌名</div>
@@ -51,6 +60,7 @@
                         <input type="submit" value="修改" class="edit">
                     </div>
                 </div>
+                
             </div>
             <div class="column">
                 <div class="singer">歌手</div>

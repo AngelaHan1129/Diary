@@ -95,7 +95,7 @@ async function DiaryData() {
       event.preventDefault();
       const formData = new FormData(formDiary);
       let object = {
-        account: getDataArr.user,
+        token: getDataArr.user,
         emoji: emojiValue,
         content: "你好哇哇哇",
         title: "你好哇哇哇",

@@ -32,14 +32,17 @@ h1{
 #add{
     background-color: #75add0;
     color: #fff;
-    width: 15%;
+    width: 13%;
     height: 50px;
     border-radius: 10px;
     display: flex;
-    align-self: start;
+    align-self: flex-end;
     align-items: center;
     justify-content: center;
     text-align: center;
+    z-index: 1;
+    position: absolute;
+    cursor: pointer;
 }
 
 .sort{

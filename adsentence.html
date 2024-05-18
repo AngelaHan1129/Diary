@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,26 +19,34 @@
         </div>
         <div id="content">
             <div id="overview">
-                <a href="" id="add">新增佳句</a>
+                <!-- <a href="" id="add">新增佳句</a> -->
+                <div id="add">新增佳句</div>
                 <div id="total">
                     <div>名言佳句總數</div>
                     <div>123</div>
                 </div>
             </div>
-            <select name="type" id="types">
+            <dialog id="infoModalSentence">
+                <h3>新增佳句</h3>
+                <label>類別</label><input type="text"><br>
+                <label>內容</label><input type="text"><br>
+                <button id="okSentence">ok</button>
+                <button id="closeSentence">close</button>
+            </dialog>
+            <!-- <select name="type" id="types">
                 <option value="all">全部類型</option>
-            </select>
+            </select> -->
             <div class="sort">
                 <div class="type">
                     <select class="dropdown-menu">
                         <option value="option1">類別</option>
                     </select>
                 </div>
-                <div class="auther">
+                <!-- <div class="auther">
                     <select class="dropdown-menu">
                         <option value="option2">作者</option>
                     </select>
-                </div>
+                </div> -->
                 <div class="content">
                     <select class="dropdown-menu">
                         <option value="option3">內容</option>
@@ -48,7 +56,7 @@
             <table id="items">
                 <tr>
                     <td class="type">勵志</td>
-                    <td class="auther">abc123</td>
+                    <!-- <td class="auther">abc123</td> -->
                     <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
                     <td class="btns">
                         <div>
@@ -59,7 +67,7 @@
                 </tr>
                 <tr>
                     <td class="type">勵志</td>
-                    <td class="auther">abc123</td>
+                    <!-- <td class="auther">abc123</td> -->
                     <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
                     <td class="btns">
                         <div>
@@ -70,7 +78,7 @@
                 </tr>
                 <tr>
                     <td class="type">勵志</td>
-                    <td class="auther">abc123</td>
+                    <!-- <td class="auther">abc123</td> -->
                     <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
                     <td class="btns">
                         <div>
@@ -81,7 +89,7 @@
                 </tr>
                 <tr>
                     <td class="type">勵志</td>
-                    <td class="auther">abc123</td>
+                    <!-- <td class="auther">abc123</td> -->
                     <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
                     <td class="btns">
                         <div>
@@ -92,7 +100,7 @@
                 </tr>
                 <tr>
                     <td class="type">勵志</td>
-                    <td class="auther">abc123</td>
+                    <!-- <td class="auther">abc123</td> -->
                     <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
                     <td class="btns">
                         <div>
@@ -103,7 +111,7 @@
                 </tr>
                 <tr>
                     <td class="type">勵志</td>
-                    <td class="auther">abc123</td>
+                    <!-- <td class="auther">abc123</td> -->
                     <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
                     <td class="btns">
                         <div>
@@ -114,7 +122,7 @@
                 </tr>
                 <tr>
                     <td class="type">勵志</td>
-                    <td class="auther">abc123</td>
+                    <!-- <td class="auther">abc123</td> -->
                     <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
                     <td class="btns">
                         <div>
@@ -125,7 +133,7 @@
                 </tr>
                 <tr>
                     <td class="type">勵志</td>
-                    <td class="auther">abc123</td>
+                    <!-- <td class="auther">abc123</td> -->
                     <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
                     <td class="btns">
                         <div>
@@ -136,7 +144,7 @@
                 </tr>
                 <tr>
                     <td class="type">勵志</td>
-                    <td class="auther">abc123</td>
+                    <!-- <td class="auther">abc123</td> -->
                     <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
                     <td class="btns">
                         <div>
@@ -147,7 +155,7 @@
                 </tr>
                 <tr>
                     <td class="type">勵志</td>
-                    <td class="auther">abc123</td>
+                    <!-- <td class="auther">abc123</td> -->
                     <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
                     <td class="btns">
                         <div>

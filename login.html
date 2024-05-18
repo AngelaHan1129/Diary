@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
     <meta charset="UTF-8">
@@ -30,10 +30,19 @@
         <input type="password" name="checkpwd" id="confirmpwd" class="checkpwd" placeholder="確認密碼" required>
         <input class='prompttest' type="submit" value="註冊">
         
-        <p class='show'></p>
-        <p id="registermsg"></p>
+        <!-- <p class='show'></p>
+        <p id="registermsg"></p> -->
+         
         <p id="gologin">已有帳戶?<a href="" id="loginlink">點此登入</a></p>
+        <!-- <a id="showAuthCode">輸入驗證碼</a> -->
     </form>
+   <dialog id="infoModal">
+        
+        <p>這裡是<b>驗證碼</b>傳送門</p>
+        <input type="text" placeholder="驗證碼">
+        <button type="submit" id="ok">確定</button>
+        <button id="close">取消</button>
+    </dialog>
 </body>
 
 </html>

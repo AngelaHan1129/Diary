@@ -32,13 +32,13 @@ const cssFiles = {
 }
 
 const jsFiles = {
-    'admusic.html': ['javascript/manage.js'],
-    'ademotion.html': ['javascript/manage.js'],
+    'admusic.html': ['javascript/manage.js','javascript/admusic.js'],
+    'ademotion.html': ['javascript/manage.js','javascript/ademotion.js'],
     'aduser.html': ['javascript/manage.js', 'javascript/userinfo.js'],
     'adpwd.html': ['javascript/manage.js', 'javascript/userinfo.js'],
     'adgender.html': ['javascript/manage.js'],
     'admember.html': ['javascript/manage.js'],
-    'adsentence.html': ['javascript/manage.js'],
+    'adsentence.html': ['javascript/manage.js','javascript/adsentence.js'], 
     'adreport.html': ['javascript/manage.js','javascript/adreport.js']
 }
 

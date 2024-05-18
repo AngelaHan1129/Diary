@@ -34,7 +34,8 @@
     background-color: #c0d8ea;
 }
 
-.new{
+.newFace,
+.newWeather{
     background-color: #3a779d;
     color: #fff;
     width: 45%;
@@ -43,6 +44,12 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+}
+
+.newFace:hover,
+.newWeather:hover{
+    background-color:#16435f;
+    cursor: pointer;
 }
 
 #search{

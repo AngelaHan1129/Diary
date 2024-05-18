@@ -1,9 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     background-color: #ebfcfe;
     font-family: 'AnyConv.com__Iansui-Regular';
 }
@@ -13,7 +13,7 @@ body{
     src: url(../font-size/AnyConv.com__Iansui-Regular.woff) format('woff');
 }
 
-a{
+a {
     color: #fff;
     text-decoration: none;
 }
@@ -30,7 +30,7 @@ a{
     left: 0;
 }
 
-#leftside a{
+#leftside a {
     background-color: #75add0;
     width: 60px;
     height: 60px;
@@ -42,39 +42,37 @@ a{
     transition: all 0.4s;
 }
 
-#leftside a:hover{
+#leftside a:hover {
     background-color: #16435f;
 }
 
-#leftside img{
+#leftside img {
     width: 30px;
     height: 30px;
 }
 
-main{
-    width: calc(100% -  300px);
+main {
+    width: calc(100% - 300px);
     height: 100%;
     display: flex;
     position: absolute;
     left: 100px;
 }
 
-#wrap{
+#wrap {
     width: 90%;
     height: 95%;
     margin: 2.5% 5%;
     position: relative;
 }
 
-
-
-.title{
+.title {
     height: 40px;
     display: flex;
     align-items: center;
 }
 
-.title div{
+.title div {
     background-color: #3a779d;
     width: 10px;
     height: 100%;
@@ -82,18 +80,18 @@ main{
 }
 
 #wrap-down,
-#wrap-up{
+#wrap-up {
     width: 100%;
     height: 50%;
     display: flex;
     justify-content: space-around;
 }
 
-h1{
+h1 {
     color: #75add0;
 }
 
-#search{
+#search {
     width: 450px;
     height: 50px;
     position: absolute;
@@ -101,7 +99,7 @@ h1{
     top: 0;
 }
 
-#search a{
+#search a {
     width: 30px;
     height: 30px;
     position: absolute;
@@ -109,12 +107,12 @@ h1{
     top: 10px;
 }
 
-#search img{
+#search img {
     width: 30px;
     height: 30px;
 }
 
-input[type = "search"]{
+input[type="search"] {
     background-color: transparent;
     width: 100%;
     height: 50px;
@@ -150,7 +148,7 @@ input[type = "search"]{
     background-color: #16435f;
 }
 
-#rightside{
+#rightside {
     background-color: #3a779d;
     width: 200px;
     height: 100%;
@@ -162,7 +160,7 @@ input[type = "search"]{
     right: 0;
 }
 
-#switch{
+#switch {
     background-color: #d9d9d9;
     width: 30px;
     height: 30px;
@@ -178,17 +176,17 @@ input[type = "search"]{
     transition: all 0.4s;
 }
 
-#switch:hover{
+#switch:hover {
     opacity: 0.5;
 }
 
-#logo{
+#logo {
     width: 150px;
     height: 75px;
     margin: 20px 0;
 }
 
-#count >*{
+#count>* {
     background-color: #d9d9d9;
     width: 160px;
     height: 80px;
@@ -198,7 +196,7 @@ input[type = "search"]{
     flex-wrap: wrap;
 }
 
-#count >* div{
+#count>* div {
     width: 100%;
     height: 50%;
     font-size: 14px;
@@ -207,17 +205,17 @@ input[type = "search"]{
     align-items: end;
 }
 
-#count >* :last-of-type{
+#count>* :last-of-type {
     font-size: 20px;
     align-items: center;
 }
 
-#count img{
+#count img {
     width: 40px;
     height: 40px;
 }
 
-#aduser{
+#aduser {
     background-color: #d9d9d9;
     color: #000;
     width: 160px;
@@ -229,19 +227,58 @@ input[type = "search"]{
     transition: all 0.4s;
 }
 
-#aduser:hover{
+#aduser:hover {
     background-color: #0b2a3d;
     color: #fff;
 }
 
-#aduser div{
+#aduser div {
     margin: 0 10px;
 }
 
-#aduser img{
+#aduser img {
     width: 25px;
     height: 25px;
     padding: 3px;
     /* border: 2px solid #fff; */
     /* border-radius: 50%; */
+}
+
+dialog {
+    font-size: 25px;
+    border: none;
+    box-shadow: 0 2px 6px #ccc;
+    border-radius: 10px;
+    padding: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: invert(20%);
+    background-color: #ebfcfec7;
+    color: #16435f;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.31);
+}
+
+dialog button {
+    background-color: #134f74;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    width: 30%;
+}
+
+dialog input[type="text"]{
+    background-color: #97abb8;
+    border: none;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+dialog label{
+    /* padding: 30px; */
+    margin: 10px;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,23 @@
     <script src="javascript/adlayout.js"></script>
     <title>心情小站</title>
 </head>
+
 <body>
     <div id="wrap">
-        <div id="emotion">           
+        <div id="emotion">
             <div class="title">
                 <div></div>
                 <h1>表情</h1>
             </div>
             <div class="content">
-                <a href="" class="new">
-                    <div>新增表情</div>
-                </a>
+                <div class="newFace">新增表情</div>
+                <dialog id="infoModal">
+                    <h3>新增表情</h3>
+                    <label>圖示</label><input type="file"><br>
+                    <label>名稱</label><input type="text"><br>
+                    <button id="okFace">ok</button>
+                    <button id="closeFace">close</button>
+                </dialog>
                 <div id="search">
                     <input type="search">
                     <a href=""><img src="image/search.png" alt=""></a>
@@ -67,15 +74,20 @@
                 </table>
             </div>
         </div>
-        <div id="weather">           
+        <div id="weather">
             <div class="title">
                 <div></div>
                 <h1>天氣</h1>
             </div>
             <div class="content">
-                <a href="" class="new">
-                    <div>新增天氣</div>
-                </a>
+                <div class="newWeather">新增天氣</div>
+                <dialog id="infoModalWeather">
+                    <h3>新增天氣</h3>
+                    <label>圖示</label><input type="file"><br>
+                    <label>名稱</label><input type="text"><br>
+                    <button id="okWeather">ok</button>
+                    <button id="closeWeather">close</button>
+                </dialog>
                 <div id="search">
                     <input type="search">
                     <a href=""><img src="image/search.png" alt=""></a>
@@ -127,4 +139,5 @@
         </div>
     </div>
 </body>
+
 </html>
