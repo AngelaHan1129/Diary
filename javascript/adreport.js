@@ -1,10 +1,10 @@
 async function musicReport() {
     try {
-        const res = await fetch('http://localhost:8000/api/form_music');
-        const data = await res.json();
+        let res = await fetch('http://localhost:8000/api/form_music');
+        let data = await res.json();
         if (data.data && data.data[0]) {
-            const emojiNames = [];
-            const emojidata = [];
+            let emojiNames = [];
+            let emojidata = [];
             data.data[0].forEach(item => {
                 if (item.Emoji_Name) {
                     emojiNames.push(item.Emoji_Name);
@@ -15,10 +15,13 @@ async function musicReport() {
                     emojidata.push(item.COUNT);
                 }
             });
-            const labels = emojiNames;
-            const datas = emojidata;
+            console.log( data.data[0])
+            console.log( data)
+            console.log(emojidata)
+            let labels = emojiNames;
+            let datas = emojidata;
 
-            const chartMusic = document.getElementById('myMusic');
+            let chartMusic = document.getElementById('myMusic');
             new Chart(chartMusic, {
                 type: 'bar',
                 data: {
@@ -56,10 +59,10 @@ musicReport();
 
 
 async function sentenceReport() {
-    const res = await fetch('http://localhost:8000/api/form_Sentence');
-    const data = await res.json();
-    const Type_Name = [];
-    const sentencedata = [];
+    let res = await fetch('http://localhost:8000/api/form_Sentence');
+    let data = await res.json();
+    let Type_Name = [];
+    let sentencedata = [];
     data.data[0].forEach(item => {
         if (item.Type_Name) {
             Type_Name.push(item.Type_Name);
@@ -71,11 +74,11 @@ async function sentenceReport() {
         }
     });
 
-    const labels = Type_Name;
-    const datas = sentencedata;
+    let labels = Type_Name;
+    let datas = sentencedata;
 
 
-    const chartSentence = document.getElementById('mySentence');
+    let chartSentence = document.getElementById('mySentence');
     new Chart(chartSentence, {
         type: 'polarArea',
         data: {
@@ -104,10 +107,10 @@ async function sentenceReport() {
 sentenceReport()
 
 async function faceReport() {
-    const res = await fetch('http://localhost:8000/api/form_emoji');
-    const data = await res.json();
-    const Face_Name = [];
-    const facedata = [];
+    let res = await fetch('http://localhost:8000/api/form_emoji');
+    let data = await res.json();
+    let Face_Name = [];
+    let facedata = [];
     data.data[0].forEach(item => {
         if (item.Emoji_Name) {
             Face_Name.push(item.Emoji_Name);
@@ -118,10 +121,10 @@ async function faceReport() {
             facedata.push(item.COUNT);
         }
     });
-    const labels = Face_Name;
-    const datas = facedata;
+    let labels = Face_Name;
+    let datas = facedata;
 
-    const chartFace = document.getElementById('myFace');
+    let chartFace = document.getElementById('myFace');
     new Chart(chartFace, {
         type: 'line',
         data: {
@@ -152,10 +155,10 @@ async function faceReport() {
 faceReport()
 
 async function MemberReport() {
-    const res = await fetch('http://localhost:8000/api/form_sex');
-    const data = await res.json();
-    const Gender = [];
-    const Memberdata = [];
+    let res = await fetch('http://localhost:8000/api/form_sex');
+    let data = await res.json();
+    let Gender = [];
+    let Memberdata = [];
     data.data[0].forEach(item => {
         if (item.Gender) {
             Gender.push(item.Gender);
@@ -166,9 +169,9 @@ async function MemberReport() {
             Memberdata.push(item.COUNT);
         }
     });
-    const labels = Gender;
-    const datas = Memberdata;
-    const chartMember = document.getElementById('myMember');
+    let labels = Gender;
+    let datas = Memberdata;
+    let chartMember = document.getElementById('myMember');
     new Chart(chartMember, {
         type: 'doughnut',
         data: {

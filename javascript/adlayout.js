@@ -37,7 +37,7 @@ const jsFiles = {
     'aduser.html': ['javascript/manage.js', 'javascript/userinfo.js'],
     'adpwd.html': ['javascript/manage.js', 'javascript/userinfo.js'],
     'adgender.html': ['javascript/manage.js'],
-    'admember.html': ['javascript/manage.js'],
+    'admember.html': ['javascript/manage.js','javascript/admember.js'],
     'adsentence.html': ['javascript/manage.js','javascript/adsentence.js'], 
     'adreport.html': ['javascript/manage.js','javascript/adreport.js']
 }
