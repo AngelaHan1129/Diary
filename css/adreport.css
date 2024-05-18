@@ -1,6 +1,8 @@
 #leftside a[href *="adreport"]{
     background-color: #16435f;
-}.title {
+}
+
+.title {
     height: 40px;
     display: flex;
     align-items: center;

@@ -183,10 +183,10 @@ h1 {
     cursor: pointer;
 }
 
-.edit {
-    background-color: #E47D43;
+.edit{
+    background-color: #2DBB32;
 }
 
-.delete {
-    background-color: #2DBB32;
+.delete{
+    background-color: #E47D43;
 }
