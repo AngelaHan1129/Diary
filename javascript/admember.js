@@ -4,18 +4,6 @@ async function showMember() {
     let tab = '';
     let res = await fetch('http://localhost:8000/api/admin_show_user_all');
     let data = await res.json();
-    // console.log(data)
-    // console.log(data.data[0][0])
-    // console.log(datadalete.data[0][0])
-
-    // let resdalete = await fetch('http://localhost:8000/api/user_del',{
-    //     method:'post',
-    //     body:JSON.stringify({
-    //         "Account":"7"
-    //     })
-    // });
-    // let datadalete = await resdalete.json();
-    // console.log(datadalete)
 
     head += `
         <div class="sort">
@@ -51,15 +39,8 @@ async function showMember() {
             Gender = '女';
         }
         // console.log(Gender);
-        
-        fetch('http://localhost:8000/api/user_del', {
-            method: 'post',
-            body: JSON.stringify({
-                "Account": "7"
-            })
-        })
-        .then(res => res.json())
-        .then(body => console.log(body))
+
+
         // console.log(datadalete)
         tab += `
         <div class="column">
@@ -81,3 +62,47 @@ async function showMember() {
     document.getElementById('content').innerHTML = head + tab;
 }
 showMember()
+
+async function deleteMember() {
+    let content = document.querySelector('#content');
+    
+    console.log(content)
+    content.addEventListener('click', function (user) {
+        console.log(user.target.className)
+        // console.log(user.target.tagName.id)
+        // console.log(user.target)
+        // console.log(user)
+        // console.log(user.id)
+        // console.log(new.target === deletes);
+        if (user.target.tagName === 'INPUT') {
+            // let deletes = document.querySelector('.deletes');
+            if (user.target.className === 'delete') {
+                // console.log(deletes.target)
+                console.log(user.target.dataset.id)
+                fetch('http://localhost:8000/api/user_del', {
+                    method: 'post',
+                    body: JSON.stringify({
+                        "Account": `${user.target.dataset.id}`
+                    })
+                })
+                    .then(res => res.json())
+                    .then(body => console.log(body))
+                    showMember()
+            }
+            if (user.target.className === 'delete') {
+                // console.log(deletes.target)
+                console.log(user.target.dataset.id)
+                fetch('http://localhost:8000/api/user_del', {
+                    method: 'post',
+                    body: JSON.stringify({
+                        "Account": `${user.target.dataset.id}`
+                    })
+                })
+                    .then(res => res.json())
+                    .then(body => console.log(body))
+            }
+        }
+    })
+
+}
+deleteMember()
