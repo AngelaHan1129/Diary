@@ -19,27 +19,13 @@ async function showMember() {
 
     head += `
         <div class="sort">
-            <div class="account">
-                <select class="dropdown-menu">
-                    <option value="option1">帳號</option>
-                </select>
-            </div>
-            <div class="name">
-                <select class="dropdown-menu">
-                    <option value="option2">姓名</option>
-                </select>
-            </div>
-            <div class="mail">
-                <select class="dropdown-menu">
-                    <option value="option3">信箱</option>
-                </select>
-            </div>
-            <div class="sex">
-                <select class="dropdown-menu">
-                    <option value="option4">性別</option>
-                </select>
-            </div>
-        </div>    
+            <div class="account" onclick="sortDivs(0)">帳號</div>
+            <div class="name" onclick="sortDivs(1)">姓名</div>
+            <div class="mail" onclick="sortDivs(2)">信箱</div>
+            <div class="sex" onclick="sortDivs(3)">性別</div>
+        </div>
+        <div id="container">
+        </div>
     `
     data.data[0].forEach(function (user) {
         let Gender = '';
@@ -75,9 +61,9 @@ async function showMember() {
             </div>
         </div>
         `;
-
     });
     // console.log(tab)
-    document.getElementById('content').innerHTML = head + tab;
+    document.getElementById('content').innerHTML = head;
+    document.getElementById('container').innerHTML = tab;
 }
 showMember()

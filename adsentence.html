@@ -19,7 +19,6 @@
         </div>
         <div id="content">
             <div id="overview">
-                <!-- <a href="" id="add">新增佳句</a> -->
                 <div id="add">新增佳句</div>
                 <div id="total">
                     <div>名言佳句總數</div>
@@ -37,27 +36,23 @@
                 <option value="all">全部類型</option>
             </select> -->
             <div class="sort">
-                <div class="type">
-                    <select class="dropdown-menu">
-                        <option value="option1">類別</option>
-                    </select>
-                </div>
-                <!-- <div class="auther">
-                    <select class="dropdown-menu">
-                        <option value="option2">作者</option>
-                    </select>
-                </div> -->
-                <div class="content">
-                    <select class="dropdown-menu">
-                        <option value="option3">內容</option>
-                    </select>
-                </div>
+                <div class="type" onclick="sortTable(0)">類別</div>
+                <div class="content" onclick="sortTable(1)">內容</div>
             </div>
             <table id="items">
                 <tr>
-                    <td class="type">勵志</td>
-                    <!-- <td class="auther">abc123</td> -->
-                    <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
+                    <td class="type">人生</td>
+                    <td class="content">Look before you leap.</td>
+                    <td class="btns">
+                        <div>
+                            <input type="submit" value="刪除" class="delete">
+                            <input type="submit" value="修改" class="edit">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="type">愛情</td>
+                    <td class="content">Faults are sick when love is thin.</td>
                     <td class="btns">
                         <div>
                             <input type="submit" value="刪除" class="delete">
@@ -67,7 +62,6 @@
                 </tr>
                 <tr>
                     <td class="type">勵志</td>
-                    <!-- <td class="auther">abc123</td> -->
                     <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
                     <td class="btns">
                         <div>
@@ -77,9 +71,28 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="type">勵志</td>
-                    <!-- <td class="auther">abc123</td> -->
-                    <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
+                    <td class="type">電影</td>
+                    <td class="content">Experience never goes out of fashion.</td>
+                    <td class="btns">
+                        <div>
+                            <input type="submit" value="刪除" class="delete">
+                            <input type="submit" value="修改" class="edit">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="type">人生</td>
+                    <td class="content">Rome was not built in a day.</td>
+                    <td class="btns">
+                        <div>
+                            <input type="submit" value="刪除" class="delete">
+                            <input type="submit" value="修改" class="edit">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="type">愛情</td>
+                    <td class="content">It's a good thing to like someone.</td>
                     <td class="btns">
                         <div>
                             <input type="submit" value="刪除" class="delete">
@@ -89,8 +102,27 @@
                 </tr>
                 <tr>
                     <td class="type">勵志</td>
-                    <!-- <td class="auther">abc123</td> -->
-                    <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
+                    <td class="content">No pain no gain</td>
+                    <td class="btns">
+                        <div>
+                            <input type="submit" value="刪除" class="delete">
+                            <input type="submit" value="修改" class="edit">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="type">電影</td>
+                    <td class="content">Manners maketh man</td>
+                    <td class="btns">
+                        <div>
+                            <input type="submit" value="刪除" class="delete">
+                            <input type="submit" value="修改" class="edit">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="type">人生</td>
+                    <td class="content">Great hopes make great men.</td>
                     <td class="btns">
                         <div>
                             <input type="submit" value="刪除" class="delete">
@@ -100,63 +132,7 @@
                 </tr>
                 <tr>
                     <td class="type">勵志</td>
-                    <!-- <td class="auther">abc123</td> -->
-                    <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
-                    <td class="btns">
-                        <div>
-                            <input type="submit" value="刪除" class="delete">
-                            <input type="submit" value="修改" class="edit">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="type">勵志</td>
-                    <!-- <td class="auther">abc123</td> -->
-                    <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
-                    <td class="btns">
-                        <div>
-                            <input type="submit" value="刪除" class="delete">
-                            <input type="submit" value="修改" class="edit">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="type">勵志</td>
-                    <!-- <td class="auther">abc123</td> -->
-                    <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
-                    <td class="btns">
-                        <div>
-                            <input type="submit" value="刪除" class="delete">
-                            <input type="submit" value="修改" class="edit">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="type">勵志</td>
-                    <!-- <td class="auther">abc123</td> -->
-                    <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
-                    <td class="btns">
-                        <div>
-                            <input type="submit" value="刪除" class="delete">
-                            <input type="submit" value="修改" class="edit">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="type">勵志</td>
-                    <!-- <td class="auther">abc123</td> -->
-                    <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
-                    <td class="btns">
-                        <div>
-                            <input type="submit" value="刪除" class="delete">
-                            <input type="submit" value="修改" class="edit">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="type">勵志</td>
-                    <!-- <td class="auther">abc123</td> -->
-                    <td class="content">When Life Gives You Lemons, Make Lemonade.</td>
+                    <td class="content">It's up to you how far you'll go.</td>
                     <td class="btns">
                         <div>
                             <input type="submit" value="刪除" class="delete">
