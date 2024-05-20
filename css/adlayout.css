@@ -8,6 +8,10 @@ body {
     font-family: 'AnyConv.com__Iansui-Regular';
 }
 
+input{
+    font-family: 'AnyConv.com__Iansui-Regular';
+}
+
 @font-face {
     font-family: 'AnyConv.com__Iansui-Regular';
     src: url(../font-size/AnyConv.com__Iansui-Regular.woff) format('woff');

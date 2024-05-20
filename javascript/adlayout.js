@@ -21,25 +21,25 @@ const titles = {
 }
 
 const cssFiles = {
-    'admusic.html': ['css/adlayout.css', 'css/admusic.css'],
-    'ademotion.html': ['css/adlayout.css', 'css/ademotion.css'],
-    'aduser.html': ['css/adlayout.css', 'css/aduser.css'],
-    'adpwd.html': ['css/adlayout.css', 'css/aduser.css'],
-    'adgender.html': ['css/adlayout.css', 'css/aduser.css'],
-    'admember.html': ['css/adlayout.css', 'css/admember.css'],
-    'adsentence.html': ['css/adlayout.css', 'css/adsentence.css'],
-    'adreport.html': ['css/adlayout.css', 'css/adreport.css']
+    'adreport.html': ['css/adlayout.css', 'css/adlayout-m.css', 'css/adreport.css', 'css/adreport-m.css'],
+    'admember.html': ['css/adlayout.css', 'css/adlayout-m.css', 'css/admember.css', 'css/admember-m.css'],
+    'adsentence.html': ['css/adlayout.css', 'css/adlayout-m.css', 'css/adsentence.css', 'css/adsentence-m.css'],
+    'ademotion.html': ['css/adlayout.css', 'css/adlayout-m.css', 'css/ademotion.css', 'css/ademotion-m.css'],
+    'admusic.html': ['css/adlayout.css', 'css/adlayout-m.css', 'css/admusic.css', 'css/admusic-m.css'],
+    // 'aduser.html': ['css/adlayout.css', 'css/aduser.css'],
+    // 'adpwd.html': ['css/adlayout.css', 'css/aduser.css'],
+    // 'adgender.html': ['css/adlayout.css', 'css/aduser.css'],
 }
 
 const jsFiles = {
-    'admusic.html': ['javascript/manage.js','javascript/admusic.js'],
+    'adreport.html': ['javascript/manage.js','javascript/adreport.js'],
+    'admember.html': ['javascript/manage.js','javascript/admember.js', 'javascript/sortdiv.js'],
+    'adsentence.html': ['javascript/manage.js','javascript/adsentence.js', 'javascript/sorttable.js'], 
     'ademotion.html': ['javascript/manage.js','javascript/ademotion.js'],
-    'aduser.html': ['javascript/manage.js', 'javascript/userinfo.js'],
-    'adpwd.html': ['javascript/manage.js', 'javascript/userinfo.js'],
-    'adgender.html': ['javascript/manage.js'],
-    'admember.html': ['javascript/manage.js','javascript/admember.js'],
-    'adsentence.html': ['javascript/manage.js','javascript/adsentence.js'], 
-    'adreport.html': ['javascript/manage.js','javascript/adreport.js']
+    'admusic.html': ['javascript/manage.js','javascript/admusic.js', 'javascript/sortdiv.js']
+    // 'aduser.html': ['javascript/manage.js', 'javascript/userinfo.js'],
+    // 'adpwd.html': ['javascript/manage.js', 'javascript/userinfo.js'],
+    // 'adgender.html': ['javascript/manage.js'],
 }
 
 function layout(page) {

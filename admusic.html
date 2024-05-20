@@ -21,21 +21,9 @@
         </div>
         <div id="content">
             <div class="sort">
-                <div class="singer">
-                    <select class="dropdown-menu">
-                        <option value="option">歌手</option>
-                    </select>
-                </div>
-                <div class="song">
-                    <select class="dropdown-menu">
-                        <option value="option">歌名</option>
-                    </select>
-                </div>
-                <div class="address">
-                    <select class="dropdown-menu">
-                        <option value="option">網址</option>
-                    </select>
-                </div>
+                <div class="singer" onclick="sortDivs(0)">歌手</div>
+                <div class="song" onclick="sortDivs(1)">歌名</div>
+                <div class="address" onclick="sortDivs(2)">網址</div>
             </div>
             <div></div>
             <div id="add">新增音樂</div> 
@@ -50,92 +38,94 @@
             <!-- <select name="type" >
                 <option value="all">全部類型</option>
             </select> -->
-            <div class="column">
-                <div class="singer">歌手</div>
-                <div class="song">歌名</div>
-                <div class="address">網址</div>
-                <div class="btns">
-                    <div>
-                        <input type="submit" value="刪除" class="delete">
-                        <input type="submit" value="修改" class="edit">
+            <div id="container">
+                <div class="column">
+                    <div class="singer">楊丞林</div>
+                    <div class="song">歌名</div>
+                    <div class="address">網址</div>
+                    <div class="btns">
+                        <div>
+                            <input type="submit" value="刪除" class="delete">
+                            <input type="submit" value="修改" class="edit">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="column">
+                    <div class="singer">蔡依林</div>
+                    <div class="song">歌名</div>
+                    <div class="address">網址</div>
+                    <div class="btns">
+                        <div>
+                            <input type="submit" value="刪除" class="delete">
+                            <input type="submit" value="修改" class="edit">
+                        </div>
                     </div>
                 </div>
-                
-            </div>
-            <div class="column">
-                <div class="singer">歌手</div>
-                <div class="song">歌名</div>
-                <div class="address">網址</div>
-                <div class="btns">
-                    <div>
-                        <input type="submit" value="刪除" class="delete">
-                        <input type="submit" value="修改" class="edit">
+                <div class="column">
+                    <div class="singer">歌手</div>
+                    <div class="song">歌名</div>
+                    <div class="address">網址</div>
+                    <div class="btns">
+                        <div>
+                            <input type="submit" value="刪除" class="delete">
+                            <input type="submit" value="修改" class="edit">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="column">
-                <div class="singer">歌手</div>
-                <div class="song">歌名</div>
-                <div class="address">網址</div>
-                <div class="btns">
-                    <div>
-                        <input type="submit" value="刪除" class="delete">
-                        <input type="submit" value="修改" class="edit">
+                <div class="column">
+                    <div class="singer">歌手</div>
+                    <div class="song">歌名</div>
+                    <div class="address">網址</div>
+                    <div class="btns">
+                        <div>
+                            <input type="submit" value="刪除" class="delete">
+                            <input type="submit" value="修改" class="edit">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="column">
-                <div class="singer">歌手</div>
-                <div class="song">歌名</div>
-                <div class="address">網址</div>
-                <div class="btns">
-                    <div>
-                        <input type="submit" value="刪除" class="delete">
-                        <input type="submit" value="修改" class="edit">
+                <div class="column">
+                    <div class="singer">歌手</div>
+                    <div class="song">歌名</div>
+                    <div class="address">網址</div>
+                    <div class="btns">
+                        <div>
+                            <input type="submit" value="刪除" class="delete">
+                            <input type="submit" value="修改" class="edit">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="column">
-                <div class="singer">歌手</div>
-                <div class="song">歌名</div>
-                <div class="address">網址</div>
-                <div class="btns">
-                    <div>
-                        <input type="submit" value="刪除" class="delete">
-                        <input type="submit" value="修改" class="edit">
+                <div class="column">
+                    <div class="singer">歌手</div>
+                    <div class="song">歌名</div>
+                    <div class="address">網址</div>
+                    <div class="btns">
+                        <div>
+                            <input type="submit" value="刪除" class="delete">
+                            <input type="submit" value="修改" class="edit">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="column">
-                <div class="singer">歌手</div>
-                <div class="song">歌名</div>
-                <div class="address">網址</div>
-                <div class="btns">
-                    <div>
-                        <input type="submit" value="刪除" class="delete">
-                        <input type="submit" value="修改" class="edit">
+                <div class="column">
+                    <div class="singer">歌手</div>
+                    <div class="song">歌名</div>
+                    <div class="address">網址</div>
+                    <div class="btns">
+                        <div>
+                            <input type="submit" value="刪除" class="delete">
+                            <input type="submit" value="修改" class="edit">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="column">
-                <div class="singer">歌手</div>
-                <div class="song">歌名</div>
-                <div class="address">網址</div>
-                <div class="btns">
-                    <div>
-                        <input type="submit" value="刪除" class="delete">
-                        <input type="submit" value="修改" class="edit">
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="singer">歌手</div>
-                <div class="song">歌名</div>
-                <div class="address">網址</div>
-                <div class="btns">
-                    <div>
-                        <input type="submit" value="刪除" class="delete">
-                        <input type="submit" value="修改" class="edit">
+                <div class="column">
+                    <div class="singer">歌手</div>
+                    <div class="song">歌名</div>
+                    <div class="address">網址</div>
+                    <div class="btns">
+                        <div>
+                            <input type="submit" value="刪除" class="delete">
+                            <input type="submit" value="修改" class="edit">
+                        </div>
                     </div>
                 </div>
             </div>
