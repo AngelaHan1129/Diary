@@ -25,6 +25,10 @@ table{
     border-radius: 10px;
 }
 
+#content :not(.page,input){
+    font-size: 20px;
+}
+
 #add{
     background-color: #75add0;
     color: #fff;
