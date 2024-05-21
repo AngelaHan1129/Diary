@@ -1,4 +1,4 @@
-//未完成deleteMember
+//未完成editMember
 async function showMember() {
     let head = '';
     let tab = '';
@@ -24,10 +24,6 @@ async function showMember() {
         } else if (user.Gender == 2) {
             Gender = '女';
         }
-        // console.log(Gender);
-
-
-        // console.log(datadalete)
         tab += `
         <div class="column">
             <div class="account">${user.Account}</div>
@@ -37,7 +33,7 @@ async function showMember() {
             <div class="btns">
                 <div>
                     <input type="submit" value="刪除" class="delete" data-id="${user.Account}">
-                    <input type="submit" value="修改" class="edit">
+                    <input type="submit" value="修改" class="edit" data-id="${user.Account}">
                 </div>
             </div>
         </div>
@@ -51,19 +47,11 @@ showMember()
 
 async function deleteMember() {
     let content = document.querySelector('#content');
-    
     console.log(content)
     content.addEventListener('click', function (user) {
         console.log(user.target.className)
-        // console.log(user.target.tagName.id)
-        // console.log(user.target)
-        // console.log(user)
-        // console.log(user.id)
-        // console.log(new.target === deletes);
         if (user.target.tagName === 'INPUT') {
-            // let deletes = document.querySelector('.deletes');
             if (user.target.className === 'delete') {
-                // console.log(deletes.target)
                 console.log(user.target.dataset.id)
                 fetch('http://localhost:8000/api/user_del', {
                     method: 'post',
@@ -73,15 +61,17 @@ async function deleteMember() {
                 })
                     .then(res => res.json())
                     .then(body => console.log(body))
-                    showMember()
+                showMember()
             }
-            if (user.target.className === 'delete') {
-                // console.log(deletes.target)
+            if (user.target.className === 'edit') {
                 console.log(user.target.dataset.id)
-                fetch('http://localhost:8000/api/user_del', {
+                fetch('http://localhost:8000/api/change_user', {
                     method: 'post',
                     body: JSON.stringify({
-                        "Account": `${user.target.dataset.id}`
+                        "oldAccount": `${user.target.dataset.id}`,
+                        "Account": `${user.target.dataset.id}`,
+                        "Name": "xfafad",
+                        "Email": "2127w"
                     })
                 })
                     .then(res => res.json())
