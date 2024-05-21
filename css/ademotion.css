@@ -79,37 +79,37 @@
     text-align: center;
 }
 
-#items{
+#items,#items-Weather{
     width: 100%;
     height: 60%;
     border-collapse: collapse;
 }
 
-#items tr{
+#items tr,#items-Weather tr{
     height: 20%;
 }
 
-#items td{
+#items td,#items-Weather td{
     border: 1px solid #000;
 }
 
-#items tr:first-of-type td{
+#items tr:first-of-type td,#items-Weather tr:first-of-type td{
     border-top: none;
 }
 
-#items td:first-of-type{
+#items td:first-of-type,#items-Weather td:first-of-type{
     border-left: none;
 }
 
-#items td:last-of-type{
+#items td:last-of-type,#items-Weather td:last-of-type{
     border-right: none;
 }
 
-#items tr:last-of-type td{
+#items tr:last-of-type td,#items-Weather tr:last-of-type td{
     border-bottom: none;
 }
 
-#items img{
+#items img,#items-Weather img{
     width: 30px;
     height: 30px;
 }
