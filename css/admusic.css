@@ -25,10 +25,6 @@ table{
     border-radius: 10px;
 }
 
-#content :not(.page,input){
-    font-size: 20px;
-}
-
 #add{
     background-color: #75add0;
     color: #fff;
@@ -54,7 +50,7 @@ table{
 
 .sort+div{
     background-color: #16435f;
-    width: 75%;
+    width: calc(85% - 120px);
     height: 50px;
     border-radius:10px;
     position: absolute;
@@ -121,6 +117,9 @@ table{
 
 .address{
     width: 40%;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .btns{
@@ -131,17 +130,18 @@ table{
 }
 
 .btns div{
+    max-width: 175px;
     width: 65%;
     display: flex;
     justify-content: space-between;
 }
 
-.edit,.delete{
-    width: 45%;
-    height: 100%;
+.edit,
+.delete {
     color: #fff;
     border: none;
     text-align: center;
+    padding: 10px 15%;
     border-radius: 10px;
     cursor: pointer;
 }

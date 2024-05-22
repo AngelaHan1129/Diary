@@ -2,21 +2,11 @@
     background-color: #16435f;
 }
 
-.title {
-    height: 40px;
+#wrap-down,
+#wrap-up {
+    width: 100%;
     display: flex;
-    align-items: center;
-}
-
-.title div {
-    background-color: #3a779d;
-    width: 10px;
-    height: 100%;
-    margin: 0 15px;
-}
-
-h1 {
-    color: #75add0;
+    justify-content: space-around;
 }
 
 .content {
@@ -33,6 +23,6 @@ h1 {
 }
 
 #report{
-    width: 50%;
+    width: calc(50% - 30px);
     padding: 15px;
 }

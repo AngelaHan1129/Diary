@@ -1,6 +1,11 @@
 var ascending = true;
+var lastSortedColumnIndex = null;
 
 function sortDivs(columnIndex) {
+    if (lastSortedColumnIndex !== columnIndex) {
+        ascending = true;
+    }
+
     var container = document.getElementById("container");
     var columns = Array.from(container.getElementsByClassName("column"));
     columns.sort(function(a, b) {
@@ -10,6 +15,11 @@ function sortDivs(columnIndex) {
         if (columnIndex === 3) {
             x = getSexOrder(x);
             y = getSexOrder(y);
+        }
+
+        if (columnIndex === 4) {
+            x = getSingerOrder(x);
+            y = getSingerOrder(y);
         }
         
         if (ascending) {
@@ -24,6 +34,7 @@ function sortDivs(columnIndex) {
     });
 
     ascending = !ascending;
+    lastSortedColumnIndex = columnIndex;
 }
 
 function getSexOrder(sex) {
@@ -36,5 +47,16 @@ function getSexOrder(sex) {
             return 3;
         default:
             return 4;
+    }
+}
+
+function getSingerOrder(singer){
+    switch(singer){
+        default:
+            return 1;
+        case 'unknown':
+            return 2;
+        case '未知':
+            return 3;
     }
 }

@@ -7,11 +7,12 @@
 }
 
 #wrap >*{
-    width: 50%;
+    width: calc(50% - 30px);
+    height: calc(100% - 30px);
     padding: 15px;
 }
 
-.content{
+#content{
     width: calc(100% - 30px);
     height: calc(100% - 85px);
     padding: 15px;
@@ -26,11 +27,11 @@
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-#emotion .content{
+#emotion #content{
     background-color: #a6bbce;
 }
 
-#weather .content{
+#weather #content{
     background-color: #c0d8ea;
 }
 

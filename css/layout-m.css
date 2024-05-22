@@ -50,6 +50,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        white-space: nowrap;
     }
     
     .infolist img {
@@ -101,12 +102,7 @@
     .infolist a{
         width: 40px;
         height: 40px;
-        margin: 0;
-        padding: 0;
-        font-size: 14px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        font-size: 16px;
     }
     
     .infolist img {
