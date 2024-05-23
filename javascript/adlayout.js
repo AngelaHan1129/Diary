@@ -10,14 +10,14 @@ const pages = {
 }
 
 const titles = {
-    'admusic.html': '音樂庫',
-    'ademotion.html': '心情小站',
-    'aduser.html': '管理員資料',
-    'adpwd.html': '管理員密碼',
-    'adgender.html': '管理員性別',
-    'admember.html': '管理會員',
+    'adreport.html': '管理員報表',
+    'admember.html': '會員名冊',
     'adsentence.html': '名言佳句',
-    'adreport.html': '管理員報表'
+    'ademotion.html': '心情小站',
+    'admusic.html': '音樂庫',
+    // 'aduser.html': '管理員資料',
+    // 'adpwd.html': '管理員密碼',
+    // 'adgender.html': '管理員性別',
 }
 
 const cssFiles = {

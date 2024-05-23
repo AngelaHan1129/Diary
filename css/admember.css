@@ -31,10 +31,6 @@ table{
     border-radius: 10px;
 }
 
-#content :not(.page,input){
-    font-size: 20px;
-}
-
 h1{
     color: #75add0;
 }
@@ -105,6 +101,12 @@ h1{
 
 .mail{
     width: 30%;
+}
+    
+.account,.mail{
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .btns{
