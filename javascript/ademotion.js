@@ -79,28 +79,28 @@ async function showEmoji(pagenow) {
         let tab = '';
         let res = await fetch('http://localhost:8000/api/admin_show_emoji_all');
         let body = await res.json();
-        let weathers = body.data[0];
-
-        let NowPage = Math.max(1, Math.min(pagenow, Math.ceil(weathers.length / 5) || 1));
+        let emojiData = body.data[0];
+        let MaxPage = Math.ceil(emojiData.length / 5);
+        let NowPage = Math.max(1, Math.min(pagenow, MaxPage || 1));
         let itemsPerPage = 5;
         let start = (NowPage - 1) * itemsPerPage;
         let end = start + itemsPerPage;
 
-        let pageItems = weathers.slice(start, end);
+        let pageItems = emojiData.slice(start, end);
         if (NowPage > 1) {
             str += `<td><a href="#" onclick="showEmoji(1)">&lt;&lt;</a></td>`;
             str += `<td><a href="#" onclick="showEmoji(${NowPage - 1})">&lt;</a></td>`;
         }
-        for (let page = Math.max(1, NowPage - 2); page <= Math.min(NowPage + 2, Math.ceil(weathers.length / itemsPerPage)); page++) {
+        for (let page = Math.max(1, NowPage - 2); page <= Math.min(NowPage + 2, Math.ceil(emojiData.length / itemsPerPage)); page++) {
             if (page === NowPage) {
                 str += `<td>${page}</td>`;
             } else {
                 str += `<td><a href="#" onclick="showEmoji(${page})">${page}</a></td>`;
             }
         }
-        if (NowPage < end) {
+        if (NowPage < MaxPage) {
             str += `<td><a href="#" onclick="showEmoji(${NowPage + 1})">&gt;</a></td>`;
-            str += `<td><a href="#" onclick="showEmoji(${end})">&gt;&gt;</a></td>`;
+            str += `<td><a href="#" onclick="showEmoji(${MaxPage})">&gt;&gt;</a></td>`;
         }
         pageItems.forEach(function (emoji) {
             let photo = emoji.Photo ? emoji.Photo : 'smile.png';
@@ -131,7 +131,8 @@ async function showWeather(pagenow) {
         let body = await res.json();
         let weathers = body.data[0];
 
-        let NowPage = Math.max(1, Math.min(pagenow, Math.ceil(weathers.length / 5) || 1));
+        let MaxPage = Math.ceil(weathers.length / 5);
+        let NowPage = Math.max(1, Math.min(pagenow, MaxPage || 1));
         let itemsPerPage = 5;
         let start = (NowPage - 1) * itemsPerPage;
         let end = start + itemsPerPage;
@@ -148,9 +149,9 @@ async function showWeather(pagenow) {
                 str += `<td><a href="#" onclick="showWeather(${page})">${page}</a></td>`;
             }
         }
-        if (NowPage < end) {
+        if (NowPage < MaxPage) {
             str += `<td><a href="#" onclick="showWeather(${NowPage + 1})">&gt;</a></td>`;
-            str += `<td><a href="#" onclick="showWeather(${end})">&gt;&gt;</a></td>`;
+            str += `<td><a href="#" onclick="showWeather(${MaxPage})">&gt;&gt;</a></td>`;
         }
         pageItems.forEach(weather => {
             let photo = weather.Photo || 'cloud.png';
