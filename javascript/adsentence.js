@@ -16,6 +16,7 @@ async function showSentence(pagenow) {
     try {
         let str = '<table id="page-sentence"><tr>';
         let tab = '';
+        let total = '';
         let res = await fetch('http://localhost:8000/api/admin_show_sentence_all');
         let body = await res.json();
         let sentence = body.data[0];
@@ -25,7 +26,7 @@ async function showSentence(pagenow) {
         let itemsPerPage = 5;
         let start = (NowPage - 1) * itemsPerPage;
         let end = start + itemsPerPage;
-
+        total = sentence.length
         let pageItems = sentence.slice(start, end);
         if (NowPage > 1) {
             str += `<td><a href="#" onclick="showSentence(1)">&lt;&lt;</a></td>`;
@@ -60,6 +61,7 @@ async function showSentence(pagenow) {
         str += '</tr></table>';
         document.getElementById('items').innerHTML = tab;
         document.getElementById('pages-sentence').innerHTML = str;
+        document.getElementById('sentence-total').innerHTML = total;
     } catch (err) {
         console.error('Failed to fetch data:', err);
         document.getElementById('items').innerHTML = '<p>Error loading data.</p>';
@@ -67,4 +69,3 @@ async function showSentence(pagenow) {
 }
 
 showSentence(1);
-
