@@ -44,14 +44,15 @@ async function showSentence(pagenow) {
             str += `<td><a href="#" onclick="showSentence(${MaxPage})">&gt;&gt;</a></td>`;
         }
         pageItems.forEach(function (sentence) {
+            console.log(sentence)
             tab += `
             <tr>
                 <td class="type">${sentence.Type_Name}</td>
                 <td class="content">${sentence.Content}</td>
                 <td class="btns">
                     <div>
-                        <input type="submit" value="刪除" class="delete">
-                        <input type="submit" value="修改" class="edit">
+                        <input type="submit" value="刪除" class="delete" data-id="${sentence.Sentence_Id}">
+                        <input type="submit" value="修改" class="edit" data-id="${sentence.Sentence_Id}">
                     </div>
                 </td>
             </tr>            
@@ -67,5 +68,55 @@ async function showSentence(pagenow) {
         document.getElementById('items').innerHTML = '<p>Error loading data.</p>';
     }
 }
+
+async function handleSentenceAction(event) {
+    if (event.target.tagName === 'INPUT') {
+        let SentenceId = event.target.dataset.id;
+        //delete
+        if (event.target.classList.contains('delete')) {
+            try {
+                let res = await fetch('http://localhost:8000/api/sentence_del', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        "Sentence_Id": SentenceId
+                    })
+                });
+                let body = await res.json();
+                console.log(body);
+                showSentence(1);
+            } catch (err) {
+                console.error(err);
+            }
+        }
+        //edit
+        else if (event.target.classList.contains('edit')) {
+            let newContent = prompt("輸入新歌名:");
+            let newType = prompt("輸入新類型:");
+            if (newContent || newType ) {
+                try {
+                    let res = await fetch('http://localhost:8000/api/change_sentence', {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            "Sentence_Id": SentenceId,
+                            "Content": newContent,
+                            "Type_Name": newType
+                        })
+                    });
+                    let body = await res.json();
+                    console.log(body);
+                    showSentence(1);
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+        }
+    }
+}
+
+document.querySelector('#items').addEventListener('click', handleSentenceAction);
 
 showSentence(1);

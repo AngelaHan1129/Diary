@@ -43,7 +43,7 @@ async function showMusic(pagenow) {
             str += `<td><a href="#" onclick="showMusic(${MaxPage})">&gt;&gt;</a></td>`;
         }
         pageItems.forEach(function (music) {
-            console.log(music.Content)
+            console.log(music)
             tab += `
             <div class="column">
                 <div class="singer">${music.singer}</div>
@@ -51,8 +51,8 @@ async function showMusic(pagenow) {
                 <div class="address">${music.music}</div>
                 <div class="btns">
                     <div>
-                        <input type="submit" value="刪除" class="delete">
-                        <input type="submit" value="修改" class="edit">
+                        <input type="submit" value="刪除" class="delete" data-id="${music.Music_Id}">
+                        <input type="submit" value="修改" class="edit" data-id="${music.Music_Id}">
                     </div>
                 </div>
             </div>                    
@@ -67,6 +67,61 @@ async function showMusic(pagenow) {
         document.getElementById('container').innerHTML = '<p>Error loading data.</p>';
     }
 }
+
+async function handleSentenceAction(event) {
+    if (event.target.tagName === 'INPUT') {
+        let musicId = event.target.dataset.id;
+        //delete member
+        if (event.target.classList.contains('delete')) {
+            try {
+                let res = await fetch('http://localhost:8000/api/music_del', {
+                    method: 'DELETE',
+                    headers: { 
+                        'Content-Type': 'application/json' 
+                    },
+                    body: JSON.stringify({
+                        "Music_Id": musicId 
+                    })
+                });
+                let body = await res.json();
+                console.log(body);
+                showMusic(1);
+            } catch (err) {
+                console.error(err);
+            }
+        } 
+        //edit member
+        else if (event.target.classList.contains('edit')) {
+            let newName = prompt("輸入新歌名:");
+            let newPath = prompt("輸入新網址:");
+            let newSinger = prompt("輸入新歌手:");
+            let newEmoji = prompt("輸入新表情:");
+            if (newName || newPath || newSinger || newEmoji) {
+                try {
+                    let res = await fetch('http://localhost:8000/api/change_music', {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            "Music_Id": musicId,
+                            "Music_Name": newName,
+                            "Path": newPath,
+                            "Singer": newSinger,
+                            "Emoji_Name": newEmoji
+                        })
+                    });
+                    let body = await res.json();
+                    console.log(body);
+                    showMusic(1);
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+        }
+    }
+}
+
+document.querySelector('#container').addEventListener('click', handleSentenceAction);
+
 
 showMusic(1);
 

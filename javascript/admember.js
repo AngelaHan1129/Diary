@@ -65,7 +65,7 @@ async function showMember(pagenow) {
     }
 }
 
-async function handleMemberAction(event) {
+async function handleSentenceAction(event) {
     if (event.target.tagName === 'INPUT') {
         let accountId = event.target.dataset.id;
         //delete member
@@ -115,6 +115,6 @@ async function handleMemberAction(event) {
     }
 }
 
-document.querySelector('#container').addEventListener('click', handleMemberAction);
+document.querySelector('#container').addEventListener('click', handleSentenceAction);
 
 showMember(1);

@@ -108,6 +108,12 @@ async function showEmoji(pagenow) {
             <tr>
                 <td class="icon"><img src="image/img-emoji/${photo}" alt=""></td>
                 <td class="name">${emoji.Emoji_Name}</td>
+                <td class="btns">
+                    <div>
+                        <input type="submit" value="刪除" class="delete" data-id="${emoji.Emoji_Id}">
+                        <input type="submit" value="修改" class="edit" data-id="${emoji.Emoji_Id}">
+                    </div>
+                </td>
             </tr>                   
             `;
         });
@@ -120,6 +126,61 @@ async function showEmoji(pagenow) {
         document.getElementById('items').innerHTML = '<p>Error loading weather data.</p>';
     }
 }
+async function handleEmojiAction(event) {
+    if (event.target.tagName === 'INPUT') {
+        let emojiId = event.target.dataset.id;
+        //delete
+        if (event.target.classList.contains('delete')) {
+            try {
+                let res = await fetch('http://localhost:8000/api/emoji_del', {
+                    method: 'DELETE',
+                    headers: { 
+                        'Content-Type': 'application/json' 
+                    },
+                    body: JSON.stringify({
+                        "Emoji_Id": emojiId 
+                    })
+                });
+                let body = await res.json();
+                console.log(body);
+                showEmoji(1);
+            } catch (err) {
+                console.error(err);
+            }
+        } 
+        //edit
+        // else if (event.target.classList.contains('edit')) {
+        //     let newName = prompt("輸入新歌名:");
+        //     let newPath = prompt("輸入新網址:");
+        //     let newSinger = prompt("輸入新歌手:");
+        //     let newEmoji = prompt("輸入新表情:");
+        //     if (newName || newPath || newSinger || newEmoji) {
+        //         try {
+        //             let res = await fetch('http://localhost:8000/api/change_weather', {
+        //                 method: 'PUT',
+        //                 headers: { 'Content-Type': 'application/json' },
+        //                 body: JSON.stringify({
+        //                     "Music_Id": musicId,
+        //                     "Music_Name": newName,
+        //                     "Path": newPath,
+        //                     "Singer": newSinger,
+        //                     "Emoji_Name": newEmoji
+        //                 })
+        //             });
+        //             let body = await res.json();
+        //             console.log(body);
+        //             showEmoji(1);
+        //         } catch (err) {
+        //             console.error(err);
+        //         }
+        //     }
+        // }
+    }
+}
+
+document.querySelector('#items').addEventListener('click', handleEmojiAction);
+
+showWeather(1);
 
 showEmoji(1);
 
@@ -158,6 +219,12 @@ async function showWeather(pagenow) {
             tab += `<tr>
             <td class="icon"><img src="image/img-weather/${photo}" alt=""></td>
             <td class="name">${weather.Weather_Name}</td>
+            <td class="btns">
+                    <div>
+                        <input type="submit" value="刪除" class="delete" data-id="${weather.Weather_Id}">
+                        <input type="submit" value="修改" class="edit" data-id="${weather.Weather_Id}">
+                    </div>
+                </td>
             </tr>`;
         });
 
@@ -165,10 +232,64 @@ async function showWeather(pagenow) {
         document.getElementById('items-Weather').innerHTML = tab;
         document.getElementById('page-weather').innerHTML = str;
     } catch (err) {
-        console.error('Failed to fetch weather data:', err);
-        document.getElementById('items-Weather').innerHTML = '<p>Error loading weather data.</p>';
+        console.error('Failed to fetch data:', err);
+        document.getElementById('items-Weather').innerHTML = '<p>Error loading data.</p>';
     }
 }
+
+async function handleSentenceAction(event) {
+    if (event.target.tagName === 'INPUT') {
+        let musicId = event.target.dataset.id;
+        //delete member
+        if (event.target.classList.contains('delete')) {
+            try {
+                let res = await fetch('http://localhost:8000/api/weather_del', {
+                    method: 'DELETE',
+                    headers: { 
+                        'Content-Type': 'application/json' 
+                    },
+                    body: JSON.stringify({
+                        "Weather_Id": musicId 
+                    })
+                });
+                let body = await res.json();
+                console.log(body);
+                showWeather(1);
+            } catch (err) {
+                console.error(err);
+            }
+        } 
+        //edit member
+        // else if (event.target.classList.contains('edit')) {
+        //     let newName = prompt("輸入新歌名:");
+        //     let newPath = prompt("輸入新網址:");
+        //     let newSinger = prompt("輸入新歌手:");
+        //     let newEmoji = prompt("輸入新表情:");
+        //     if (newName || newPath || newSinger || newEmoji) {
+        //         try {
+        //             let res = await fetch('http://localhost:8000/api/change_weather', {
+        //                 method: 'PUT',
+        //                 headers: { 'Content-Type': 'application/json' },
+        //                 body: JSON.stringify({
+        //                     "Music_Id": musicId,
+        //                     "Music_Name": newName,
+        //                     "Path": newPath,
+        //                     "Singer": newSinger,
+        //                     "Emoji_Name": newEmoji
+        //                 })
+        //             });
+        //             let body = await res.json();
+        //             console.log(body);
+        //             showWeather(1);
+        //         } catch (err) {
+        //             console.error(err);
+        //         }
+        //     }
+        // }
+    }
+}
+
+document.querySelector('#items-Weather').addEventListener('click', handleSentenceAction);
 
 showWeather(1);
 
