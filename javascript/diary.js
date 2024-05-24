@@ -121,4 +121,45 @@ async function DiaryData() {
     console.log(err);
   }
 }
-DiaryData();
+// DiaryData();
+
+async function WriteDiary(){
+  let dateValue = document.querySelector(".datecontent").value;
+  let emojiValue = document.querySelector("#emojiSelect").value;
+  let weatherValue = document.querySelector("#weatherSelect").value;
+  let titleValue = document.querySelector("#title").value;
+  let contentValue = document.querySelector("#contentSelect");
+  let write = document.querySelector("#writeDiary");
+  let getData = localStorage.getItem("userData");
+  write.addEventListener('click', async function (){
+    console.log(dateValue,emojiValue,weatherValue,titleValue,contentValue)
+    try {
+        await fetch("http://localhost:8000/api/write_diary", {
+          method: "POST",
+          body:  JSON.stringify({
+            "emoji":emojiValue,
+            "content":contentValue,
+            "weather":weatherValue,
+            "title":titleValue,
+            "date":dateValue
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data.msg);
+            if(data.msg == '新增成功'){
+              window.alert(data.msg)
+            }
+            errmsg = msg.replace("", data.msg);
+            document.getElementById("diarymsg").innerText = errmsg;
+          })
+          .catch((error) => {
+            console.error("Fetch error:", error);
+          });
+      
+    } catch (err) {
+      console.log(err);
+    }
+  })
+}
+WriteDiary()

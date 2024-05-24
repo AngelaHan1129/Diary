@@ -19,7 +19,15 @@
             <div class="feeling">
                 <div id="emotion">
                     <div class="drop">
-                        <div class="dropOption" onclick="toggleDropdown(this)">
+                        <select id="emojiSelect">
+                            <option value="calm">平靜</option>
+                            <option value="fear">害怕</option>
+                            <option value="sad">失落</option>
+                            <option value="joy">喜悅</option>
+                            <option value="happiness">幸福</option>
+                            <option value="angry">生氣</option>
+                        </select>
+                        <!-- <div class="dropOption" onclick="toggleDropdown(this)">
                             <div class="image-container" id="image-container">
                                 <img src="image/smile.png" width="80" alt="請選擇">
                             </div>
@@ -52,12 +60,19 @@
                                 onclick="selectOption(this), loadImage(this, 'sad')">
                                 <img src="image/img-emoji/sad.png" alt="失落" width="100">
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
-                </div>
+                </div><br>
                 <div id="weather">
                     <div class="drop">
-                        <div class="dropOption" onclick="toggleDropdown(this)">
+                        <select id="weatherSelect">
+                            <option value="sun">晴天</option>
+                            <option value="rain">雨天</option>
+                            <option value="cloudy">陰天</option>
+                            <option value="partly">晴時多雲</option>
+                            <option value="snowy">下雪</option>
+                        </select>
+                        <!-- <div class="dropOption" onclick="toggleDropdown(this)">
                             <div class="image-container" id="image-container1">
                                 <img src="image/cloud.png" width="80" alt="請選擇">
                             </div>
@@ -86,7 +101,7 @@
                                 onclick="selectOption(this), loadImage1(this, 'snow')">
                                 <img class="weatherValue" src="image/img-weather/snowy.png" alt="下雪" width="100">
                             </li>
-                        </ul>
+                        </ul> -->
 
                     </div>
                 </div>
@@ -115,7 +130,7 @@
         <div id="diary">
             <input type="text" id="title" name="title" placeholder="標題(最多100字)" />
             <textarea placeholder="內容..." id="content" name="content"></textarea>
-            <button type="submit">
+            <button type="submit" id="writeDiary">
                 <img src="image/pen.png" alt="">
                 <p>儲存</p>
                 <p id="diarymsg"></p>
