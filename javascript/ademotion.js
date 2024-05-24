@@ -72,60 +72,6 @@ async function addWeather() {
 addWeather()
 
 
-
-async function showEmoji(pagenow) {
-    try {
-        let str = '<table class="pages" id="page-emotion"><tr>';
-        let tab = '';
-        let res = await fetch('http://localhost:8000/api/admin_show_emoji_all');
-        let body = await res.json();
-        let emojiData = body.data[0];
-        let MaxPage = Math.ceil(emojiData.length / 5);
-        let NowPage = Math.max(1, Math.min(pagenow, MaxPage || 1));
-        let itemsPerPage = 5;
-        let start = (NowPage - 1) * itemsPerPage;
-        let end = start + itemsPerPage;
-
-        let pageItems = emojiData.slice(start, end);
-        if (NowPage > 1) {
-            str += `<td><a href="#" onclick="showEmoji(1)">&lt;&lt;</a></td>`;
-            str += `<td><a href="#" onclick="showEmoji(${NowPage - 1})">&lt;</a></td>`;
-        }
-        for (let page = Math.max(1, NowPage - 2); page <= Math.min(NowPage + 2, Math.ceil(emojiData.length / itemsPerPage)); page++) {
-            if (page === NowPage) {
-                str += `<td>${page}</td>`;
-            } else {
-                str += `<td><a href="#" onclick="showEmoji(${page})">${page}</a></td>`;
-            }
-        }
-        if (NowPage < MaxPage) {
-            str += `<td><a href="#" onclick="showEmoji(${NowPage + 1})">&gt;</a></td>`;
-            str += `<td><a href="#" onclick="showEmoji(${MaxPage})">&gt;&gt;</a></td>`;
-        }
-        pageItems.forEach(function (emoji) {
-            let photo = emoji.Photo ? emoji.Photo : 'smile.png';
-            tab += `
-            <tr>
-                <td class="icon"><img src="image/img-emoji/${photo}" alt=""></td>
-                <td class="name">${emoji.Emoji_Name}</td>
-                <td class="btns">
-                    <div>
-                        <input type="submit" value="刪除" class="delete" data-id="${emoji.Emoji_Id}">
-                        <input type="submit" value="修改" class="edit" data-id="${emoji.Emoji_Id}">
-                    </div>
-                </td>
-            </tr>                   
-            `;
-        });
-
-        str += '</tr></table>';
-        document.getElementById('items').innerHTML = tab;
-        document.getElementById('page-emotion').innerHTML = str;
-    } catch (err) {
-        console.error('Failed to fetch weather data:', err);
-        document.getElementById('items').innerHTML = '<p>Error loading weather data.</p>';
-    }
-}
 async function handleEmojiAction(event) {
     if (event.target.tagName === 'INPUT') {
         let emojiId = event.target.dataset.id;
@@ -134,11 +80,11 @@ async function handleEmojiAction(event) {
             try {
                 let res = await fetch('http://localhost:8000/api/emoji_del', {
                     method: 'DELETE',
-                    headers: { 
-                        'Content-Type': 'application/json' 
+                    headers: {
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        "Emoji_Id": emojiId 
+                        "Emoji_Id": emojiId
                     })
                 });
                 let body = await res.json();
@@ -147,7 +93,7 @@ async function handleEmojiAction(event) {
             } catch (err) {
                 console.error(err);
             }
-        } 
+        }
         //edit
         // else if (event.target.classList.contains('edit')) {
         //     let newName = prompt("輸入新歌名:");
@@ -178,66 +124,7 @@ async function handleEmojiAction(event) {
     }
 }
 
-document.querySelector('#items').addEventListener('click', handleEmojiAction);
-
-showWeather(1);
-
-showEmoji(1);
-
-async function showWeather(pagenow) {
-    try {
-        let str = '<table id="page-weather"><tr>';
-        let tab = '';
-        let res = await fetch('http://localhost:8000/api/admin_show_weather_all');
-        let body = await res.json();
-        let weathers = body.data[0];
-
-        let MaxPage = Math.ceil(weathers.length / 5);
-        let NowPage = Math.max(1, Math.min(pagenow, MaxPage || 1));
-        let itemsPerPage = 5;
-        let start = (NowPage - 1) * itemsPerPage;
-        let end = start + itemsPerPage;
-
-        let pageItems = weathers.slice(start, end);
-        if (NowPage > 1) {
-            str += `<td><a href="#" onclick="showWeather(1)">&lt;&lt;</a></td>`;
-            str += `<td><a href="#" onclick="showWeather(${NowPage - 1})">&lt;</a></td>`;
-        }
-        for (let page = Math.max(1, NowPage - 2); page <= Math.min(NowPage + 2, Math.ceil(weathers.length / itemsPerPage)); page++) {
-            if (page === NowPage) {
-                str += `<td>${page}</td>`;
-            } else {
-                str += `<td><a href="#" onclick="showWeather(${page})">${page}</a></td>`;
-            }
-        }
-        if (NowPage < MaxPage) {
-            str += `<td><a href="#" onclick="showWeather(${NowPage + 1})">&gt;</a></td>`;
-            str += `<td><a href="#" onclick="showWeather(${MaxPage})">&gt;&gt;</a></td>`;
-        }
-        pageItems.forEach(weather => {
-            let photo = weather.Photo || 'cloud.png';
-            tab += `<tr>
-            <td class="icon"><img src="image/img-weather/${photo}" alt=""></td>
-            <td class="name">${weather.Weather_Name}</td>
-            <td class="btns">
-                    <div>
-                        <input type="submit" value="刪除" class="delete" data-id="${weather.Weather_Id}">
-                        <input type="submit" value="修改" class="edit" data-id="${weather.Weather_Id}">
-                    </div>
-                </td>
-            </tr>`;
-        });
-
-        str += '</tr></table>';
-        document.getElementById('items-Weather').innerHTML = tab;
-        document.getElementById('page-weather').innerHTML = str;
-    } catch (err) {
-        console.error('Failed to fetch data:', err);
-        document.getElementById('items-Weather').innerHTML = '<p>Error loading data.</p>';
-    }
-}
-
-async function handleSentenceAction(event) {
+async function handleWeatherAction(event) {
     if (event.target.tagName === 'INPUT') {
         let musicId = event.target.dataset.id;
         //delete member
@@ -245,11 +132,11 @@ async function handleSentenceAction(event) {
             try {
                 let res = await fetch('http://localhost:8000/api/weather_del', {
                     method: 'DELETE',
-                    headers: { 
-                        'Content-Type': 'application/json' 
+                    headers: {
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        "Weather_Id": musicId 
+                        "Weather_Id": musicId
                     })
                 });
                 let body = await res.json();
@@ -258,7 +145,7 @@ async function handleSentenceAction(event) {
             } catch (err) {
                 console.error(err);
             }
-        } 
+        }
         //edit member
         // else if (event.target.classList.contains('edit')) {
         //     let newName = prompt("輸入新歌名:");
@@ -289,7 +176,132 @@ async function handleSentenceAction(event) {
     }
 }
 
-document.querySelector('#items-Weather').addEventListener('click', handleSentenceAction);
+document.querySelector('#items').addEventListener('click', handleEmojiAction);
+document.querySelector('#items-Weather').addEventListener('click', handleWeatherAction);
 
-showWeather(1);
+// showWeather(1);
+
+async function fetchWeatherData(pagenow, searchContents = '') {
+    try {
+        let str = '<table class="pages"><tr>';
+        let tab = '';
+        let res = searchContents
+            ? await fetch('http://localhost:8000/api/Search_weather?Content=' + searchContents)
+            : await fetch('http://localhost:8000/api/admin_show_weather_all');
+            let body = await res.json();
+            let weathers = body.data[0];
+    
+            let MaxPage = Math.ceil(weathers.length / 5);
+            let NowPage = Math.max(1, Math.min(pagenow, MaxPage || 1));
+            let itemsPerPage = 5;
+            let start = (NowPage - 1) * itemsPerPage;
+            let end = start + itemsPerPage;
+    
+            let pageItems = weathers.slice(start, end);
+        if (NowPage > 1) {
+            str += `<td><a href="#" onclick="fetchWeatherData(1, '${searchContents}')">&lt;&lt;</a></td>`;
+            str += `<td><a href="#" onclick="fetchWeatherData(${NowPage - 1}, '${searchContents}')">&lt;</a></td>`;
+        }
+        for (let page = Math.max(1, NowPage - 2); page <= Math.min(NowPage + 2, Math.ceil(weathers.length / itemsPerPage)); page++) {
+            if (page === NowPage) {
+                str += `<td>${page}</td>`;
+            } else {
+                str += `<td><a href="#" onclick="fetchWeatherData(${page}, '${searchContents}')">${page}</a></td>`;
+            }
+        }
+        if (NowPage < MaxPage) {
+            str += `<td><a href="#" onclick="fetchWeatherData(${NowPage + 1}, '${searchContents}')">&gt;</a></td>`;
+            str += `<td><a href="#" onclick="fetchWeatherData(${MaxPage}, '${searchContents}')">&gt;&gt;</a></td>`;
+        }
+        pageItems.forEach(weather => {
+            let photo = weather.Photo || 'cloud.png';
+            tab += `<tr>
+            <td class="icon"><img src="image/img-weather/${photo}" alt=""></td>
+            <td class="name">${weather.Weather_Name}</td>
+            <td class="btns">
+                    <div>
+                        <input type="submit" value="刪除" class="delete" data-id="${weather.Weather_Id}">
+                        <input type="submit" value="修改" class="edit" data-id="${weather.Weather_Id}">
+                    </div>
+                </td>
+            </tr>`;
+        });
+
+        str += '</tr></table>';
+        document.getElementById('items-Weather').innerHTML = tab;
+        document.getElementById('page-weather').innerHTML = str;
+    } catch (err) {
+        console.error('Failed to fetch data:', err);
+        document.getElementById('items-Weather').innerHTML = '<p>Error loading data.</p>';
+    }
+}
+fetchWeatherData(1);
+
+document.querySelector('#searchBtnWeather').addEventListener('click', function () {
+    let searchContents = document.querySelector('#searchDataWeather').value;
+    fetchWeatherData(1, searchContents);
+});
+
+async function fetchFaceData(pagenow, searchContent = '') {
+    try {
+        let str = '<table class="pages"><tr>';
+        let tab = '';
+        let res = searchContent
+            ? await fetch('http://localhost:8000/api/Search_emoji?Content=' + searchContent)
+            : await fetch('http://localhost:8000/api/admin_show_emoji_all');
+        let body = await res.json();
+        let emojiData = body.data[0];
+        let MaxPage = Math.ceil(emojiData.length / 5);
+        let NowPage = Math.max(1, Math.min(pagenow, MaxPage || 1));
+        let itemsPerPage = 5;
+        let start = (NowPage - 1) * itemsPerPage;
+        let end = start + itemsPerPage;
+
+        let pageItems = emojiData.slice(start, end);
+        if (NowPage > 1) {
+            str += `<td><a href="#" onclick="fetchFaceData(1, '${searchContent}')">&lt;&lt;</a></td>`;
+            str += `<td><a href="#" onclick="fetchFaceData(${NowPage - 1}, '${searchContent}')">&lt;</a></td>`;
+        }
+        for (let page = Math.max(1, NowPage - 2); page <= Math.min(NowPage + 2, Math.ceil(emojiData.length / itemsPerPage)); page++) {
+            if (page === NowPage) {
+                str += `<td>${page}</td>`;
+            } else {
+                str += `<td><a href="#" onclick="fetchFaceData(${page}, '${searchContent}')">${page}</a></td>`;
+            }
+        }
+        if (NowPage < MaxPage) {
+            str += `<td><a href="#" onclick="fetchFaceData(${NowPage + 1}, '${searchContent}')">&gt;</a></td>`;
+            str += `<td><a href="#" onclick="fetchFaceData(${MaxPage}, '${searchContent}')">&gt;&gt;</a></td>`;
+        }
+        pageItems.forEach(function (emoji) {
+            let photo = emoji.Photo ? emoji.Photo : 'smile.png';
+            tab += `
+            <tr>
+                <td class="icon"><img src="image/img-emoji/${photo}" alt=""></td>
+                <td class="name">${emoji.Emoji_Name}</td>
+                <td class="btns">
+                    <div>
+                        <input type="submit" value="刪除" class="delete" data-id="${emoji.Emoji_Id}">
+                        <input type="submit" value="修改" class="edit" data-id="${emoji.Emoji_Id}">
+                    </div>
+                </td>
+            </tr>                   
+            `;
+        });
+
+        str += '</tr></table>';
+        document.getElementById('items').innerHTML = tab;
+        document.getElementById('page-emotion').innerHTML = str;
+    } catch (err) {
+        console.error('Failed to fetch data:', err);
+        document.getElementById('items').innerHTML = '<p>Error loading data.</p>';
+    }
+}
+fetchFaceData(1);
+
+document.querySelector('#searchBtnFace').addEventListener('click', function () {
+    let searchContent = document.querySelector('#searchDataFace').value;
+    fetchFaceData(1, searchContent);
+});
+
 
