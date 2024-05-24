@@ -79,10 +79,6 @@ async function loginData() {
                         console.log(responseData);
                         localStorage.setItem('userData', responseData.token);
                         window.location.href = 'http://127.0.0.1:5501/index.html';
-                        // const logoutLinks = document.querySelectorAll('header #logintext');
-                        // logoutLinks.forEach(link => {
-                        //     link.querySelector('div').innerText = '登出';
-                        // });
                     }
                 })
                 .catch(error => {

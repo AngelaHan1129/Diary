@@ -27,10 +27,14 @@
             </div>
             <dialog id="infoModalSentence">
                 <h3>新增佳句</h3>
-                <label>類別</label><input type="text"><br>
-                <label>內容</label><input type="text"><br>
-                <button id="okSentence">ok</button>
-                <button id="closeSentence">close</button>
+                <label>類別</label>
+                <select id="typeSentence">
+                    <option value="其他">其他</option>
+                    <option value="勵志">勵志</option>
+                    </select><br>
+                <label>內容</label><input type="text" id="contentSentence"><br>
+                <button id="okSentence">確認</button>
+                <button id="closeSentence">關閉</button>
             </dialog>
             <!-- <select name="type" id="types">
                 <option value="all">全部類型</option>

@@ -30,7 +30,7 @@ async function handleSentenceAction(event) {
                 });
                 let body = await res.json();
                 console.log(body);
-                showMusic(1);
+                fetchData(1);
             } catch (err) {
                 console.error(err);
             }
@@ -56,7 +56,7 @@ async function handleSentenceAction(event) {
                     });
                     let body = await res.json();
                     console.log(body);
-                    showMusic(1);
+                    fetchData(1);
                 } catch (err) {
                     console.error(err);
                 }
