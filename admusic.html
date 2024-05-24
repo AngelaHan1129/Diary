@@ -26,12 +26,21 @@
                 <div class="address" onclick="sortDivs(2)">網址</div>
             </div>
             <div></div>
-            <div id="add">新增音樂</div> 
+            <div id="add">新增音樂</div>
             <dialog id="infoModalMusic">
                 <h3>新增音樂</h3>
-                <label>歌手</label><input type="text"><br>
-                <label>歌名</label><input type="text"><br>
-                <label>網址</label><input type="text"><br>
+                <label>歌手</label><input type="text" id="singerMusic"><br>
+                <label>歌名</label><input type="text" id="nameMusic"><br>
+                <label>網址</label><input type="text" id="pathMusic"><br>
+                <label>對應表情</label>
+                <select id="emojiMusic">
+                    <option value="平靜">平靜</option>
+                    <option value="害怕">害怕</option>
+                    <option value="失落">失落</option>
+                    <option value="喜悅">喜悅</option>
+                    <option value="幸福">幸福</option>
+                    <option value="生氣">生氣</option>
+                </select><br>
                 <button id="okMusic">ok</button>
                 <button id="closeMusic">close</button>
             </dialog>

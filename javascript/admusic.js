@@ -1,17 +1,46 @@
 async function addMusic() {
     let btn = document.querySelector("#add");
+    let ok = document.querySelector("#okMusic");
     let infoModal = document.querySelector("#infoModalMusic");
     let close = document.querySelector("#closeMusic");
-    btn.addEventListener("click", function () {
+
+    btn.addEventListener("click", async function () {
         infoModal.showModal();
-    })
+        ok.addEventListener('click', async function () {
+            let singer = document.querySelector("#singerMusic").value;
+            let name = document.querySelector("#nameMusic").value;
+            let path = document.querySelector("#pathMusic").value;
+            let emoji = document.querySelector("#emojiMusic").value;
+            console.log(emoji);
+            try {
+                let res = await fetch('http://localhost:8000/api/music_add', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        "Music_Name": name,
+                        "Path": path,
+                        "Singer": singer,
+                        "Emoji_Name": emoji
+                    })
+                });
+                let body = await res.json();
+                console.log(body);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+            finally {
+                infoModal.close();
+            }
+        })
+
+    });
     close.addEventListener("click", function () {
         infoModal.close();
-    })
+    });
 }
-
-addMusic()
-
+addMusic();
 
 async function handleSentenceAction(event) {
     if (event.target.tagName === 'INPUT') {
@@ -21,11 +50,11 @@ async function handleSentenceAction(event) {
             try {
                 let res = await fetch('http://localhost:8000/api/music_del', {
                     method: 'DELETE',
-                    headers: { 
-                        'Content-Type': 'application/json' 
+                    headers: {
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        "Music_Id": musicId 
+                        "Music_Id": musicId
                     })
                 });
                 let body = await res.json();
@@ -34,7 +63,7 @@ async function handleSentenceAction(event) {
             } catch (err) {
                 console.error(err);
             }
-        } 
+        }
         //edit member
         else if (event.target.classList.contains('edit')) {
             let newName = prompt("輸入新歌名:");
@@ -76,16 +105,16 @@ async function fetchData(pagenow, searchContent = '') {
         let res = searchContent
             ? await fetch('http://localhost:8000/api/Search_music?Content=' + searchContent)
             : await fetch('http://localhost:8000/api/admin_show_music_all');
-            let body = await res.json();
-            let musicData = body.data[0];
-            console.log(musicData)
-            let MaxPage = Math.ceil(musicData.length / 5);
-            let NowPage = Math.max(1, Math.min(pagenow, MaxPage || 1));
-            let itemsPerPage = 5;
-            let start = (NowPage - 1) * itemsPerPage;
-            let end = start + itemsPerPage;
-    
-            let pageItems = musicData.slice(start, end);
+        let body = await res.json();
+        let musicData = body.data[0];
+        console.log(musicData)
+        let MaxPage = Math.ceil(musicData.length / 5);
+        let NowPage = Math.max(1, Math.min(pagenow, MaxPage || 1));
+        let itemsPerPage = 5;
+        let start = (NowPage - 1) * itemsPerPage;
+        let end = start + itemsPerPage;
+
+        let pageItems = musicData.slice(start, end);
         if (NowPage > 1) {
             str += `<td><a href="#" onclick="fetchData(1, '${searchContent}')">&lt;&lt;</a></td>`;
             str += `<td><a href="#" onclick="fetchData(${NowPage - 1}, '${searchContent}')">&lt;</a></td>`;
