@@ -26,19 +26,19 @@ async function fetchData(pagenow, searchContent = '') {
 
         let pageItems = members.slice(start, end);
         if (NowPage > 1) {
-            str += `<td><a href="#" onclick="fetchMembers(1, '${searchContent}')">&lt;&lt;</a></td>`;
-            str += `<td><a href="#" onclick="fetchMembers(${NowPage - 1}, '${searchContent}')">&lt;</a></td>`;
+            str += `<td><a href="#" onclick="fetchData(1, '${searchContent}')">&lt;&lt;</a></td>`;
+            str += `<td><a href="#" onclick="fetchData(${NowPage - 1}, '${searchContent}')">&lt;</a></td>`;
         }
         for (let page = Math.max(1, NowPage - 2); page <= Math.min(NowPage + 2, Math.ceil(members.length / itemsPerPage)); page++) {
             if (page === NowPage) {
                 str += `<td>${page}</td>`;
             } else {
-                str += `<td><a href="#" onclick="fetchMembers(${page}, '${searchContent}')">${page}</a></td>`;
+                str += `<td><a href="#" onclick="fetchData(${page}, '${searchContent}')">${page}</a></td>`;
             }
         }
         if (NowPage < MaxPage) {
-            str += `<td><a href="#" onclick="fetchMembers(${NowPage + 1}, '${searchContent}')">&gt;</a></td>`;
-            str += `<td><a href="#" onclick="fetchMembers(${MaxPage}, '${searchContent}')">&gt;&gt;</a></td>`;
+            str += `<td><a href="#" onclick="fetchData(${NowPage + 1}, '${searchContent}')">&gt;</a></td>`;
+            str += `<td><a href="#" onclick="fetchData(${MaxPage}, '${searchContent}')">&gt;&gt;</a></td>`;
         }
         pageItems.forEach(function (user) {
             let Gender = ['不透漏', '男', '女'][user.Gender] || '不透漏';
