@@ -1,9 +1,11 @@
-async function showMember(pagenow) {
+async function fetchMembers(pagenow, searchContent = '') {
     try {
         let head = '';
         let str = '<table class="pages"><tr>';
         let tab = '';
-        let res = await fetch('http://localhost:8000/api/admin_show_user_all');
+        let res = searchContent 
+            ? await fetch('http://localhost:8000/api/Search_user?Content=' + searchContent) 
+            : await fetch('http://localhost:8000/api/admin_show_user_all');
         let body = await res.json();
         let members = body.data[0];
 
@@ -24,19 +26,19 @@ async function showMember(pagenow) {
 
         let pageItems = members.slice(start, end);
         if (NowPage > 1) {
-            str += `<td><a href="#" onclick="showMember(1)">&lt;&lt;</a></td>`;
-            str += `<td><a href="#" onclick="showMember(${NowPage - 1})">&lt;</a></td>`;
+            str += `<td><a href="#" onclick="fetchMembers(1, '${searchContent}')">&lt;&lt;</a></td>`;
+            str += `<td><a href="#" onclick="fetchMembers(${NowPage - 1}, '${searchContent}')">&lt;</a></td>`;
         }
         for (let page = Math.max(1, NowPage - 2); page <= Math.min(NowPage + 2, Math.ceil(members.length / itemsPerPage)); page++) {
             if (page === NowPage) {
                 str += `<td>${page}</td>`;
             } else {
-                str += `<td><a href="#" onclick="showMember(${page})">${page}</a></td>`;
+                str += `<td><a href="#" onclick="fetchMembers(${page}, '${searchContent}')">${page}</a></td>`;
             }
         }
         if (NowPage < MaxPage) {
-            str += `<td><a href="#" onclick="showMember(${NowPage + 1})">&gt;</a></td>`;
-            str += `<td><a href="#" onclick="showMember(${MaxPage})">&gt;&gt;</a></td>`;
+            str += `<td><a href="#" onclick="fetchMembers(${NowPage + 1}, '${searchContent}')">&gt;</a></td>`;
+            str += `<td><a href="#" onclick="fetchMembers(${MaxPage}, '${searchContent}')">&gt;&gt;</a></td>`;
         }
         pageItems.forEach(function (user) {
             let Gender = ['不透漏', '男', '女'][user.Gender] || '不透漏';
@@ -68,26 +70,26 @@ async function showMember(pagenow) {
 async function handleSentenceAction(event) {
     if (event.target.tagName === 'INPUT') {
         let accountId = event.target.dataset.id;
-        //delete member
+        //delete 
         if (event.target.classList.contains('delete')) {
             try {
                 let res = await fetch('http://localhost:8000/api/user_del', {
                     method: 'DELETE',
-                    headers: { 
-                        'Content-Type': 'application/json' 
+                    headers: {
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        "Account": accountId 
+                        "Account": accountId
                     })
                 });
                 let body = await res.json();
                 console.log(body);
-                showMember(1);
+                fetchMembers(1);
             } catch (err) {
                 console.error(err);
             }
-        } 
-        //edit member
+        }
+        //edit 
         else if (event.target.classList.contains('edit')) {
             let newAccount = prompt("輸入您的帳號:");
             let newName = prompt("輸入您的姓名:");
@@ -106,7 +108,7 @@ async function handleSentenceAction(event) {
                     });
                     let body = await res.json();
                     console.log(body);
-                    showMember(1);
+                    fetchMembers(1);
                 } catch (err) {
                     console.error(err);
                 }
@@ -117,4 +119,9 @@ async function handleSentenceAction(event) {
 
 document.querySelector('#container').addEventListener('click', handleSentenceAction);
 
-showMember(1);
+fetchMembers(1);
+
+document.querySelector('#searchBtn').addEventListener('click', function() {
+    let searchContent = document.querySelector('#searchData').value;
+    fetchMembers(1, searchContent);
+});
