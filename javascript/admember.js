@@ -1,10 +1,10 @@
-async function fetchMembers(pagenow, searchContent = '') {
+async function fetchData(pagenow, searchContent = '') {
     try {
         let head = '';
         let str = '<table class="pages"><tr>';
         let tab = '';
-        let res = searchContent 
-            ? await fetch('http://localhost:8000/api/Search_user?Content=' + searchContent) 
+        let res = searchContent
+            ? await fetch('http://localhost:8000/api/Search_user?Content=' + searchContent)
             : await fetch('http://localhost:8000/api/admin_show_user_all');
         let body = await res.json();
         let members = body.data[0];
@@ -84,7 +84,7 @@ async function handleSentenceAction(event) {
                 });
                 let body = await res.json();
                 console.log(body);
-                fetchMembers(1);
+                fetchData(1);
             } catch (err) {
                 console.error(err);
             }
@@ -108,7 +108,7 @@ async function handleSentenceAction(event) {
                     });
                     let body = await res.json();
                     console.log(body);
-                    fetchMembers(1);
+                    fetchData(1);
                 } catch (err) {
                     console.error(err);
                 }
@@ -119,9 +119,9 @@ async function handleSentenceAction(event) {
 
 document.querySelector('#container').addEventListener('click', handleSentenceAction);
 
-fetchMembers(1);
+fetchData(1);
 
-document.querySelector('#searchBtn').addEventListener('click', function() {
+document.querySelector('#searchBtn').addEventListener('click', function () {
     let searchContent = document.querySelector('#searchData').value;
-    fetchMembers(1, searchContent);
+    fetchData(1, searchContent);
 });
