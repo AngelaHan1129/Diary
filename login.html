@@ -20,29 +20,25 @@
         <p id="loginmsg"></p>
         <p id="goregister">新用戶?<a href="" id="registerlink">前往註冊</a></p>
         <p id="forgotpwd"><a href="#">忘記密碼</a></p>
+        
     </form>
+    <dialog id="infoModal">
+        <h3>驗證碼</h3>
+        <input type="text" id="content"><br>
+        <button id="ok">確認</button>
+        <button id="close">關閉</button>
+    </dialog>
     <form action="" id="registerform" class="registerform" onsubmit="return validateRegister()">
         <p id="registertitle">Register</p>
         <input type="text" name="account" id="acc" class="acc" placeholder="帳號" required>
         <input type="text" name="name" class="myname" placeholder="姓名" required>
         <input type="email" name="email" id="email" class="email" placeholder="電子信箱" required>
-        <input type="password" name="password"  id="passwd" class="pwd" placeholder="密碼" required>
+        <input type="password" name="password" id="passwd" class="pwd" placeholder="密碼" required>
         <input type="password" name="checkpwd" id="confirmpwd" class="checkpwd" placeholder="確認密碼" required>
         <input class='prompttest' type="submit" value="註冊">
-        
-        <!-- <p class='show'></p>
-        <p id="registermsg"></p> -->
-         
         <p id="gologin">已有帳戶?<a href="" id="loginlink">點此登入</a></p>
-        <!-- <a id="showAuthCode">輸入驗證碼</a> -->
+        <dialog id="showAuthCode"><p><a href="#" class="showAuthCode">註冊成功後點此輸入驗證碼</a></p></dialog>
     </form>
-   <dialog id="infoModal">
-        
-        <p>這裡是<b>驗證碼</b>傳送門</p>
-        <input type="text" placeholder="驗證碼">
-        <button type="submit" id="ok">確定</button>
-        <button id="close">取消</button>
-    </dialog>
 </body>
 
 </html>

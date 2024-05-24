@@ -14,6 +14,10 @@ a[href*="login"] {
     box-shadow: 1px 2.5px 5px rgba(0, 0, 0, 0.25);
 }
 
+.showAuthCode{
+    color: #2a2a2a;
+}
+
 #loginmsg,
 #registermsg {
     color: red;
@@ -92,6 +96,10 @@ dialog {
     border-radius: 10px;
     padding: 50px;
     font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: invert(20%);
 }
 
 dialog::backdrop {

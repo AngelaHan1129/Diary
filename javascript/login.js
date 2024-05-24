@@ -73,11 +73,11 @@ async function loginData() {
                 .then(data => {
                     console.log(data);
                     errmsg = msg.replace("", data.msg);
-                    document.getElementById('loginmsg').innerText = errmsg;
                     if (errmsg === "登入成功") {
                         const responseData = data.data;
                         console.log(responseData);
                         localStorage.setItem('userData', responseData.token);
+                        window.alert(errmsg)
                         window.location.href = 'http://127.0.0.1:5501/index.html';
                     }
                 })
@@ -93,89 +93,74 @@ async function loginData() {
 loginData()
 
 async function registerData() {
-    const forRegister = await document.querySelector('.registerform');
-    let acc = await document.querySelector('.acc').value
-    var showtxt = await document.querySelector('.show');
-    let msg = '';
+    const forRegister = document.querySelector('.registerform');
+    let showAuthCode = document.querySelector('#showAuthCode');
     let btn = document.querySelector("#showAuthCode");
     let infoModal = document.querySelector("#infoModal");
     let close = document.querySelector("#close");
-    let ok = document.querySelector("#ok").value;
-    try {
-        btn.addEventListener("click", function () {
-            infoModal.showModal();
-        })
-        close.addEventListener("click", function () {
-            infoModal.close();
-        })
-        ok.addEventListener("click", function () {
-            infoModal.close();
-        })
-        console.log(ok)
-        forRegister.addEventListener('submit', event => {
-            event.preventDefault();
-            const formDataR = new FormData(forRegister);
-            let object = {};
-            formDataR.forEach((value, key) => object[key] = value);
-            let json = JSON.stringify(object);
-            fetch('http://localhost:8000/api/register', {
-                method: 'post',
+    let ok = document.querySelector("#ok");
+    
+    close.addEventListener("click", function () {
+        infoModal.close();
+        showAuthCode.close();
+    });
+    
+    forRegister.addEventListener('submit', async event => {
+        event.preventDefault();
+        const formDataR = new FormData(forRegister);
+        let object = {};
+        formDataR.forEach((value, key) => object[key] = value);
+        let json = JSON.stringify(object);
+        
+        try {
+            let res = await fetch('http://localhost:8000/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
                 body: json
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    errmsg = msg.replace("", data.msg)
-                    console.log(registermsg)
-                    document.getElementById('registermsg').innerHTML = errmsg;
-                    if (errmsg == '註冊成功，請收取驗證信') {
-                        let guest = window.prompt('您好!註冊成功，請收取驗證信');
-                        if (guest == null || "") {
-                            showtxt.innerHTML = '您已取消輸入'
-                        } else {
-                            showtxt.innerHTML = ''
+            });
+            let data = await res.json();
+            console.log(data);
+            
+            if (data.msg === '註冊成功，請收取驗證信') {
+                showAuthCode.showModal();
+                btn.addEventListener("click", function () {
+                    showAuthCode.close();
+                    infoModal.showModal();
+                    ok.addEventListener("click", async function () {
+                        let content = document.querySelector("#content").value;
+                        console.log(object.account);
+                        try {
+                            let res = await fetch('http://localhost:8000/api/AuthCode', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    "account": object.account,
+                                    "AuthCode": content
+                                })
+                            });
+                            let body = await res.json();
+                            console.log(body.data.msg);
+                            window.alert(body.data.msg);
+                        } catch (e) {
+                            console.log(e);
+                        } finally {
+                            infoModal.close();
                         }
-                        fetch('http://localhost:8000/api/AuthCode', {
-                            method: 'post',
-                            body: JSON.stringify({
-                                "account": `${object.account}`,
-                                "AuthCode": `${ok}`
-                            })
-                        })
-                            .then(res => res.json())
-                            .then(data => {
-                                console.log(data)
-                                resultMsg = data.data.msg
-                                if (resultMsg == "驗證失敗") {
-                                    document.getElementById('registermsg').innerText = resultMsg;
-                                } else {
-                                    document.getElementById('registermsg').innerText = "註冊成功，可以返回登入";
-                                }
-                            })
-                    }
-                })
-        })
-    }
-    catch (err) {
-        console.log(err)
-    }
+                    }, { once: true }); 
+                }, { once: true }); 
+                
+            } else {
+                window.alert('!!!註冊失敗!!!');
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    });
 }
+
 registerData();
 
-async function AuthCode() {
-
-}
-AuthCode()
-
-async function getData() {
-    let res = await fetch('http://localhost:8000/api/AuthCode', {
-        method: 'get',
-        body: json
-    })
-    console.log(res)
-    console.log(res.ok)
-    console.log(res.status)
-    console.log(res.statusText)
-    console.log(res.url)
-}
-// getData()
