@@ -88,3 +88,46 @@ window.addEventListener('load', function() {
     let page = pages[pathname] || 'index.html';
     layout(page);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM fully loaded and parsed");
+
+    setTimeout(() => {
+        const quantityElements = document.querySelectorAll('.count .quantity');
+        console.log("Quantity elements found:", quantityElements.length);
+
+        fetch('http://localhost:8000/api/user_quantity', {
+            method: 'POST'  
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Data parsed:", data);
+            if (quantityElements.length > 0) {
+                quantityElements.forEach(element => {
+                    element.textContent = data.data !== undefined ? `${data.data}` : 'Error';
+                });
+            } else {
+                console.error('Quantity element not found');
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching user quantity:', error);
+            if (quantityElements.length > 0) {
+                quantityElements.forEach(element => {
+                    element.textContent = 'Error';
+                });
+            }
+        });
+    }, 1000); 
+});
+
+
+
+
+
+
