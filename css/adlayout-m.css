@@ -65,17 +65,17 @@
         margin: 0;
     }
 
-    #aduser{
+    #logout{
         width: 60px;
         height: 60px;
         border-radius: 50%;
     }
 
-    #aduser >:last-of-type{
+    #logout >:last-of-type{
         display: none;
     }
 
-    #switch,#count{
+    #switch,.count{
         display: none;
     }
 }
