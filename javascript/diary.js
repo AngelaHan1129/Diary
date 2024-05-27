@@ -6,19 +6,57 @@ var today = yyyy + "-" + mm + "-" + dd;
 
 document.getElementById("date").value = today;
 
-function selectOption(option) {
-  var selectedText = option.querySelector("img").getAttribute("alt");
-  var dropOption = option.closest(".drop").querySelector(".dropOption a");
-  dropOption.textContent = selectedText;
-  dropOption.removeAttribute("id");
-  option.closest(".drop").querySelector(".dropdown").style.display = "none";
+function show(emotion) {
+  const textbox = document.querySelector('input[name="textbox"]');
+  textbox.value = emotion;
 }
 
-function toggleDropdown(option) {
-  var dropdown = option.nextElementSibling;
-  dropdown.style.display =
-    dropdown.style.display === "block" ? "none" : "block";
+function showone(weather) {
+  const textbox1 = document.querySelector('input[name="textbox1"]');
+  textbox1.value = weather;
 }
+
+function toggleRotation(id) {
+  const drop = document.getElementById(id);
+  drop.classList.toggle('active');
+}
+
+function show(emotion) {
+  const textbox = document.querySelector('input[name="textbox"]');
+  textbox.value = emotion;
+  const image = document.querySelector('#emotion img');
+  if (emotion === '生氣') {
+      image.src = './image/img-emoji/angry.png';
+  } else if (emotion === '平靜') {
+      image.src = './image/img-emoji/calm.png';
+  } else if (emotion === '害怕') {
+      image.src = './image/img-emoji/fear.png';
+  } else if (emotion === '幸福') {
+      image.src = './image/img-emoji/happiness.png';
+  } else if (emotion === '喜悅') {
+      image.src = './image/img-emoji/joy.png';
+  } else if (emotion === '失落') {
+      image.src = './image/img-emoji/sad.png';
+  }
+}
+
+function showone(weather) {
+  const textbox = document.querySelector('input[name="textbox1"]');
+  textbox.value = weather;
+  const image = document.querySelector('#weather img');
+  if (weather === '晴天') {
+      image.src = './image/img-weather/sun.png';
+  } else if (weather === '雨天') {
+      image.src = './image/img-weather/rain.png';
+  } else if (weather === '陰天') {
+      image.src = './image/img-weather/cloudy.png';
+  } else if (weather === '晴時多雲') {
+      image.src = './image/img-weather/partly.png';
+  } else if (weather === '下雪') {
+      image.src = './image/img-weather/snowy.png';
+  }
+}
+
 
 function loadImage(option, emotion) {
   document.getElementById("image-container").innerHTML = "";
