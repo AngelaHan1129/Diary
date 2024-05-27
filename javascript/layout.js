@@ -33,6 +33,7 @@ const cssFiles = {
 
 const jsFiles = {
     'login.html': ['javascript/login.js'],
+    'layout.html': ['javascript/layout.js'],
     'music.html': ['javascript/music.js'],
     'diary.html': ['javascript/diary.js'],
     'index.html': ['javascript/index.js'],
@@ -104,4 +105,33 @@ const checklogin = () => {
       });
     }
   }
+  
+  async function getUserData() {
+    const token = await localStorage.getItem('userData')
+    console.log(token)
+    await fetch(`http://localhost:8000/api/getuser_by_token`,{
+      headers:{
+        Authorization:token
+      }
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data)
+        data = data.data
+        account = data.user
+        document.getElementById("infoname").innerText = data.Account
+        console.log(data.Email)
+      })
+      .catch(error => {
+        console.error('發生錯誤:', error);
+      });
+  }
+  
+  getUserData()
+  
   
