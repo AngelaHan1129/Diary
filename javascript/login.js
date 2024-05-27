@@ -75,7 +75,7 @@ async function loginData() {
                     errmsg = msg.replace("", data.msg);
                     if (errmsg === "登入成功") {
                         const responseData = data.data;
-                        console.log(responseData);
+                        console.log(responseData.token);
                         localStorage.setItem('userData', responseData.token);
                         window.alert(errmsg)
                         window.location.href = 'http://127.0.0.1:5501/index.html';
@@ -99,19 +99,19 @@ async function registerData() {
     let infoModal = document.querySelector("#infoModal");
     let close = document.querySelector("#close");
     let ok = document.querySelector("#ok");
-    
+
     close.addEventListener("click", function () {
         infoModal.close();
         showAuthCode.close();
     });
-    
+
     forRegister.addEventListener('submit', async event => {
         event.preventDefault();
         const formDataR = new FormData(forRegister);
         let object = {};
         formDataR.forEach((value, key) => object[key] = value);
         let json = JSON.stringify(object);
-        
+
         try {
             let res = await fetch('http://localhost:8000/api/register', {
                 method: 'POST',
@@ -122,7 +122,7 @@ async function registerData() {
             });
             let data = await res.json();
             console.log(data);
-            
+
             if (data.msg === '註冊成功，請收取驗證信') {
                 showAuthCode.showModal();
                 btn.addEventListener("click", function () {
@@ -150,9 +150,9 @@ async function registerData() {
                         } finally {
                             infoModal.close();
                         }
-                    }, { once: true }); 
-                }, { once: true }); 
-                
+                    }, { once: true });
+                }, { once: true });
+
             } else {
                 window.alert('!!!註冊失敗!!!');
             }

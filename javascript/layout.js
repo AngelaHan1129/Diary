@@ -93,7 +93,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
 const checklogin = () => {
     const user = localStorage.getItem('userData');
-    console.log(user);
     if (user) {
       const logoutLinks = document.querySelectorAll('header #logintext');
       logoutLinks.forEach(link => {
