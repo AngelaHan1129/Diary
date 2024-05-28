@@ -20,7 +20,7 @@
             <div class="feeling">
                 <div id="emotion" class="drop" onclick="toggleRotation('emotion')">
                     <img src="./image/img-emoji/smile.png" alt="">
-                    <input type="text" name="textbox" placeholder="請選擇表情" readonly>
+                    <input id="emojiSelect" type="text" name="textbox" placeholder="請選擇表情" readonly>
                     <div class="options">
                         <div onclick="show('生氣')"><img src="./image/img-emoji/angry.png">生氣</div>
                         <div onclick="show('平靜')"><img src="./image/img-emoji/calm.png">平靜</div>
@@ -32,7 +32,7 @@
                 </div>
                 <div id="weather" class="drop" onclick="toggleRotation('weather')">
                     <img src="./image/img-weather/cloud.png" alt="">
-                    <input type="text" name="textbox1" placeholder="請選擇天氣" readonly>
+                    <input id="weatherSelect" type="text" name="textbox1" placeholder="請選擇天氣" readonly>
                     <div class="options">
                         <div onclick="showone('晴天')"><img src="./image/img-weather/sun.png">晴天</div>
                         <div onclick="showone('雨天')"><img src="./image/img-weather/rain.png">雨天</div>
@@ -67,7 +67,7 @@
         <div id="diary">
             <input type="text" id="title" name="title" placeholder="標題(最多100字)" />
             <textarea placeholder="內容..." id="content" name="content"></textarea>
-            <button type="submit" id="writeDiary">
+            <button type="submit" id="writeDiary" onclick="WriteDiary()">
                 <img src="image/pen.png" alt="">
                 <p>儲存</p>
                 <p id="diarymsg"></p>

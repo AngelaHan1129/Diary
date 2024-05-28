@@ -18,45 +18,45 @@ function showone(weather) {
 
 function toggleRotation(id) {
   const drop = document.getElementById(id);
-  drop.classList.toggle('active');
+  drop.classList.toggle("active");
 }
 
 function show(emotion) {
   const textbox = document.querySelector('input[name="textbox"]');
   textbox.value = emotion;
-  const image = document.querySelector('#emotion img');
-  if (emotion === '生氣') {
-      image.src = './image/img-emoji/angry.png';
-  } else if (emotion === '平靜') {
-      image.src = './image/img-emoji/calm.png';
-  } else if (emotion === '害怕') {
-      image.src = './image/img-emoji/fear.png';
-  } else if (emotion === '幸福') {
-      image.src = './image/img-emoji/happiness.png';
-  } else if (emotion === '喜悅') {
-      image.src = './image/img-emoji/joy.png';
-  } else if (emotion === '失落') {
-      image.src = './image/img-emoji/sad.png';
+  console.log(emotion);
+  const image = document.querySelector("#emotion img");
+  if (emotion === "生氣") {
+    image.src = "./image/img-emoji/angry.png";
+  } else if (emotion === "平靜") {
+    image.src = "./image/img-emoji/calm.png";
+  } else if (emotion === "害怕") {
+    image.src = "./image/img-emoji/fear.png";
+  } else if (emotion === "幸福") {
+    image.src = "./image/img-emoji/happiness.png";
+  } else if (emotion === "喜悅") {
+    image.src = "./image/img-emoji/joy.png";
+  } else if (emotion === "失落") {
+    image.src = "./image/img-emoji/sad.png";
   }
 }
 
 function showone(weather) {
   const textbox = document.querySelector('input[name="textbox1"]');
   textbox.value = weather;
-  const image = document.querySelector('#weather img');
-  if (weather === '晴天') {
-      image.src = './image/img-weather/sun.png';
-  } else if (weather === '雨天') {
-      image.src = './image/img-weather/rain.png';
-  } else if (weather === '陰天') {
-      image.src = './image/img-weather/cloudy.png';
-  } else if (weather === '晴時多雲') {
-      image.src = './image/img-weather/partly.png';
-  } else if (weather === '下雪') {
-      image.src = './image/img-weather/snowy.png';
+  const image = document.querySelector("#weather img");
+  if (weather === "晴天") {
+    image.src = "./image/img-weather/sun.png";
+  } else if (weather === "雨天") {
+    image.src = "./image/img-weather/rain.png";
+  } else if (weather === "陰天") {
+    image.src = "./image/img-weather/cloudy.png";
+  } else if (weather === "晴時多雲") {
+    image.src = "./image/img-weather/partly.png";
+  } else if (weather === "下雪") {
+    image.src = "./image/img-weather/snowy.png";
   }
 }
-
 
 function loadImage(option, emotion) {
   document.getElementById("image-container").innerHTML = "";
@@ -161,43 +161,44 @@ async function DiaryData() {
 }
 // DiaryData();
 
-async function WriteDiary(){
+async function WriteDiary() {
   let dateValue = document.querySelector(".datecontent").value;
   let emojiValue = document.querySelector("#emojiSelect").value;
   let weatherValue = document.querySelector("#weatherSelect").value;
   let titleValue = document.querySelector("#title").value;
-  let contentValue = document.querySelector("#contentSelect");
-  let write = document.querySelector("#writeDiary");
-  let getData = localStorage.getItem("userData");
-  write.addEventListener('click', async function (){
-    console.log(dateValue,emojiValue,weatherValue,titleValue,contentValue)
-    try {
-        await fetch("http://localhost:8000/api/write_diary", {
-          method: "POST",
-          body:  JSON.stringify({
-            "emoji":emojiValue,
-            "content":contentValue,
-            "weather":weatherValue,
-            "title":titleValue,
-            "date":dateValue
-          }),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data.msg);
-            if(data.msg == '新增成功'){
-              window.alert(data.msg)
-            }
-            errmsg = msg.replace("", data.msg);
-            document.getElementById("diarymsg").innerText = errmsg;
-          })
-          .catch((error) => {
-            console.error("Fetch error:", error);
-          });
-      
-    } catch (err) {
-      console.log(err);
+  let contentValue = document.querySelector("#content").value;
+  // let write = document.querySelector("#writeDiary");
+  let token = localStorage.getItem("userData");
+  // let msg = "";
+
+  // write.addEventListener('click', async function () {
+  console.log(dateValue, emojiValue, weatherValue, titleValue, contentValue);
+  try {
+    const response = await fetch("http://localhost:8000/api/write_diary", {
+      method: "POST",
+      headers: {
+        Authorization: token,
+      },
+      body: JSON.stringify({
+        emoji: emojiValue,
+        content: contentValue,
+        weather: weatherValue,
+        title: titleValue,
+        date: dateValue,
+      }),
+    });
+    const data = await response.json();
+    console.log(data.msg);
+    if (data.msg == "新增成功") {
+      window.alert(data.msg);
     }
-  })
+    let errmsg = "";
+    errmsg = errmsg.replace("", data.msg);
+    document.getElementById("diarymsg").innerText = errmsg;
+  } catch (error) {
+    console.error("Fetch error:", error);
+  }
+  // });
 }
-WriteDiary()
+
+// WriteDiary();
