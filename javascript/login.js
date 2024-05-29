@@ -1,6 +1,6 @@
 //正則表達式
 function isValidEmail(email) {
-    var emailRegex = /.+@(gmail.com|yahoo.com.tw|live.com|mail.com)$/;
+    var emailRegex = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
     return emailRegex.test(email);
 }
 
@@ -57,7 +57,15 @@ document.getElementById("loginlink").addEventListener("click", function (event) 
 
 async function loginData() {
     const formLogin = await document.querySelector('.loginform');
+    let btn = document.querySelector("#forgotpwd");
+    let infoModalforgot = document.querySelector("#infoModalforgot");
+    let close = document.querySelector("#closeForgot");
+    let ok = document.querySelector("#okForgot");
     let msg = '';
+
+    close.addEventListener("click", function () {
+        infoModalforgot.close();
+    });
     try {
         formLogin.addEventListener('submit', event => {
             event.preventDefault();
@@ -79,18 +87,50 @@ async function loginData() {
                         localStorage.setItem('userData', responseData.token);
                         window.alert(errmsg)
                         window.location.href = 'http://127.0.0.1:5501/index.html';
+                    } else {
+                        window.alert('!!!登入失敗!!!');
                     }
                 })
                 .catch(error => {
                     console.error('Fetch error:', error);
                 });
         });
+        btn.addEventListener("click", function () {
+            infoModalforgot.showModal();
+            ok.addEventListener("click", async function () {
+                let content = document.querySelector("#accountForgot").value;
+                try {
+                    const body = await forgotPassword(content);
+                    console.log(body.data);
+                    localStorage.setItem('forgetPwd', body.data.token);
+                    window.alert(body.msg);
+                } catch (e) {
+                    console.log(e);
+                } finally {
+                    infoModalforgot.close();
+                }
+            }, { once: true });
+        }, { once: true });
     }
     catch (err) {
         console.log(err);
     }
 }
 loginData()
+
+async function forgotPassword(content) {
+    let res = await fetch('http://localhost:8000/api/forget_password', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "account": content
+        })
+    });
+    let body = await res.json();
+    return body;
+}
 
 async function registerData() {
     const forRegister = document.querySelector('.registerform');
@@ -121,6 +161,7 @@ async function registerData() {
                 body: json
             });
             let data = await res.json();
+            localStorage.setItem('registerData', data.data.token);
             console.log(data);
 
             if (data.msg === '註冊成功，請收取驗證信') {
@@ -129,16 +170,18 @@ async function registerData() {
                     showAuthCode.close();
                     infoModal.showModal();
                     ok.addEventListener("click", async function () {
+                        const token = await localStorage.getItem('registerData')
+                        console.log(token)
                         let content = document.querySelector("#content").value;
                         console.log(object.account);
                         try {
                             let res = await fetch('http://localhost:8000/api/AuthCode', {
                                 method: 'POST',
                                 headers: {
-                                    'Content-Type': 'application/json'
+                                    'Content-Type': 'application/json',
+                                    Authorization: token
                                 },
                                 body: JSON.stringify({
-                                    "account": object.account,
                                     "AuthCode": content
                                 })
                             });

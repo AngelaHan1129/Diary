@@ -1,7 +1,11 @@
-let account = ''
+// let account = ''
 function getUserData(){
-    const token = JSON.parse(localStorage.getItem('userData')).token
-    fetch(`http://localhost:8000/api/getuser_by_token?token=${token}`)
+    const token = localStorage.getItem('userData')
+    fetch(`http://localhost:8000/api/getuser_by_token`,{
+      headers:{
+        Authorization:token
+      }
+    })
     .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -12,6 +16,7 @@ function getUserData(){
         data = data.data
         account = data.user
         console.log(data)
+        document.getElementById("username").innerText = data.Account
         document.getElementById("gender_select").value = data.Gender
       })
       .catch(error => {
@@ -23,11 +28,13 @@ getUserData()
 
 function changesex(){
     const sex = document.getElementById("gender_select").value
-
+    const token = localStorage.getItem('userData')
     fetch('http://localhost:8000/api/change_sex',{
         method: 'POST',
+        headers:{
+          Authorization:token
+        },
         body: JSON.stringify({
-            acc:account,
             sex:sex
         })
     })
@@ -37,7 +44,6 @@ function changesex(){
     .then(data =>{
         console.log(data)
         alert("性別修改成功");
-        history.back(); // 返回上一頁
-        
+        history.back();
     })
 }
