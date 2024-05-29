@@ -119,7 +119,9 @@ table{
     width: 40%;
 }
 
-.singer,.song,.address{
+.column .singer,
+.column .song,
+.column .address{
     height: 100%;
     transform: translateY(25%);
     overflow:hidden;
