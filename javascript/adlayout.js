@@ -50,6 +50,7 @@ function layout(page) {
             fetch(page)
                 .then(response => response.text())
                 .then(pageHtml => {
+                    checklogin()
                     const main = document.querySelector('main');
                     main.innerHTML = pageHtml;
                     const title = titles[page]
@@ -126,6 +127,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000); 
 });
 
+const checklogin = () => {
+    const user = localStorage.getItem('userData');
+    if (user) {
+      const logoutLinks = document.querySelectorAll('header #logintext');
+      logoutLinks.forEach(link => {
+        link.innerText = '登出';
+        link.addEventListener('click', () => {
+          localStorage.removeItem('userData');
+          link.innerText = '登入';
+        });
+      });
+    }
+  }
 
 
 

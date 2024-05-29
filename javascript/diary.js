@@ -119,47 +119,6 @@ submit.addEventListener("click", function (event) {
   // music.style.transform = "none"
 });
 
-async function DiaryData() {
-  const formDiary = await document.querySelector(".formDiary");
-  let dateValue = document.querySelector(".datecontent").value;
-  let emojiValue = document.querySelector(".emojivalue");
-  var getData = localStorage.getItem("userData");
-  var getDataArr = JSON.parse(getData);
-  console.log(getDataArr.user);
-  console.log(emojiValue);
-  let msg = "";
-  try {
-    formDiary.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const formData = new FormData(formDiary);
-      let object = {
-        token: getDataArr.user,
-        emoji: emojiValue,
-        content: "你好哇哇哇",
-        title: "你好哇哇哇",
-        date: dateValue,
-      };
-      formData.forEach((value, key) => (object[key] = value));
-      let json = JSON.stringify(object);
-      fetch("http://localhost:8000/api/write_diary", {
-        method: "POST",
-        body: json,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          errmsg = msg.replace("", data.msg);
-          document.getElementById("diarymsg").innerText = errmsg;
-        })
-        .catch((error) => {
-          console.error("Fetch error:", error);
-        });
-    });
-  } catch (err) {
-    console.log(err);
-  }
-}
-// DiaryData();
 
 async function WriteDiary() {
   let dateValue = document.querySelector(".datecontent").value;
@@ -167,11 +126,8 @@ async function WriteDiary() {
   let weatherValue = document.querySelector("#weatherSelect").value;
   let titleValue = document.querySelector("#title").value;
   let contentValue = document.querySelector("#content").value;
-  // let write = document.querySelector("#writeDiary");
-  let token = localStorage.getItem("userData");
-  // let msg = "";
 
-  // write.addEventListener('click', async function () {
+  let token = localStorage.getItem("userData");
   console.log(dateValue, emojiValue, weatherValue, titleValue, contentValue);
   try {
     const response = await fetch("http://localhost:8000/api/write_diary", {
@@ -190,15 +146,23 @@ async function WriteDiary() {
     const data = await response.json();
     console.log(data.msg);
     if (data.msg == "新增成功") {
+      var iframeElement = document.getElementById('musicShow');
+      var src = new URL(iframeElement.src);
+      console.log(iframeElement.src);
       window.alert(data.msg);
+      let res = await fetch(`http://localhost:8000/api/show_diary?diary_id=124`, {
+        headers: {
+          Authorization: token,
+        }
+      })
+      let body = await res.json();
+      console.log(body)
+      console.log(body.data.music)
+      iframeElement.src = body.data.music
     }
     let errmsg = "";
     errmsg = errmsg.replace("", data.msg);
-    // document.getElementById("diarymsg").innerText = errmsg;
   } catch (error) {
     console.error("Fetch error:", error);
   }
-  // });
 }
-
-// WriteDiary();
