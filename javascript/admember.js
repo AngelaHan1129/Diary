@@ -41,7 +41,7 @@ async function fetchData(pagenow, searchContent = '') {
             str += `<td><a href="#" onclick="fetchData(${MaxPage}, '${searchContent}')">&gt;&gt;</a></td>`;
         }
         pageItems.forEach(function (user) {
-            let Gender = ['不透漏', '男', '女'][user.Gender] || '不透漏';
+            let Gender = ['不透露', '男', '女'][user.Gender] || '不透露';
             tab += `
             <div class="column">
                 <div class="account">${user.Account}</div>

@@ -117,9 +117,24 @@ table{
 
 .address{
     width: 40%;
+}
+
+.singer,.song,.address{
+    height: 100%;
+    transform: translateY(25%);
     overflow:hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    transition: all 0.4s;
+}
+
+.column .singer:hover,
+.column .song:hover,
+.column .address:hover{
+    color: #75add0;
+    overflow: visible;
+    cursor: default;
+    transform: translateY(0);
 }
 
 .btns{
