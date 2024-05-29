@@ -30,7 +30,27 @@ main{
     align-items: center;
     position: relative;
 }
+#infoShowDiary img{
+    width: 20%;
+    height: 20%;
+}
+dialog {
+    font-size: 25px;
+    border: none;
+    box-shadow: 0 2px 6px #ccc;
+    border-radius: 10px;
+    padding: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: invert(20%);
+    background-color: #ebfcfec7;
+    color: #16435f;
+}
 
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.31);
+}
 .date{
     color: #ffffff;
     position: absolute;
