@@ -87,7 +87,7 @@ async function loginData() {
                         localStorage.setItem('userData', responseData.token);
                         window.alert(errmsg)
                         window.location.href = 'http://127.0.0.1:5501/index.html';
-                    }else {
+                    } else {
                         window.alert('!!!登入失敗!!!');
                     }
                 })
@@ -95,7 +95,6 @@ async function loginData() {
                     console.error('Fetch error:', error);
                 });
         });
-        //未完成忘記密碼功能API
         btn.addEventListener("click", function () {
             infoModalforgot.showModal();
             ok.addEventListener("click", async function () {
@@ -162,6 +161,7 @@ async function registerData() {
                 body: json
             });
             let data = await res.json();
+            localStorage.setItem('registerData', data.data.token);
             console.log(data);
 
             if (data.msg === '註冊成功，請收取驗證信') {
@@ -170,16 +170,18 @@ async function registerData() {
                     showAuthCode.close();
                     infoModal.showModal();
                     ok.addEventListener("click", async function () {
+                        const token = await localStorage.getItem('registerData')
+                        console.log(token)
                         let content = document.querySelector("#content").value;
                         console.log(object.account);
                         try {
                             let res = await fetch('http://localhost:8000/api/AuthCode', {
                                 method: 'POST',
                                 headers: {
-                                    'Content-Type': 'application/json'
+                                    'Content-Type': 'application/json',
+                                    Authorization: token
                                 },
                                 body: JSON.stringify({
-                                    "account": object.account,
                                     "AuthCode": content
                                 })
                             });
