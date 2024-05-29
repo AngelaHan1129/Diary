@@ -103,7 +103,10 @@ h1{
     width: 30%;
 }
 
-.account,.name,.mail,.sex{
+.column .account,
+.column .name,
+.column .mail,
+.column .sex{
     height: 100%;
     transform: translateY(25%);
     overflow:hidden;
