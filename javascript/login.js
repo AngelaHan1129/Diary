@@ -184,7 +184,7 @@ async function registerData() {
                                 })
                             });
                             let body = await res.json();
-                            console.log(body.data.msg);
+                            console.log(body.data);
                             window.alert(body.data.msg);
                         } catch (e) {
                             console.log(e);

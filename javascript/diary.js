@@ -194,7 +194,7 @@ async function WriteDiary() {
     }
     let errmsg = "";
     errmsg = errmsg.replace("", data.msg);
-    document.getElementById("diarymsg").innerText = errmsg;
+    // document.getElementById("diarymsg").innerText = errmsg;
   } catch (error) {
     console.error("Fetch error:", error);
   }

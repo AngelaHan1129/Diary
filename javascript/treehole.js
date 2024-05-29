@@ -13,7 +13,7 @@ async function treehole() {
         data.data.forEach(function (user) {
             let Emoji = ''; 
             if (user.Emoji == 1) {
-                Emoji = 'caim';
+                Emoji = 'calm';
             } else if (user.Emoji == 2) {
                 Emoji = 'fear';
             } else if (user.Emoji == 3) {
