@@ -12,6 +12,10 @@ input{
     font-family: 'AnyConv.com__Iansui-Regular';
 }
 
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+
 @font-face {
     font-family: 'AnyConv.com__Iansui-Regular';
     src: url(../font-size/AnyConv.com__Iansui-Regular.woff) format('woff');
@@ -241,8 +245,6 @@ input[type="search"] {
     width: 25px;
     height: 25px;
     padding: 3px;
-    /* border: 2px solid #fff; */
-    /* border-radius: 50%; */
 }
 
 dialog {
@@ -271,7 +273,7 @@ dialog button {
     width: 30%;
 }
 
-dialog input[type="text"]{
+dialog input[type="text"] {
     background-color: #97abb8;
     border: none;
     height: 25px;
@@ -279,7 +281,7 @@ dialog input[type="text"]{
     font-size: 20px;
 }
 
-dialog label{
+dialog label {
     /* padding: 30px; */
     margin: 10px;
 }

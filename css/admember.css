@@ -102,11 +102,24 @@ h1{
 .mail{
     width: 30%;
 }
-    
-.account,.mail{
+
+.account,.name,.mail,.sex{
+    height: 100%;
+    transform: translateY(25%);
     overflow:hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    transition: all 0.4s;
+}
+
+.column .account:hover,
+.column .name:hover,
+.column .mail:hover,
+.column .sex:hover{
+    color: #75add0;
+    overflow: visible;
+    cursor: default;
+    transform: translateY(0);
 }
 
 .btns{
