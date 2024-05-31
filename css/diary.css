@@ -61,6 +61,7 @@ select {
     padding: 5px 30px;
     border-radius: 10px;
     position: relative;
+    transform: translate(80%,-10%);
 }
 
 .music {

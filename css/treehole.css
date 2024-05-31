@@ -1,16 +1,16 @@
-li a[href *= "treehole"]{
+li a[href *="treehole"] {
     background-color: #887a69;
 }
 
-#rightside{
+#rightside {
     height: auto;
 }
 
-main{
+main {
     flex-direction: column;
 }
 
-#upside{
+#upside {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -18,7 +18,7 @@ main{
     padding: 0 10%;
 }
 
-.diarys{
+.diarys {
     background-color: #887A69;
     width: 276px;
     height: 166px;
@@ -30,35 +30,113 @@ main{
     align-items: center;
     position: relative;
 }
-#infoShowDiary img{
-    width: 20%;
-    height: 20%;
+ 
+iframe {
+    border-radius: 10px;
+    width: 50%;
+    margin: 10px;
 }
+
 dialog {
+    position: relative;
     font-size: 25px;
     border: none;
     box-shadow: 0 2px 6px #ccc;
     border-radius: 10px;
     padding: 40px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     backdrop-filter: invert(20%);
-    background-color: #ebfcfec7;
-    color: #16435f;
+    background-color: #f7f0ddec;
+    color: #35322e;
 }
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.31);
 }
-.date{
+
+dialog h3{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    color: #71604A;
+    font-size: 2em;
+}
+
+input[type="date"]{
+    background-color: rgb(237, 227, 217);
+    border: none;
+    color: #555555;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.infoTitle {
+    background-color: #887a69;
+    color: #ffffff;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+.infoTitle div{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    background-color: rgb(86, 81, 76);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    border-radius: 100px;
+}
+.infoTitle img{
+    width: 50px;
+    height: 50px;
+}
+.infoContent {
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0 0  10px 10px;
+    background-color: rgb(237, 227, 217);
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    font-size: 20px;
+}
+
+.ShowDiaryContent {
+    border-left: 1px solid #3f3f3f;
+    padding: 10px;
+}
+
+#titleShowDiary,
+#contentShowDiary {
+    border-radius: 5px;
+    padding-left: 5px;
+    background-color: rgb(213, 201, 188);
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6) inset;
+}
+
+#titleShowDiary{
+    height: 20%;
+    width: 90%;
+    margin-bottom: 5px;
+}
+#contentShowDiary{
+    height: 75%;
+    width: 90%;
+}
+
+.date {
     color: #ffffff;
     position: absolute;
     top: 10px;
     left: 10%;
 }
 
-.title{
+.title {
     background-color: #F7F0DD;
     width: 80px;
     height: 25px;
@@ -66,30 +144,30 @@ dialog::backdrop {
     position: absolute;
 }
 
-.title p{
-    text-overflow: ellipsis; 
-    white-space: nowrap; 
-    overflow:hidden;
+.title p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.emoticon{
+.emoticon {
     width: 60px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
-.emoticon img{
+.emoticon img {
     margin: 5px;
 }
 
-.check{
+.check {
     display: flex;
     justify-content: center;
 }
 
-.checklink{
+.checklink {
     background-color: #71604A;
     color: #ffffff;
     width: 200px;
@@ -102,26 +180,26 @@ dialog::backdrop {
     position: absolute;
 }
 
-.check{
+.check {
     width: 20px;
     height: 20px;
 }
 
-.checktext{
+.checktext {
     margin-left: 15px;
 }
 
-#downside{
+#downside {
     text-align: center;
     margin-bottom: 25px;
 }
 
-.pages{
+.pages {
     display: inline-block;
     margin-top: 25px;
 }
 
-.pages a{
+.pages a {
     color: #3f3f3f;
     width: 38px;
     height: 38px;
@@ -134,12 +212,12 @@ dialog::backdrop {
     transition: all 0.3s;
 }
 
-.pages a:hover{
+.pages a:hover {
     color: #fff;
     background-color: #3f3f3f;
 }
 
-.pages div{
+.pages div {
     background-color: #F7F0DD;
     color: #71604A;
     width: 40px;

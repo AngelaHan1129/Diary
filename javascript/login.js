@@ -86,7 +86,7 @@ async function loginData() {
                         console.log(responseData.token);
                         localStorage.setItem('userData', responseData.token);
                         window.alert(errmsg)
-                        window.location.href = 'http://127.0.0.1:5501/index.html';
+                        window.location.href = 'http://localhost:5501/index.html';
                     } else {
                         window.alert('!!!登入失敗!!!');
                     }

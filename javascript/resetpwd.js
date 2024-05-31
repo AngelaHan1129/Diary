@@ -21,7 +21,7 @@ async function loginData() {
                 let body = await res.json();
                 console.log(body);
                 window.alert(body.msg);
-                // window.location.href = 'http://127.0.0.1:5501/login.html';
+                // window.location.href = 'http://localhost:5501/login.html';
             } catch (e) {
                 console.log(e);
             }

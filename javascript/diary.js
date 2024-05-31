@@ -126,7 +126,7 @@ async function WriteDiary() {
   let weatherValue = document.querySelector("#weatherSelect").value;
   let titleValue = document.querySelector("#title").value;
   let contentValue = document.querySelector("#content").value;
-
+  let showMusic = document.getElementsByClassName('showMusic')[0];
   let token = localStorage.getItem("userData");
   console.log(dateValue, emojiValue, weatherValue, titleValue, contentValue);
   try {
@@ -146,11 +146,12 @@ async function WriteDiary() {
     const data = await response.json();
     console.log(data.msg);
     if (data.msg == "新增成功") {
+      showMusic.style.transform = 'translate(0,0)';
       var iframeElement = document.getElementById('musicShow');
       var src = new URL(iframeElement.src);
       console.log(iframeElement.src);
       window.alert(data.msg);
-      let res = await fetch(`http://localhost:8000/api/show_diary?diary_id=124`, {
+      let res = await fetch(`http://localhost:8000/api/show_diary?diary_id=200`, {
         headers: {
           Authorization: token,
         }
@@ -166,3 +167,5 @@ async function WriteDiary() {
     console.error("Fetch error:", error);
   }
 }
+
+

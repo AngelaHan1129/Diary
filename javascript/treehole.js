@@ -25,6 +25,7 @@ async function treehole() {
             } else if (user.Emoji == 6) {
                 Emoji = 'angry';
             }
+            console.log(user)
             console.log(Emoji);
             tab += `
                 <div class="diarys">
@@ -37,7 +38,7 @@ async function treehole() {
                         <a href="" class="checklink">
                             <img src="image/pen.png" class="check">
                             <div class="checktext">
-                                <p>查看</p>
+                                <p data-id="${user.Diary_Id}">查看</p>
                             </div>
                         </a>
                     </div>
@@ -48,8 +49,8 @@ async function treehole() {
                 </div>
             `;
         });
-
         document.getElementById('upside').innerHTML = tab;
+
 
     } catch (err) {
         console.log(err);

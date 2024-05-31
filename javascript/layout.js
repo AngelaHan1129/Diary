@@ -56,6 +56,7 @@ function layout(page) {
         .then(response => response.text())
         .then(pageHtml => {
           checklogin()
+          getUserData()
           const main = document.querySelector('main');
           main.innerHTML = pageHtml;
           const title = titles[page]
@@ -104,6 +105,7 @@ const checklogin = () => {
       link.innerText = '登出';
       link.addEventListener('click', () => {
         localStorage.removeItem('userData');
+        localStorage.clear()
         link.innerText = '登入';
       });
     });
@@ -136,5 +138,5 @@ async function getUserData() {
     });
 }
 
-getUserData()
+
 
