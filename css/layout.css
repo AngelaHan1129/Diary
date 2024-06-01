@@ -18,7 +18,13 @@ a {
     text-decoration: none;
 }
 
-input:focus,textarea:focus {
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+input:focus,
+textarea:focus {
     outline: none;
 }
 
@@ -78,7 +84,8 @@ input[type="search"]::placeholder {
     z-index: 3;
 }
 
-#leftside,#leftside *{
+#leftside,
+#leftside * {
     transition: all 0.4s;
 }
 
@@ -193,7 +200,8 @@ header {
     width: 100%;
     height: 60px;
     display: flex;
-    position: sticky;top: 0;
+    position: sticky;
+    top: 0;
     right: 0;
     justify-content: end;
     align-items: center;
@@ -209,72 +217,79 @@ main {
     justify-content: center;
 }
 
-@keyframes FadeIn{
-    0%{
+@keyframes FadeIn {
+    0% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
 
-@keyframes FadeInUp{
-    0%{
+@keyframes FadeInUp {
+    0% {
         opacity: 0;
         transform: translateY(-50%);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: none;
     }
 }
 
-@keyframes FadeInLeft{
-    0%{
+@keyframes FadeInLeft {
+    0% {
         opacity: 0;
         transform: translate(-50%);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: none;
     }
 }
 
-@keyframes FadeInRight{
-    0%{
+@keyframes FadeInRight {
+    0% {
         opacity: 0;
         transform: translate(50%);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: none;
     }
 }
 
-@keyframes FadeOut{
-    0%{
+@keyframes FadeOut {
+    0% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: 0;
     }
 }
 
-@keyframes FadeOutLeft{
-    0%{
+@keyframes FadeOutLeft {
+    0% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: 0;
         transform: translate(-50%);
     }
 }
 
-@keyframes FadeOutRight{
-    0%{
+@keyframes FadeOutRight {
+    0% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: 0;
         transform: translate(50%);
     }

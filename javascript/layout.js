@@ -98,45 +98,63 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 const checklogin = () => {
+  let adminLi = document.getElementsByClassName('adminLi');
+  let userLi = document.getElementsByClassName('userLi');
   const user = localStorage.getItem('userData');
+  const logoutLinks = document.querySelectorAll('header #logintext');
+
   if (user) {
-    const logoutLinks = document.querySelectorAll('header #logintext');
     logoutLinks.forEach(link => {
       link.innerText = '登出';
       link.addEventListener('click', () => {
         localStorage.removeItem('userData');
-        localStorage.clear()
+        localStorage.clear();
         link.innerText = '登入';
+        Array.from(adminLi).forEach(item => item.classList.add('hidden'));
+        Array.from(userLi).forEach(item => item.classList.add('hidden'));
+        alert('謝謝光臨~已登出!')
       });
+    });
+  } else {
+    Array.from(adminLi).forEach(item => item.classList.add('hidden'));
+    Array.from(userLi).forEach(item => item.classList.add('hidden'));
+    logoutLinks.forEach(link => {
+      link.innerText = '登入';
+      localStorage.removeItem('userData');
+        localStorage.clear();
     });
   }
 }
 
+
 async function getUserData() {
-  const token = await localStorage.getItem('userData')
-  console.log(token)
-  await fetch(`http://localhost:8000/api/getuser_by_token`, {
-    headers: {
-      Authorization: token
-    }
-  })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
+  const token = localStorage.getItem('userData');
+  let adminLi = document.getElementsByClassName('adminLi');
+  let userLi = document.getElementsByClassName('userLi');
+
+  if (token) {
+    try {
+      let res = await fetch(`http://localhost:8000/api/getuser_by_token`, {
+        headers: {
+          Authorization: token
+        }
+      });
+
+      let body = await res.json();
+      if (body && body.data) {
+        let userInfo = body.data;
+        document.getElementById("infoname").innerText = userInfo.Name;
+        if (userInfo.Role === 'admin') {
+          Array.from(adminLi).forEach(item => item.classList.remove('hidden'));
+          Array.from(userLi).forEach(item => item.classList.remove('hidden'));
+        }
+
+        if (userInfo.Role === 'user') {
+          Array.from(userLi).forEach(item => item.classList.remove('hidden'));
+        }
       }
-      return response.json();
-    })
-    .then(data => {
-      console.log(data)
-      data = data.data
-      account = data.user
-      document.getElementById("infoname").innerText = data.Account
-      console.log(data.Email)
-    })
-    .catch(error => {
-      console.error('發生錯誤:', error);
-    });
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  }
 }
-
-
-

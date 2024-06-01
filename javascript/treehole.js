@@ -25,8 +25,6 @@ async function treehole() {
             } else if (user.Emoji == 6) {
                 Emoji = 'angry';
             }
-            console.log(user)
-            console.log(Emoji);
             tab += `
                 <div class="diarys">
                     <div class="diary-left">
@@ -56,6 +54,25 @@ async function treehole() {
         console.log(err);
     }
 }
+async function showDiaryContent(event){
+    if (event.target.tagName === 'P') {
+        let diaryId = event.target.dataset.id;
+        if (event.target.classList.contains('checktext')) {
+            try {
+                let res = await fetch(`http://localhost:8000/api/show_diary?diary_id=${diaryId}`, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                let body = await res.json();
+                console.log(body);
+            } catch (err) {
+                console.error(err);
+            }
+        }
+    }
+}
+document.querySelector('#upside').addEventListener('click', showDiaryContent);
 
 treehole();
 

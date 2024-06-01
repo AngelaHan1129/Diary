@@ -47,12 +47,12 @@ function changepwd() {
       .then(data => {
         console.log(data)
         console.log(data.msg)
-        if (data.msg == '修改成功') {
+        if (data.msg === '修改成功') {
           alert("密碼修改成功！");
-          history.back(); // 返回上一頁
-        }
+          history.back();
+        } 
         else {
-          alert(data.msg)
+          alert(data.msg);
         }
       })
 
