@@ -25,6 +25,7 @@ async function treehole() {
             } else if (user.Emoji == 6) {
                 Emoji = 'angry';
             }
+
             tab += `
                 <div class="diarys">
                     <div class="diary-left">
@@ -33,12 +34,12 @@ async function treehole() {
                             <p>${user.Title}</p>
                             <hr>
                         </div>
-                        <a href="" class="checklink">
+                        <button class="checklink openDialog" data-id="${user.Diary_Id}">
                             <img src="image/pen.png" class="check">
                             <div class="checktext">
-                                <p data-id="${user.Diary_Id}">查看</p>
+                                <p>查看</p>
                             </div>
-                        </a>
+                        </button>
                     </div>
                     <hr>
                     <div class="diary-right">
@@ -49,30 +50,68 @@ async function treehole() {
         });
         document.getElementById('upside').innerHTML = tab;
 
-
+        // 添加查看按钮的事件监听器
+        document.querySelectorAll('.openDialog').forEach(button => {
+            button.addEventListener('click', async function () {
+                const diaryId = this.getAttribute('data-id');
+                await showDiaryContent(diaryId);
+            });
+        });
     } catch (err) {
         console.log(err);
     }
 }
-async function showDiaryContent(event){
-    if (event.target.tagName === 'P') {
-        let diaryId = event.target.dataset.id;
-        if (event.target.classList.contains('checktext')) {
-            try {
-                let res = await fetch(`http://localhost:8000/api/show_diary?diary_id=${diaryId}`, {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-                let body = await res.json();
-                console.log(body);
-            } catch (err) {
-                console.error(err);
+
+async function showDiaryContent(diaryId) {
+    const infoModal = document.querySelector("#infoShowDiary");
+    const token = localStorage.getItem('userData');
+
+    try {
+        const response = await fetch(`http://localhost:8000/api/get_diary_by_id/${diaryId}`, {
+            headers: {
+                'Authorization': token
             }
+        });
+        const data = await response.json();
+        document.getElementById("infoDate").value = data.Day;
+        document.getElementById("titleShowDiary").value = data.Title;
+        document.getElementById("contentShowDiary").value = data.Content;
+
+        let emoji = '';
+        if (data.Emoji == 1) {
+            emoji = 'calm';
+        } else if (data.Emoji == 2) {
+            emoji = 'fear';
+        } else if (data.Emoji == 3) {
+            emoji = 'sad';
+        } else if (data.Emoji == 4) {
+            emoji = 'joy';
+        } else if (data.Emoji == 5) {
+            emoji = 'happiness';
+        } else if (data.Emoji == 6) {
+            emoji = 'angry';
         }
+        
+        let weather = '';
+        if (data.Weather == 1) {
+            weather = 'sun';
+        } else if (data.Weather == 2) {
+            weather = 'cloud';
+        } else if (data.Weather == 3) {
+            weather = 'rain';
+        }
+
+        document.getElementById("infoEmoji").src = `./image/img-emoji/${emoji}.png`;
+        document.getElementById("infoWeather").src = `./image/img-weather/${weather}.png`;
+
+        infoModal.showModal();
+    } catch (err) {
+        console.error("Error fetching diary content:", err);
     }
 }
-document.querySelector('#upside').addEventListener('click', showDiaryContent);
 
-treehole();
+window.onload = treehole;
 
+document.getElementById('closeDialog').addEventListener('click', function () {
+    document.querySelector("#infoShowDiary").close();
+});

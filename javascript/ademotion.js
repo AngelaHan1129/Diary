@@ -1,5 +1,4 @@
 async function addEmoji() {
-    // let newtext = await document.querySelector('.newFace');
     let btn = document.querySelector(".newFace");
     let infoModal = document.querySelector("#infoModal");
     let close = document.querySelector("#closeFace");
@@ -18,10 +17,6 @@ async function addEmoji() {
             })
         })
             .then(response => response.json())
-            .then(json => {
-                console.log(json);
-            });
-        // newtext.addEventListener('click',)
     }
     catch (err) {
         console.log(err)
@@ -188,16 +183,16 @@ async function fetchWeatherData(pagenow, searchContents = '') {
         let res = searchContents
             ? await fetch('http://localhost:8000/api/Search_weather?Content=' + searchContents)
             : await fetch('http://localhost:8000/api/admin_show_weather_all');
-            let body = await res.json();
-            let weathers = body.data[0];
-    
-            let MaxPage = Math.ceil(weathers.length / 5);
-            let NowPage = Math.max(1, Math.min(pagenow, MaxPage || 1));
-            let itemsPerPage = 5;
-            let start = (NowPage - 1) * itemsPerPage;
-            let end = start + itemsPerPage;
-    
-            let pageItems = weathers.slice(start, end);
+        let body = await res.json();
+        let weathers = body.data[0];
+
+        let MaxPage = Math.ceil(weathers.length / 5);
+        let NowPage = Math.max(1, Math.min(pagenow, MaxPage || 1));
+        let itemsPerPage = 5;
+        let start = (NowPage - 1) * itemsPerPage;
+        let end = start + itemsPerPage;
+
+        let pageItems = weathers.slice(start, end);
         if (NowPage > 1) {
             str += `<td><a href="#" onclick="fetchWeatherData(1, '${searchContents}')">&lt;&lt;</a></td>`;
             str += `<td><a href="#" onclick="fetchWeatherData(${NowPage - 1}, '${searchContents}')">&lt;</a></td>`;

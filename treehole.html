@@ -13,7 +13,7 @@
 
 <body>
     <div id="upside"></div>
-    <dialog id="infoShowDiary" open>
+    <dialog id="infoShowDiary">
         <h3>我的日記</h3>
         <div class="infoTitle">
             <div><img id="infoEmoji" src="./image/img-emoji/happiness.png"></div>
@@ -28,12 +28,12 @@
                 <textarea placeholder="內容..." id="contentShowDiary" value="content"></textarea>
             </div>
         </div>
-        <a href="" class="checklink">
+        <button class="checklink" id="closeDialog">
             <img src="image/pen.png" class="check">
             <div class="checktext">
                 <p>關閉</p>
             </div>
-        </a>
+        </button>
     </dialog>
 </body>
 
