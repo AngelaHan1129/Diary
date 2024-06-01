@@ -51,9 +51,6 @@ function changepwd() {
           alert("密碼修改成功！");
           history.back();
         } 
-        else {
-          alert(data.msg);
-        }
       })
 
   })

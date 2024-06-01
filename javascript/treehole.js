@@ -73,9 +73,9 @@ async function showDiaryContent(diaryId) {
             }
         });
         const data = await response.json();
-        document.getElementById("infoDate").value = data.Day;
-        document.getElementById("titleShowDiary").value = data.Title;
-        document.getElementById("contentShowDiary").value = data.Content;
+        // document.getElementById("infoDate").value = data.Day;
+        // document.getElementById("titleShowDiary").value = data.Title;
+        // document.getElementById("contentShowDiary").value = data.Content;
 
         let emoji = '';
         if (data.Emoji == 1) {
@@ -100,9 +100,10 @@ async function showDiaryContent(diaryId) {
         } else if (data.Weather == 3) {
             weather = 'rain';
         }
-
-        document.getElementById("infoEmoji").src = `./image/img-emoji/${emoji}.png`;
-        document.getElementById("infoWeather").src = `./image/img-weather/${weather}.png`;
+        
+        // document.getElementById("infoIframe").src = `https://www.youtube.com/embed/3V0iwhq3jdA`
+        // document.getElementById("infoEmoji").src = `./image/img-emoji/${emoji}.png`;
+        // document.getElementById("infoWeather").src = `./image/img-weather/${weather}.png`;
 
         infoModal.showModal();
     } catch (err) {

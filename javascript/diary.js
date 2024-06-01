@@ -147,8 +147,7 @@ async function WriteDiary() {
     console.log(data.msg);
     if (data.msg == "新增成功") {
       showMusic.style.transform = 'translate(0,0)';
-      var iframeElement = document.getElementById('musicShow');
-      var src = new URL(iframeElement.src);
+      let iframeElement = document.getElementById('musicShow');
       console.log(iframeElement.src);
       window.alert(data.msg);
       let res = await fetch(`http://localhost:8000/api/show_diary?diary_id=200`, {
@@ -160,6 +159,7 @@ async function WriteDiary() {
       console.log(body)
       console.log(body.data.music)
       iframeElement.src = body.data.music
+      document.getElementById("songName").value = data.Day;
     }
     let errmsg = "";
     errmsg = errmsg.replace("", data.msg);

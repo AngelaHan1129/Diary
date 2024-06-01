@@ -112,7 +112,7 @@ const checklogin = () => {
         link.innerText = '登入';
         Array.from(adminLi).forEach(item => item.classList.add('hidden'));
         Array.from(userLi).forEach(item => item.classList.add('hidden'));
-        alert('謝謝光臨~已登出!')
+        alert('謝謝光臨~已登出')
       });
     });
   } else {
