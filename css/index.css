@@ -1,29 +1,49 @@
-li a[href*="index"]{
+li a[href*="index"] {
     background-color: #887a69;
 }
 
-#rightside{
+.goDiary {
+    background-color: #887a69;
+    color: #fff;
+    width: 20%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.goDiary:hover {
+    background-color: #6d5c4b;
+}
+
+#rightside {
     height: auto;
 }
 
-#wrap{
+#wrap {
     width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.bar{
+.bar {
     width: 100%;
     border-bottom: 1px solid #000000;
     padding-bottom: 30px;
+    transition: transform 0.3s ease;
 }
 
-.bar:last-of-type{
+.bar:hover {
+    transform: scale(1.05);
+}
+
+.bar:last-of-type {
     border: none;
 }
 
-.intro{
+.intro {
     background-color: #D9D9D9;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -35,25 +55,26 @@ li a[href*="index"]{
     border-radius: 10px;
     position: relative;
     text-shadow: 5px 5px 5px #fff;
+    transition: background-position 0.1s;
 }
 
-.a{
+.a {
     background-image: url(../image/a-index-ps.png);
 }
 
-.b{
+.b {
     background-image: url(../image/b-index-ps.png);
 }
 
-.c{
+.c {
     background-image: url(../image/c-index-ps.png);
 }
 
-.d{
+.d {
     background-image: url(../image/d-index-ps.png);
 }
 
-.a-text{
+.a-text {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -61,20 +82,20 @@ li a[href*="index"]{
     left: 10%;
 }
 
-.a-text p{
+.a-text p {
     max-width: 400px;
     height: 100px;
     border-radius: 10px;
     margin-top: 35px;
 }
 
-.b-content{
+.b-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.b-img{
+.b-img {
     background-size: 100%;
     background-repeat: no-repeat;
     width: 20%;
@@ -82,21 +103,21 @@ li a[href*="index"]{
     border-radius: 10px;
 }
 
-.b-left{
+.b-left {
     background-image: url(../image/b-1.jpg);
     position: absolute;
     top: 30px;
     left: 30px;
 }
 
-.b-right{
+.b-right {
     background-image: url(../image/b-2.jpg);
     position: absolute;
     bottom: 30px;
     right: 30px;
 }
 
-.b-text{
+.b-text {
     max-width: 400px;
     width: 40%;
     margin-top: 50px;
@@ -106,12 +127,12 @@ li a[href*="index"]{
     transform: translate(-50%);
 }
 
-.b-text p{
+.b-text p {
     height: 100px;
     margin-top: 35px;
 }
 
-.c-img{
+.c-img {
     background-image: url(../image/c-1.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
@@ -123,7 +144,7 @@ li a[href*="index"]{
     left: 3%;
 }
 
-.c-text{
+.c-text {
     max-width: 400px;
     width: 40%;
     position: absolute;
@@ -131,15 +152,14 @@ li a[href*="index"]{
     left: 51%;
 }
 
-.c-text p{
+.c-text p {
     border-radius: 10px;
     width: 100%;
     height: 100px;
     position: absolute;
-
 }
 
-.d-text{
+.d-text {
     max-width: 600px;
     width: 60%;
     position: absolute;
@@ -147,14 +167,14 @@ li a[href*="index"]{
     left: 3%;
 }
 
-.d-text p{
+.d-text p {
     width: 100%;
     height: 100px;
     border-radius: 10px;
     margin-top: 35px;
 }
 
-.d-img{
+.d-img {
     background-size: 100%;
     background-repeat: no-repeat;
     background-color: #B9B7B7;
@@ -164,21 +184,21 @@ li a[href*="index"]{
     border-radius: 10px;
 }
 
-.d-img:first-of-type{
+.d-img:first-of-type {
     background-image: url(../image/d-1.jpg);
     position: absolute;
     bottom: 6%;
     left: 3%;
 }
 
-.d-img:last-of-type{
+.d-img:last-of-type {
     background-image: url(../image/d-2.jpg);
     position: absolute;
     bottom: 6%;
     left: 33%;
 }
 
-.d-right{
+.d-right {
     background-color: #B9B7B7;
     max-width: 350px;
     width: 35%;
@@ -190,4 +210,25 @@ li a[href*="index"]{
     position: absolute;
     bottom: 6%;
     right: 3%;
+}
+.bar {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
 }

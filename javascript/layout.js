@@ -8,19 +8,19 @@ const pages = {
   '/music.html': 'music.html',
   '/resetpwd.html': 'resetpwd.html',
   '/diary.html': 'diary.html'
-}
+};
 
 const titles = {
   'index.html': '首頁',
-  'login.html': '登入?註冊?',
+  'login.html': '登入/註冊',
   'userinfo.html': '用戶資訊',
-  'changpwd.html': '變更密碼',
+  'changepwd.html': '變更密碼',
   'selectgender.html': '選擇性別',
   'treehole.html': '樹洞',
   'music.html': '音樂',
   'resetpwd.html': '忘記密碼',
   'diary.html': '日記'
-}
+};
 
 const cssFiles = {
   'index.html': ['css/layout.css', 'css/layout-m.css', 'css/index.css', 'css/index-m.css'],
@@ -32,7 +32,7 @@ const cssFiles = {
   'music.html': ['css/layout.css', 'css/layout-m.css', 'css/music.css', 'css/music-m.css'],
   'resetpwd.html': ['css/layout.css', 'css/layout-m.css', 'css/login.css'],
   'diary.html': ['css/layout.css', 'css/layout-m.css', 'css/diary.css', 'css/diary-m.css']
-}
+};
 
 const jsFiles = {
   'login.html': ['javascript/login.js'],
@@ -45,49 +45,46 @@ const jsFiles = {
   'changepwd.html': ['javascript/userinfo.js', 'javascript/changepwd.js'],
   'selectgender.html': ['javascript/userinfo.js', 'javascript/changesex.js'],
   'treehole.html': ['javascript/treehole.js']
-}
+};
 
 function layout(page) {
   fetch('layout.html')
     .then(response => response.text())
     .then(html => {
       document.body.innerHTML = html;
-      fetch(page)
-        .then(response => response.text())
-        .then(pageHtml => {
-          checklogin()
-          getUserData()
-          const main = document.querySelector('main');
-          main.innerHTML = pageHtml;
-          const title = titles[page]
-          const cssFile = cssFiles[page];
-          const jsFile = jsFiles[page];
-          if (title) {
-            document.title = title;
-          }
-          if (cssFile) {
-            cssFile.forEach(cssfile => {
-              const link = document.createElement('link')
-              link.rel = 'stylesheet';
-              link.href = cssfile;
-              document.head.appendChild(link)
-            });
-          }
-          if (jsFile) {
-            jsFile.forEach(jsfile => {
-              const script = document.createElement('script');
-              script.src = jsfile;
-              script.async = true;
-              document.body.appendChild(script);
-            })
-          }
-        })
-        .catch(error => {
-          console.error('加載指定頁面失敗：', error);
+      return fetch(page);
+    })
+    .then(response => response.text())
+    .then(pageHtml => {
+      checklogin();
+      getUserData();
+      const main = document.querySelector('main');
+      main.innerHTML = pageHtml;
+      const title = titles[page];
+      const cssFile = cssFiles[page];
+      const jsFile = jsFiles[page];
+      if (title) {
+        document.title = title;
+      }
+      if (cssFile) {
+        cssFile.forEach(cssfile => {
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = cssfile;
+          document.head.appendChild(link);
         });
+      }
+      if (jsFile) {
+        jsFile.forEach(jsfile => {
+          const script = document.createElement('script');
+          script.src = jsfile;
+          script.async = true;
+          document.body.appendChild(script);
+        });
+      }
     })
     .catch(error => {
-      console.error('加載佈局失敗：', error);
+      console.error('加載指定頁面失敗：', error);
     });
 }
 
@@ -100,9 +97,9 @@ window.addEventListener('DOMContentLoaded', function () {
 const checklogin = () => {
   let adminLi = document.getElementsByClassName('adminLi');
   let userLi = document.getElementsByClassName('userLi');
+  let userinfo = document.getElementById('userinfo');
   const user = localStorage.getItem('userData');
   const logoutLinks = document.querySelectorAll('header #logintext');
-
   if (user) {
     logoutLinks.forEach(link => {
       link.innerText = '登出';
@@ -112,7 +109,7 @@ const checklogin = () => {
         link.innerText = '登入';
         Array.from(adminLi).forEach(item => item.classList.add('hidden'));
         Array.from(userLi).forEach(item => item.classList.add('hidden'));
-        alert('謝謝光臨~已登出')
+        alert('謝謝光臨~已登出');
       });
     });
   } else {
@@ -121,11 +118,11 @@ const checklogin = () => {
     logoutLinks.forEach(link => {
       link.innerText = '登入';
       localStorage.removeItem('userData');
-        localStorage.clear();
+      localStorage.clear();
+
     });
   }
-}
-
+};
 
 async function getUserData() {
   const token = localStorage.getItem('userData');

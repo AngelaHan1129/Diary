@@ -12,3 +12,27 @@ async function sentenceData() {
 }
 
 sentenceData();
+
+
+
+
+const checkGoDiary = () => {
+    const user = localStorage.getItem('userData');
+let goDiary = document.querySelectorAll('.goDiary');
+
+    if (user) {
+        goDiary.forEach(item => {
+            item.addEventListener('click', () => {
+                window.location.href = 'http://localhost:5501/diary.html';
+            });
+        });
+    } else {
+        goDiary.forEach(item => {
+            item.addEventListener('click', () => {
+                alert('登入後才可寫日記');
+                window.location.href = 'http://localhost:5501/login.html';
+            });
+        });
+    }
+};
+checkGoDiary()
