@@ -50,7 +50,6 @@ async function treehole() {
         });
         document.getElementById('upside').innerHTML = tab;
 
-        // 添加查看按钮的事件监听器
         document.querySelectorAll('.openDialog').forEach(button => {
             button.addEventListener('click', async function () {
                 const diaryId = this.getAttribute('data-id');
@@ -65,45 +64,50 @@ async function treehole() {
 async function showDiaryContent(diaryId) {
     const infoModal = document.querySelector("#infoShowDiary");
     const token = localStorage.getItem('userData');
+    let iframeElement = document.getElementById("infoIfream");
 
     try {
-        const response = await fetch(`http://localhost:8000/api/get_diary_by_id/${diaryId}`, {
+        const response = await fetch(`http://localhost:8000/api/show_diary?Diary_Id=${diaryId}`, {
             headers: {
                 'Authorization': token
             }
         });
         const data = await response.json();
-        // document.getElementById("infoDate").value = data.Day;
-        // document.getElementById("titleShowDiary").value = data.Title;
-        // document.getElementById("contentShowDiary").value = data.Content;
+        console.log(data)
+        document.getElementById("infoDate").value = data.data.Day;
+        document.getElementById("titleShowDiary").value = data.data.Title;
+        document.getElementById("contentShowDiary").value = data.data.content;
 
         let emoji = '';
-        if (data.Emoji == 1) {
+        if (data.data.Emoji == 1) {
             emoji = 'calm';
-        } else if (data.Emoji == 2) {
+        } else if (data.data.Emoji == 2) {
             emoji = 'fear';
-        } else if (data.Emoji == 3) {
+        } else if (data.data.Emoji == 3) {
             emoji = 'sad';
-        } else if (data.Emoji == 4) {
+        } else if (data.data.Emoji == 4) {
             emoji = 'joy';
-        } else if (data.Emoji == 5) {
+        } else if (data.data.Emoji == 5) {
             emoji = 'happiness';
-        } else if (data.Emoji == 6) {
+        } else if (data.data.Emoji == 6) {
             emoji = 'angry';
         }
         
         let weather = '';
-        if (data.Weather == 1) {
+        if (data.data.weather == 1) {
             weather = 'sun';
-        } else if (data.Weather == 2) {
-            weather = 'cloud';
-        } else if (data.Weather == 3) {
+        } else if (data.data.weather == 2) {
+            weather = 'cloudy';
+        } else if (data.data.weather == 3) {
             weather = 'rain';
+        }else if (data.data.weather == 4) {
+            weather = 'partly';
+        }else if (data.data.weather == 5) {
+            weather = 'snowy';
         }
-        
-        // document.getElementById("infoIframe").src = `https://www.youtube.com/embed/3V0iwhq3jdA`
-        // document.getElementById("infoEmoji").src = `./image/img-emoji/${emoji}.png`;
-        // document.getElementById("infoWeather").src = `./image/img-weather/${weather}.png`;
+        iframeElement.src = data.data.music
+        document.getElementById("infoEmoji").src = `./image/img-emoji/${emoji}.png`;
+        document.getElementById("infoWeather").src = `./image/img-weather/${weather}.png`;
 
         infoModal.showModal();
     } catch (err) {

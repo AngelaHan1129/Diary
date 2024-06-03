@@ -151,16 +151,9 @@ async function WriteDiary() {
       let iframeElement = document.getElementById('musicShow');
       console.log(iframeElement.src);
       window.alert(data.msg);
-      // let res = await fetch(`http://localhost:8000/api/show_diary?diary_id=200`, {
-      //   headers: {
-      //     Authorization: token,
-      //   }
-      // })
-      // let body = await res.json();
-      // console.log(body)
-      // console.log(body.data.music)
       iframeElement.src = data.data.Path
-      document.getElementById("songName").value = data.Day;
+      document.getElementById("songName").innerHTML = data.data.Music_Name;
+      document.getElementById("singerName").innerHTML = data.data.Singer;
     }
     let errmsg = "";
     errmsg = errmsg.replace("", data.msg);
