@@ -13,6 +13,10 @@ body {
     src: url(../font-size/AnyConv.com__Iansui-Regular.woff) format('woff');
 }
 
+button,input,textarea{
+    font-family: 'AnyConv.com__Iansui-Regular';
+}
+
 a {
     color: #fff;
     text-decoration: none;

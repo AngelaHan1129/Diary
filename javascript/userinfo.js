@@ -25,6 +25,8 @@ inputimg.addEventListener('change', function () {
       var reader = new FileReader();
       reader.onload = function (e) {
         userimg.src = e.target.result;
+        changeUserPicture(e.target.result)
+
         userimg.style.display = 'block';
       }
       reader.readAsDataURL(selectfile);
@@ -54,13 +56,31 @@ function changePicture(pic) {
       console.log(data)
     })
 }
+async function changeUserPicture(uploadShot) {
+  const token = await localStorage.getItem('userData')
+  let changeUserPhoto = document.querySelector('#changeUserPhoto')
+  changeUserPhoto.addEventListener('click', async () => {
+    let res = await fetch('http://localhost:8000/api/change_shot', {
+      method: 'POST',
+      headers: {
+        Authorization: token
+      },
+      body: JSON.stringify({
+        file: uploadShot
+      })
+    })
+    let body = await res.json();
+    console.log(body)
+    console.log(uploadShot);
+  })
+}
 
 async function getUserData() {
   const token = await localStorage.getItem('userData')
   console.log(token)
-  await fetch(`http://localhost:8000/api/getuser_by_token`,{
-    headers:{
-      Authorization:token
+  await fetch(`http://localhost:8000/api/getuser_by_token`, {
+    headers: {
+      Authorization: token
     }
   })
     .then(response => {

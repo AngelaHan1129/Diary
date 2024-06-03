@@ -18,8 +18,7 @@ sentenceData();
 
 const checkGoDiary = () => {
     const user = localStorage.getItem('userData');
-let goDiary = document.querySelectorAll('.goDiary');
-
+    let goDiary = document.querySelectorAll('.goDiary');
     if (user) {
         goDiary.forEach(item => {
             item.addEventListener('click', () => {

@@ -15,8 +15,8 @@ async function musicReport() {
                     emojidata.push(item.COUNT);
                 }
             });
-            console.log( data.data[0])
-            console.log( data)
+            console.log(data.data[0])
+            console.log(data)
             console.log(emojidata)
             let labels = emojiNames;
             let datas = emojidata;
@@ -29,7 +29,13 @@ async function musicReport() {
                     datasets: [{
                         label: '數量',
                         data: datas,
-                        backgroundColor: 'rgb(145, 189, 217)',
+                        backgroundColor: [
+                            'rgba(242, 184, 206, 0.8)',
+                            'rgba(104, 214, 245, 0.8)',
+                            'rgba(95, 215, 185, 0.8)',
+                            'rgba(244, 218, 107, 0.8)',
+                            'rgba(245, 101, 100, 0.8)'
+                        ],
                         borderColor: 'rgb(255, 255, 255)',
                         borderWidth: 1
                     }]
@@ -86,7 +92,13 @@ async function sentenceReport() {
             datasets: [{
                 label: '數量',
                 data: datas,
-                backgroundColor: 'rgb(145, 189, 217)',
+                backgroundColor: [
+                    'rgba(242, 184, 206, 0.8)',
+                    'rgba(104, 214, 245, 0.8)',
+                    'rgba(95, 215, 185, 0.8)',
+                    'rgba(244, 218, 107, 0.8)',
+                    'rgba(245, 101, 100, 0.8)'
+                ],
                 borderColor: 'rgb(255, 255, 255)',
                 borderWidth: 1
             }]
@@ -135,7 +147,13 @@ async function faceReport() {
                 borderWidth: 1,
                 tension: 0.1,
                 fill: false,
-                borderColor: 'rgb(145, 189, 217)',
+                borderColor: [
+                    'rgba(242, 184, 206, 0.8)',
+                    'rgba(104, 214, 245, 0.8)',
+                    'rgba(95, 215, 185, 0.8)',
+                    'rgba(244, 218, 107, 0.8)',
+                    'rgba(245, 101, 100, 0.8)'
+                ],
                 tension: 0.1
             }]
         },
@@ -179,7 +197,13 @@ async function MemberReport() {
             datasets: [{
                 label: '數量',
                 data: datas,
-                backgroundColor: 'rgb(145, 189, 217)',
+                backgroundColor: [
+                    'rgba(242, 184, 206, 0.8)',
+                    'rgba(104, 214, 245, 0.8)',
+                    'rgba(95, 215, 185, 0.8)',
+                    'rgba(244, 218, 107, 0.8)',
+                    'rgba(245, 101, 100, 0.8)'
+                ],
                 borderColor: 'rgb(255, 255, 255)',
                 borderWidth: 1
             }]

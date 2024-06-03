@@ -131,7 +131,7 @@ input:not([type = "submit"], [type = "reset"], [type = "button"]){
     cursor: text;
 }
 
-input[type = "submit"], [type = "reset"], [type = "button"]{
+#changeUserPhoto,input[type = "submit"], [type = "reset"], [type = "button"]{
     background-color: #71604a;
     color: #fff;
     width: 95px;
@@ -140,6 +140,15 @@ input[type = "submit"], [type = "reset"], [type = "button"]{
     border-radius: 10px;
     align-self: end;
     cursor: pointer;
+}
+#changeUserPhoto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+#changeUserPhoto:hover{
+    background-color: #5f503d;
 }
 
 select{
