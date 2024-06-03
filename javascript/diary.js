@@ -144,21 +144,22 @@ async function WriteDiary() {
       }),
     });
     const data = await response.json();
-    console.log(data.msg);
+    console.log(data);
+    console.log(data.Path);
     if (data.msg == "新增成功") {
       showMusic.style.transform = 'translate(0,0)';
       let iframeElement = document.getElementById('musicShow');
       console.log(iframeElement.src);
       window.alert(data.msg);
-      let res = await fetch(`http://localhost:8000/api/show_diary?diary_id=200`, {
-        headers: {
-          Authorization: token,
-        }
-      })
-      let body = await res.json();
-      console.log(body)
-      console.log(body.data.music)
-      iframeElement.src = body.data.music
+      // let res = await fetch(`http://localhost:8000/api/show_diary?diary_id=200`, {
+      //   headers: {
+      //     Authorization: token,
+      //   }
+      // })
+      // let body = await res.json();
+      // console.log(body)
+      // console.log(body.data.music)
+      iframeElement.src = data.data.Path
       document.getElementById("songName").value = data.Day;
     }
     let errmsg = "";
