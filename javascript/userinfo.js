@@ -25,13 +25,10 @@ inputimg.addEventListener('change', function () {
       var reader = new FileReader();
       reader.onload = function (e) {
         userimg.src = e.target.result;
-        changeUserPicture(e.target.result)
-
         userimg.style.display = 'block';
       }
       reader.readAsDataURL(selectfile);
-
-      changePicture(selectfile)
+      changeUserPicture(selectfile)
     } else {
       alert('請選擇圖片文件');
       changeshot.value = '';
@@ -41,33 +38,37 @@ inputimg.addEventListener('change', function () {
   }
 });
 
-function changePicture(pic) {
-  let formdata = new FormData()
-  const acc = JSON.parse(localStorage.getItem('userData')).user
-  formdata.append("account", acc)
-  formdata.append("file", pic)
-  fetch('http://localhost:8000/api/change_shot',
-    {
-      method: "post",
-      body: formdata
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-    })
-}
+// function changePicture(pic) {
+//   let formdata = new FormData()
+//   const acc = JSON.parse(localStorage.getItem('userData'))
+//   formdata.append("account", acc)
+//   formdata.append("file", pic)
+//   fetch('http://localhost:8000/api/change_shot',
+//     {
+//       headers: {
+//         Authorization: token
+//       },
+//       method: "post",
+//       body: formdata
+//     })
+//     .then(res => res.json())
+//     .then(data => {
+//       console.log(data)
+//     })
+// }
 async function changeUserPicture(uploadShot) {
-  const token = await localStorage.getItem('userData')
+  const token = localStorage.getItem('userData')
+  let formdata = new FormData()
   let changeUserPhoto = document.querySelector('#changeUserPhoto')
+  formdata.append("file", uploadShot)
   changeUserPhoto.addEventListener('click', async () => {
     let res = await fetch('http://localhost:8000/api/change_shot', {
       method: 'POST',
       headers: {
-        Authorization: token
+        Authorization: token,
+        // 'Content-Type': 'multipart/form-data'
       },
-      body: JSON.stringify({
-        file: uploadShot
-      })
+      body:formdata
     })
     let body = await res.json();
     console.log(body)

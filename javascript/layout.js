@@ -117,9 +117,6 @@ const checklogin = () => {
     Array.from(userLi).forEach(item => item.classList.add('hidden'));
     logoutLinks.forEach(link => {
       link.innerText = '登入';
-      localStorage.removeItem('userData');
-      localStorage.clear();
-
     });
   }
 };
