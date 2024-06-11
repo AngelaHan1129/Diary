@@ -12,7 +12,7 @@ async function addEmoji() {
         let api = await fetch('http://localhost:8000/api/emoji_add', {
             method: 'post',
             body: JSON.stringify({
-                "Photo": "234",
+                // "Photo": "234",
                 "Emoji_Name": "234"
             })
         })
@@ -39,7 +39,7 @@ async function addWeather() {
             method: 'post',
             body: JSON.stringify({
                 "Weather_Name": "123",
-                "Photo": "123"
+                // "Photo": "123"
             })
         })
             .then(response => response.json())
