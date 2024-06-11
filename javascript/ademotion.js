@@ -216,7 +216,6 @@ async function fetchWeatherData(pagenow, searchContents = '') {
             <td class="btns">
                     <div>
                         <input type="submit" value="刪除" class="delete" data-id="${weather.Weather_Id}">
-                        <input type="submit" value="修改" class="edit" data-id="${weather.Weather_Id}">
                     </div>
                 </td>
             </tr>`;
@@ -277,7 +276,6 @@ async function fetchFaceData(pagenow, searchContent = '') {
                 <td class="btns">
                     <div>
                         <input type="submit" value="刪除" class="delete" data-id="${emoji.Emoji_Id}">
-                        <input type="submit" value="修改" class="edit" data-id="${emoji.Emoji_Id}">
                     </div>
                 </td>
             </tr>                   

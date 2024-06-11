@@ -80,7 +80,7 @@ input[type="search"]::placeholder {
 #leftside {
     background-color: #555;
     width: 180px;
-    height: 100%;
+    height: 100000px;
     display: flex;
     flex-direction: column;
     padding: 0 15px;

@@ -170,7 +170,7 @@ async function registerData() {
                     showAuthCode.close();
                     infoModal.showModal();
                     ok.addEventListener("click", async function () {
-                        const token = await localStorage.getItem('registerData')
+                        const token = localStorage.getItem('registerData')
                         console.log(token)
                         let content = document.querySelector("#content").value;
                         console.log(object.account);
